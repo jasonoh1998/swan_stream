@@ -185,6 +185,7 @@
 			    <div class="main-content-side-margin">
 			        <div class="main-content-header">
 			            <h1 class="main-content-header__title">홈</h1>
+                        <h1>현욱 test</h1>
 			            <hr class=".main-content-header__divider">
 			        </div>
 			    </div>
