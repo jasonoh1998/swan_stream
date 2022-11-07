@@ -47,7 +47,8 @@
                 </div>
             </div>
             
-			<jsp:include page="/navigation/leftNav.jsp" />
+            <!-- navigation area -->
+            <jsp:include page="/navigation/leftNav.jsp" />
 			<jsp:include page="/navigation/topNav.jsp" />
 			
             <!-- main content area -->

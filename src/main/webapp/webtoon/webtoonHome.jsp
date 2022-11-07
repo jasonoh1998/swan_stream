@@ -17,21 +17,5 @@
 	</div>
 </main>
 
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script>
-$(function(){
-    // changes selected background color of left navigation bar
-    $(".content-video").click(function() {
-        $(".contents > a").css("background", "#FAADB4");
-        $(".content-video > a").css("background", "#fa8891");
-    });
-    $(".contents").click(function() {
-        $(".contents > a").css("background", "#FAADB4");
-        $(".content-video > a").css("background", "#FAADB4");
-        $(this).find("a").css("background", "#fa8891");
-    });
-
-});
-</script> -->
 </body>
 </html>
