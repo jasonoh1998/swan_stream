@@ -24,16 +24,15 @@ $(function(){
             $(this).css("background", "#FAADB4");
         }
     );
-
+    
     // changes selected background color of left navigation bar
     $(".content-video").click(function() {
-        $(".contents > a").css("background", "inherit");
+        $(".contents > a").css("background", "#FAADB4");
         $(".content-video > a").css("background", "#fa8891");
     });
     $(".contents").click(function() {
-        $(".contents > a").css("background", "inherit");
-        $(".content-video > a").css("background", "inherit");
+        $(".contents > a").css("background", "#FAADB4");
+        $(".content-video > a").css("background", "#FAADB4");
         $(this).find("a").css("background", "#fa8891");
     });
-
 });
