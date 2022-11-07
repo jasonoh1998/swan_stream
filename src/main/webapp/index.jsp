@@ -37,19 +37,21 @@
         <div id="main">
             <!-- new subscription advertisement for non-membership members -->
             <div id="new-sub">
-                <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub-ticket">
-                <div class="new-sub-content">
-                    <div class="new-sub-description">
+                <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket">
+                <div class="new-sub_content">
+                    <div class="new-sub_description">
                         <p>첫 구독 시 2주 무료!</p>
                         <p>지금 구독 시작하고 모든 콘텐츠를 무제한 감상해보세요.</p>
                     </div>
-                    <button class="new-sub-button">무료 이용 시작</button>
+                    <button class="new-sub_button">무료 이용 시작</button>
                 </div>
             </div>
+            
             
             <!-- navigation area -->
             <jsp:include page="/navigation/leftNav.jsp" />
 			<jsp:include page="/navigation/topNav.jsp" />
+			
 			
             <!-- main content area -->
          	<c:if test="${empty display }">
@@ -58,6 +60,10 @@
            	<c:if test="${not empty display }">
 				<jsp:include page="${display }" />
 			</c:if>
+            
+            
+            <!-- footer area -->
+            
             
         </div>
     </div>

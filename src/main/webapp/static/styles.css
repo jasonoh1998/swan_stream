@@ -85,36 +85,36 @@ ol, ul {
     margin: 0px 10px;
     gap: 10px;
 }
-.new-sub-ticket {
+.new-sub_ticket {
     height: 24px;
 }
-.new-sub-content {
+.new-sub_content {
     display: inline-flex;
     -webkit-box-flex: 1;
     flex-grow: 1;
     flex-direction: column;
     gap: 8px;
 }
-.new-sub-description {
+.new-sub_description {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
-.new-sub-description > p:nth-child(1) {
+.new-sub_description > p:nth-child(1) {
     color: rgb(255, 255, 255);
     font-size: 16px;
     font-weight: 700;
     line-height: 22px;
     margin-bottom: 2px;
 }
-.new-sub-description > p:nth-child(2) {
+.new-sub_description > p:nth-child(2) {
     color: rgb(255, 255, 255);
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
     margin-bottom: 8px;
 }
-.new-sub-button {
+.new-sub_button {
     display: inline-flex;
     color: rgb(255, 255, 255);
     font-size: 14px;
@@ -124,7 +124,7 @@ ol, ul {
 }
 
 /* left fixed navigation bar */
-#main-navigation {
+#left-navigation {
     position: fixed;
     top: 0;
     left: 0;
@@ -143,11 +143,11 @@ ol, ul {
     width: 88px;
     height: 26px;
 }
-.content-navigation {
+.content-section {
     padding: 0 16px;
     margin: 30px 0 0;
 }
-.content-list {
+.content-lists {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -162,7 +162,7 @@ ol, ul {
     padding: 0;
     margin: 0;
 }
-.content-list::before {
+.content-lists::before {
     content: attr(aria-label);
     color: #84868d;
     padding: 0 12px 2px;
@@ -176,7 +176,7 @@ ol, ul {
     text-decoration: none;
     line-height: 18px;
 }
-.content-video, .contents {
+.content_video, .contents {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
@@ -184,7 +184,7 @@ ol, ul {
     padding: 0;
     margin: 0;
 }
-.content-video > a, .content-video > button {
+.content_video > a, .content_video > button {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -222,7 +222,7 @@ ol, ul {
     line-height: 20px;
     color: #fff;
 }
-.content-video svg {
+.content_video svg, .contents svg {
     color: #fff;
     width: 20px;
     height: 20px;
@@ -265,13 +265,7 @@ ol, ul {
     text-decoration: none;
     line-height: 20px;
 }
-.contents svg {
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    margin: 0 10px 0 0;
-}
-.navigation-divider {
+.left-navigation_divider {
     background-color: #1b1c1d;
     width: 100%;
     height: 1px;
@@ -282,7 +276,7 @@ ol, ul {
 }
 
 /* fixed top navigation bar */
-#top-navigation {
+#top-navigation-fixed {
     position: fixed;
     top: 0;
     left: 0;
@@ -290,7 +284,7 @@ ol, ul {
     width: 100%;
     padding: 0 0 0 240px;
 }
-.fixed-top-navigation{
+.top-navigation{
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -311,16 +305,16 @@ ol, ul {
     -webkit-transition: background-color 300ms;
     transition: background-color 300ms;
 }
-.profile-area {
+.profile {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 }
-.profile-area-0 {
+.profile-content {
     position: relative;
 }
-.profile-area-in {
+.profile-circle {
     width: 100%;
     height: 100%;
 }
@@ -335,12 +329,12 @@ ol, ul {
     margin: 0;
     overflow: hidden;
 }
-.profile-picture-image {
+.profile-picture_image {
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
-.settings-menu {
+.setting-menu {
     display: flex; /* block on click */
     position: absolute;
     z-index: 0;
@@ -351,7 +345,7 @@ ol, ul {
     outline: none;
     visibility: hidden; /* visible */
 }
-.settings-list {
+.setting-lists {
     display: flex;
     flex-direction: column;
     background: #FAADB4;
@@ -363,11 +357,11 @@ ol, ul {
     margin: 4px 0px;
     overflow: hidden;
 }
-.settings a, .settings button {
+.setting a, .setting button {
     display: block;
     width: 100%;
 }
-.settings-box {
+.setting-box {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -385,7 +379,7 @@ ol, ul {
     text-overflow: ellipsis;
     cursor: pointer;
 }
-.settings-box > svg {
+.setting-box > svg {
     margin: 0px 8px 0px 0px;
 }
 .kids-image {
@@ -396,13 +390,13 @@ ol, ul {
     border-radius: 50%;
     margin: 0px 8px 0px 0px;
 }
-.settings-text {
+.setting-text {
     flex: 1 1 0%;
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.settings-divider {
+.setting-divider {
     background-color: rgb(56, 57, 61);
     width: 100%;
     height: 1px;
@@ -410,9 +404,13 @@ ol, ul {
     border: none;
     margin: 0px;
 }
-.settings-list [class*="divider"] {
+.setting-list [class*="divider"] {
     margin: 4px 0px;
 }
+
+/* footer */
+
+
 
 /* media query */
 @media (min-width: 600px){
