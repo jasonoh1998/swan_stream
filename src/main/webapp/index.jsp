@@ -36,7 +36,7 @@
     <div id="root">
         <div id="main">
             <!-- new subscription advertisement for non-membership members -->
-            <div id="new-sub">
+<!--             <div id="new-sub">
                 <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket">
                 <div class="new-sub_content">
                     <div class="new-sub_description">
@@ -45,7 +45,7 @@
                     </div>
                     <button class="new-sub_button">무료 이용 시작</button>
                 </div>
-            </div>
+            </div> -->
             
             
             <!-- navigation area -->
@@ -63,6 +63,32 @@
             
             
             <!-- footer area -->
+            <footer id="footer">
+            	<ul class="footer-lists">
+            	    <li class="footer-list">
+            			스완스트림 서비스 이용약관
+            		</li>
+            		<li class="footer-list">
+            			개인정보 처리 방침
+            		</li>
+            		<li class="footer-list">
+	       			   	<a href="#/[https://watcha.com/zendesk/login]" target="_blank" rel="noopener noreferrer">
+	                    	고객센터 <!-- same link in topNav -->
+	                    </a>
+            		</li>
+            	</ul>
+            	<div class="social-media">
+            		<a href="https://fb.com" rel="noreferrer noopener" class="footer_facebook"></a>
+            		<a href="https://twitter.com" rel="noreferrer noopener" class="footer_twitter"></a>
+            		<a href="https://instagram.com" rel="noreferrer noopener" class="footer_instagram"></a>
+            	</div>
+            	<div class="copyright">
+            		<a href="#">
+            			<img alt="SwanStream" src="/swan_stream/images/copyright_logo.svg" />
+            		</a>
+					Copyright © 2022 by <em style="font-weight: 700;">SwanStream.dev</em> All rights reserved.
+            	</div>
+            </footer>
             
             
         </div>
