@@ -6,14 +6,15 @@
 <meta charset="UTF-8">
 </head>
 <body>
+
 <!-- left side fixed position navigation bar -->
-<nav id="main-navigation">
+<nav id="left-navigation">
     <a class="logo-link" href="/swan_stream/video/videoHome.do">
         <img alt="Watcha" src="/swan_stream/images/logo.svg" class="logo">
     </a>
-    <section class="content-navigation">
-        <ul class="content-list">
-            <li class="content-video">
+    <section class="content-section">
+        <ul class="content-lists">
+            <li class="content_video">
                 <a href="/swan_stream/video/videoHome.do">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3335 2.5H1.66683C1.2085 2.5 0.833496 2.875 0.833496 3.33333V16.6667C0.833496 17.125 1.2085 17.5 1.66683 17.5H18.3335C18.7918 17.5 19.1668 17.125 19.1668 16.6667V10.625V9.375V3.33333C19.1668 2.875 18.7918 2.5 18.3335 2.5ZM17.9168 5.93333H16.0418V3.75H17.9168V5.93333ZM14.7918 16.25H5.2085V10.625H14.7918V16.25ZM3.9585 9.375H2.0835V7.18333H3.9585V9.375ZM2.0835 10.625H3.9585V12.8083H2.0835V10.625ZM5.2085 9.375V3.75H14.7918V9.375H5.2085ZM3.9585 3.75V5.93333H2.0835V3.75H3.9585ZM2.0835 14.0667H3.9585V16.25H2.0835V14.0667ZM16.0418 16.25V14.0667H17.9168V16.25H16.0418ZM17.9168 12.8167H16.0418V10.625H17.9168V12.8167ZM16.0418 9.375V7.18333H17.9168V9.36667H16.0418V9.375Z" fill="currentColor"></path>
@@ -30,8 +31,8 @@
                 </a>
             </li>
         </ul>
-        <hr class="navigation-divider">
-        <ul class="content-list">
+        <hr class="left-navigation_divider">
+        <ul class="content-lists">
             <li class="contents">
                 <a href="#/for_you">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +42,7 @@
                 </a>
             </li>
             <li class="contents">
-                <a href="#/search">
+                <a href="/swan_stream/search/searchHome.do">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M16.173 16.43a7.5 7.5 0 1 1 .257-.257.749.749 0 0 0-.257.257Zm.639 1.442a9 9 0 1 1 1.06-1.06l3.88 3.88a.75.75 0 1 1-1.06 1.06l-3.88-3.88Z" fill="currentColor"></path>
                     </svg>
@@ -67,5 +68,6 @@
         </ul>
     </section>
 </nav>
+
 </body>
 </html>

@@ -7,12 +7,12 @@
 </head>
 <body>
 
-<main id="main-content">
+<main id="content">
 	<div></div>
-	<div class="main-content-side-margin">
-	    <div class="main-content-header">
-			<h1 class="main-content-header__title">웹툰</h1>
-			<hr class="main-content-header__divider">
+	<div class="content-margin">
+	    <div class="content_header">
+			<h1 class="content_header_title">웹툰</h1>
+			<hr class="content_header_divider">
 	    </div>
 	</div>
 </main>
