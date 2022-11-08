@@ -83,9 +83,7 @@
             		<a href="https://instagram.com" rel="noreferrer noopener" class="footer_instagram"></a>
             	</div>
             	<div class="copyright">
-            		<a href="#">
-            			<img alt="SwanStream" src="/swan_stream/images/copyright_logo.svg" />
-            		</a>
+            		<img alt="SwanStream" src="/swan_stream/images/copyright_logo.svg" />
 					Copyright © 2022 by <em style="font-weight: 700;">SwanStream.dev</em> All rights reserved.
             	</div>
             </footer>
