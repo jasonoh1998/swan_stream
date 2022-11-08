@@ -36,7 +36,7 @@
     <div id="root">
         <div id="main">
             <!-- new subscription advertisement for non-membership members -->
-<!--             <div id="new-sub">
+            <div id="new-sub">
                 <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket">
                 <div class="new-sub_content">
                     <div class="new-sub_description">
@@ -45,7 +45,7 @@
                     </div>
                     <button class="new-sub_button">무료 이용 시작</button>
                 </div>
-            </div> -->
+            </div>
             
             
             <!-- navigation area -->
