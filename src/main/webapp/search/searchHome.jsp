@@ -98,12 +98,12 @@
 			<div class="search_title-box">
 				<div>
 					<h2 class="search_title">
-						인기
+						비디오 장르
 					</h2>
 				</div>
 			</div>
 			<div class="show-more-button">
-				<a class="show-more-button-link" href="#/popular_list/staffmades">
+				<a class="show-more-button-link" href="/swan_stream/search/searchVideoGenre.do">
 					모두 보기
 				</a>
 			</div>
