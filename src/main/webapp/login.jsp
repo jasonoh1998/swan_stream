@@ -45,6 +45,13 @@
 							</div>
 						</form>
 						<p>다른 방법으로 로그인하기</p>
+							<ul class="login-api-group">    <!-- 로그인API그룹-->
+								<li class="login-api">
+									<button class="login-kakao" type="button" src="/swan_stream/images/login/kakaologo.svg"> <!-- 카카오버튼 -->
+									</button>
+								</li>
+							</ul>
+						
 					</div>
 				</main>
 			</div>
