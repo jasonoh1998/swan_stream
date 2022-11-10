@@ -3,14 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 </head>
 <body>
 
 <!-- top side fixed position navigation bar -->
 <header id="top-navigation-fixed">
     <nav class="top-navigation">
-        <div><!--space--></div>
+        <div class="hidden-logo">
+        	<div class="hidden-logo-display"></div>
+        	<div class="hidden-logo-box">
+        		<a href="/swan_stream/video/videoHome.do">
+        			<img alt="Watcha" src="/swan_stream/images/logo.svg">
+    			</a>
+        	</div>
+        </div>
         <div class="profile">
             <div class="profile-content">
                 <div class="profile-circle">
