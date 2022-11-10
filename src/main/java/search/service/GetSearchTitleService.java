@@ -15,9 +15,11 @@ public class GetSearchTitleService implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		String title = request.getParameter("title");
+		
 		//DB
 		SearchDAO searchDAO = SearchDAO.getInstance();
-		List<String> list = searchDAO.getTitle("webtoon_genre");
+		List<String> list = searchDAO.getTitle(title);
 		
 		//List -> JSON
 		JSONObject json = new JSONObject();

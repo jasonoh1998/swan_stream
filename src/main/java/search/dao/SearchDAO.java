@@ -29,7 +29,7 @@ public class SearchDAO {
 	public List<String> getTitle(String columnName) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		List<String> list = sqlSession.selectList("searchSQL.getTitle", columnName);
-		System.out.println(list);
+		//System.out.println(list);
 		sqlSession.commit();
 		sqlSession.close();
 		return list;
