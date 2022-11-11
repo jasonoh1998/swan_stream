@@ -7,20 +7,15 @@ $(function(){
 		success: function(data) {
 			$.each(data.list, function(index, items){
 				//console.log(index, items)
-				$('<li/>').append($("<a/>",{
-					class: "search-link"
-					}).append($("<div/>",{
-						class: "search-link-box"
-						}).append($("<img/>",{
-							src: "/swan_stream/images/search/genre/"+(index+1)+".png"
-						})).append($("<div/>",{
-							class: "search-link-box_title"
-							}).append($("<p/>",{
-								text: items
-							}))
+				$('<li/>')
+					.append($("<a/>",{class: "search-link"})
+						.append($("<div/>",{class: "search-link-box"})
+							.append($("<img/>",{src: "/swan_stream/images/search/genre/"+(index+1)+".png"}))
+							.append($("<div/>",{class: "search-link-box_title"})
+								.append($("<p/>",{text: items}))
+							)
 						)
-					)
-				).appendTo($(".search-grid"))
+					).appendTo($(".search-grid"))
 			});
 		},
 		error: function(err){
