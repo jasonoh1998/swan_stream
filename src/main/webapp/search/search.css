@@ -78,6 +78,9 @@
     width: 50%;
     transition: transform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s;
 }
+.search-content_list:hover {
+    z-index: 1;
+}
 .search-content_list_link {
     display: block;
 }
@@ -133,6 +136,11 @@
 @media screen and (min-width: 62em){
 	.search-content_list {
 		width: 25%;
+	}
+}
+@media screen and (min-width: 97em){
+	.search-content_list {
+		width: 20%;
 	}
 }
 @media screen and (max-width: 47em){

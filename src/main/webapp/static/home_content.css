@@ -29,3 +29,9 @@
     border: none;
     margin: 0px 0px 18px;
 }
+@media (min-width: 1920px){
+	.content-margin {
+	    max-width: 1680px;
+	    margin: 0px auto;
+	}	
+}

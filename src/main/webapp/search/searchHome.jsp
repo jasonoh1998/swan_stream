@@ -33,18 +33,6 @@
 	    		</span>
 	    	</button>
 	    	<ul class="search-content_lists">
-<!-- 	    		<li class="search-content_list">
-	    			<article>
-	    				<a class="search-content_list_link" href="#searchPageWithTitleAsParameter">
-	    					<div class="search-link-box">
-	    						<img src='/swan_stream/images/search/genre/1.png' />
-								<div class='search-link-box_title'>
-									<p>한국 드라마</p>
-								</div>
-	    					</div>
-	    				</a>
-	    			</article>
-	    		</li> -->
 	    	</ul>
 	    	<button type="button" class="slide-right-slidernav">
 	    		<span>
@@ -129,71 +117,24 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
-let i = [0,0,0];
-let row;
-let width = $(window).width();
-if(width >= 896) $(".slide-right-slidernav:eq(2)").hide();
-let clickCount = [1,1,1];
-
-// This will execute whenever the window is resized
-$(window).resize(function() {
-	width = $(window).width(); // New width
-	if(width >= 896) $(".slide-right-slidernav:eq(2)").hide();
-	else if(width <896) $(".search:eq(2)").show();
-});
+let listPosition = [0,0,0];
+let rowNum;
 
 $(".slide-left-slidernav").hide();
 $(".slide-left-slidernav").click(function(){
-	row = $(".slide-left-slidernav").index(this)
-	clickCount[row]-=1;
-	i[row]+=100;
-	if(i[row]==0)
-		$(".slide-left-slidernav:eq("+row+")").hide();
-	if($(".slide-right-slidernav:eq("+row+")").is(":hidden"))
-		$(".slide-right-slidernav:eq("+row+")").show();
-	$(".search-content_lists:eq("+row+")").css("transform","translateX("+i[row]+"%");
+	rowNum = $(".slide-left-slidernav").index(this);
+	listPosition[rowNum]+=100;
+	if(listPosition[rowNum]==0)
+		$(".slide-left-slidernav:eq("+rowNum+")").hide();
+	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden"))
+		$(".slide-right-slidernav:eq("+rowNum+")").show();
+	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%");
 });
 $(".slide-right-slidernav").click(function(){
-	row = $(".slide-right-slidernav").index(this);
-	clickCount[row]+=1;
-	i[row]-=100;
-	if(width >= 992){
-		if(row == 0){
-			if(clickCount[row]==3){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		} else if(row == 1){
-			if(clickCount[row]==2){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		}
-	} else if(width >= 896){
-		if(row == 0){
-			if(clickCount[row]==4){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		} else if(row == 1){
-			if(clickCount[row]==2){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		}
-	} else {
-		if(row == 0){
-			if(clickCount[row]==5){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		} else if(row == 1){
-			if(clickCount[row]==3){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		} else if(row == 2){
-			if(clickCount[row]==2){
-				$(".slide-right-slidernav:eq("+row+")").hide();
-			}
-		}
-	}
-	$(".search-content_lists:eq("+row+")").css("transform","translateX("+i[row]+"%)");
-	$(".slide-left-slidernav:eq("+row+")").show();
+	rowNum = $(".slide-right-slidernav").index(this);
+	listPosition[rowNum]-=100;
+	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%)");
+	$(".slide-left-slidernav:eq("+rowNum+")").show();
 });
 
 $(function(){
