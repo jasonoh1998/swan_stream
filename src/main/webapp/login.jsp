@@ -47,7 +47,7 @@
 						<p>다른 방법으로 로그인하기</p>
 							<ul class="login-api-group">    <!-- 로그인API그룹-->
 								<li class="login-api">
-									<button class="login-kakao" type="button" src="/swan_stream/images/login/kakaologo.svg"> <!-- 카카오버튼 -->
+									<button class="login-kakao" type="button" src="/swan_stream/images/login/kakaologo.svg" onClick="kakaoLogin();"> <!-- 카카오버튼 -->
 									</button>
 								</li>
 							</ul>
@@ -58,5 +58,27 @@
 		</main>
 	</div>
 </div>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+//c9a61ca45804d295d5cd603ebcf28eb4
+window.Kakao.init("c9a61ca45804d295d5cd603ebcf28eb4");
+
+function kakaoLogin() {
+	window.Kakao.Auth.login({
+		scope:'profile, account_email, gender',
+		success: function(authobj) {
+			console.log(authobj);
+			window.Kakao.API.request({
+			url: '/v2/user/me',
+			success: res => {
+				const kakao_acconut = res.kakao_account;
+				console.log
+				}
+			
+			});
+		}
+	});
+}
+</script>
 </body>
 </html>
