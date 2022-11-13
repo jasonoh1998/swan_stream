@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Naver Login Service</title>
+
+<a href="http://developers.naver.com" target="_blank">
+    <img src="/swan_stream/images/login/naverlogo.jpg" alt="NAVER 오픈 API" />
+</a>
+
+
+ <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+  <!-- 네이버 로그인 버튼 노출 영역 -->
+  <div id="naver_id_login"></div>
+  <!-- //네이버 로그인 버튼 노출 영역 -->
+  <script type="text/javascript">
+  	var naverLogin = new naver.LoginWithNaverId(
+  		{
+  			clientId: "hr0i2zsIsYgV1e6y88ha",
+  			callbackUrl: "http://localhost:8080/swan_stream/login.jsp",
+  			isPopup: false,
+  			loginButton: {color: "green", type: 3, height: 60}
+  		}
+  	);
+  	
+  	naverLogin.init();
+  	
+  </script>
+</html>

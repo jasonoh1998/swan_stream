@@ -12,7 +12,7 @@
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
 
     <link rel="stylesheet" href="/swan_stream/static/normalize.css">
-    <link rel="stylesheet" href="/swan_stream/static/sign_up.css">
+    <link rel="stylesheet" href="/swan_stream/static/sign_up2.css">
 </head>
 <body>
 <div id="root">

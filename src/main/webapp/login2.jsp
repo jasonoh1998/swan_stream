@@ -25,8 +25,6 @@
 				</li>
 			</ul>
 		</nav>
-		
-		
 		<main class="login-area">
 			<div src="/swan_stream/images/login/login.webp" class="login-area-image">
 				<main class="login-box">
@@ -46,22 +44,14 @@
 								<button type="submit" class="login-login-button-click">로그인</button>
 							</div>
 						</form>
-						
-						
-						
 						<p>다른 방법으로 로그인하기</p>
 							<ul class="login-api-group">    <!-- 로그인API그룹-->
-								<li class="login-api-kakao">
+								<li class="login-api">
 									<button class="login-kakao" type="button" src="/swan_stream/images/login/kakaologo.svg" onClick="kakaoLogin();"> <!-- 카카오버튼 -->
 									</button>
 								</li>
-								<li class="login-api-naver">
-									<button class="login-naver" type="button" src="/swan_stream/images/login/naverloginimg.svg onClick="naver_id_login();"> <!-- 네이버버튼 -->
-									</button>
-								</li>
-									<li class="login-api-google">
-									<button class="login-google" type="button" src="/swan_stream/images/login/googleimg.svg" > <!-- 네이버버튼 -->
-									</button>
+								<li class="login-api">
+									<button class="login-google" type="button" src="/swan_stream/images/login/googleimg.svg"></button>
 								</li>
 							</ul>
 						
@@ -73,7 +63,6 @@
 </div>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
-//카카오
 //c9a61ca45804d295d5cd603ebcf28eb4
 window.Kakao.init("c9a61ca45804d295d5cd603ebcf28eb4");
 
@@ -93,19 +82,6 @@ function kakaoLogin() {
 		}
 	});
 }
-</script>
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script>
-//네이버
-var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8438/swan_stream/login.jsp");
-  	var state = naver_id_login.getUniqState();
-  	naver_id_login.setButton("white", 2,40);
-  	naver_id_login.setDomain("http://localhost:8438/swan_stream/login.jsp");
-  	naver_id_login.setState(state);
-  	naver_id_login.setPopup();
-  	naver_id_login.init_naver_id_login();   
-});
 </script>
 </body>
 </html>
