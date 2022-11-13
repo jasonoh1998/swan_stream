@@ -16,6 +16,7 @@
 </head>
 <body>
 <div id="root">
+	<!-- git checking. b0y0ung push. test2. -->
 	<div class="main">
 		<nav class="navigation">
 			<a class="navigation-image" href="#"></a>
