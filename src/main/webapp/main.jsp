@@ -41,7 +41,98 @@
 				</li>
 			</ul>
 		</nav>
+		<main class="main-page-area">
+			<div class="main-slider">
+				<div class="slider on"></div>
+				<div class="slider"></div>
+				<div class="slider"></div>
+				<div class="slider"></div>
+				<div class="slider"></div>
+			</div>
+			<div id="main-page-wallpaper1">
+				<div class="main-page-content">
+					<h3><span>영화, 드라마, 예능, 다큐멘터리, 웹툰을 무제한으로<br></span></h3>
+					<h4>매주 5백 여편의 신작이 업데이트 되며, 추가 요금은 전혀 없어요.</h4>
+					<div class="main-subscription">
+						<a href="/swan_stream/login.jsp">2주 무료 이용 시작</a>
+					</div>
+				</div>
+			</div>
+			<div id="main-page-wallpaper2">
+				<div class="main-page-content">
+					<h3><span>여럿이 함께, 하나의 이용권으로<br></span></h3>
+					<h4>동시 4개 기기에서 재생이 가능한 프리미엄 이용권을 이용해보세요.</h4>
+					<div class="main-subscription">
+						<a href="/swan_stream/login.jsp">2주 무료 이용 시작</a>
+					</div>
+				</div>
+			</div>
+			<div id="main-page-wallpaper3">
+				<div class="main-page-content">
+					<h3><span>이제 TV로 최고의 화질을 경험하세요<br></span></h3>
+					<h4>최대 Ultra HD 4K 해상도로 생생한 감동을 느껴보세요.</h4>
+					<div class="main-subscription">
+						<a href="/swan_stream/login.jsp">2주 무료 이용 시작</a>
+					</div>
+				</div>
+			</div>
+			<div id="main-page-wallpaper4">
+				<div class="main-page-content">
+					<h3><span>이동 중에도 감상을 멈추지 마세요<br></span></h3>
+					<h4>보고 싶은 콘텐츠를 다운로드하여 오프라인으로 즐기세요.</h4>
+					<div class="main-subscription">
+						<a href="/swan_stream/login.jsp">2주 무료 이용 시작</a>
+					</div>
+				</div>
+			</div>
+			<div id="main-page-wallpaper5">
+				<div class="main-page-content">
+					<h3><span>스마트폰, 태블릿, TV, PC, 크롬캐스트, Android TV에서<br></span></h3>
+					<h4>10만여 편의 콘텐츠를 무제한 스트리밍하세요.</h4>
+					<div class="main-subscription">
+						<a href="/swan_stream/login.jsp">2주 무료 이용 시작</a>
+					</div>
+				</div>
+				<div class="main-page-arrow-box">
+					<button type="button" class="main-page-arrow-reverse"></button>
+				</div>
+			</div>
+		</main>
 	</div>
 </div>
+<script>
+let height;
+$(function(){
+	height = $("#main-page-wallpaper1").offset();
+	$("html, body").animate({scrollTop: height.top},300);
+});
+$(".slider").click(function(){
+	$(".slider").removeClass("on");
+	if($(this).index() == 0) {
+		$(".slider:eq(0)").addClass("on");
+		height = $("#main-page-wallpaper1").offset();
+	} else if($(this).index() == 1){
+		$(".slider:eq(1)").addClass("on");
+		height = $("#main-page-wallpaper2").offset();
+	} else if($(this).index() == 2){
+		$(".slider:eq(2)").addClass("on");
+		height = $("#main-page-wallpaper3").offset();
+	} else if($(this).index() == 3){
+		$(".slider:eq(3)").addClass("on");
+		height = $("#main-page-wallpaper4").offset();
+	} else if($(this).index() == 4){
+		$(".slider:eq(4)").addClass("on");
+		height = $("#main-page-wallpaper5").offset();
+	}
+	$("html, body").animate({scrollTop: height.top},300);
+});
+$(".main-page-arrow").click(function(){
+	console.log($(this).index())
+});
+$(".main-page-arrow-reverse").click(function(){
+	height = $("#main-page-wallpaper1").offset();
+	$("html, body").animate({scrollTop: height.top},300);
+});
+</script>
 </body>
 </html>
