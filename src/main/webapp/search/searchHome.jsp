@@ -116,26 +116,57 @@
 </main>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script>
+<script type="text/javascript">
+let clicked = [0,0,0];
 let listPosition = [0,0,0];
+let initialListLength = [0,0,0];
+let listLength = [0,0,0];
 let rowNum;
+let clone = [,,];
 
 $(".slide-left-slidernav").hide();
 $(".slide-left-slidernav").click(function(){
 	rowNum = $(".slide-left-slidernav").index(this);
+	
 	listPosition[rowNum]+=100;
 	if(listPosition[rowNum]==0)
 		$(".slide-left-slidernav:eq("+rowNum+")").hide();
-	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden"))
-		$(".slide-right-slidernav:eq("+rowNum+")").show();
 	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%");
 });
 $(".slide-right-slidernav").click(function(){
 	rowNum = $(".slide-right-slidernav").index(this);
-	listPosition[rowNum]-=100;
-	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%)");
-	$(".slide-left-slidernav:eq("+rowNum+")").show();
+	clone[rowNum] = ($(".search-content_lists:eq("+rowNum+")").find(".search-content_list").clone());
+	$(".search-content_lists:eq("+rowNum+")").append(clone[rowNum]);
+	
+	listLength[rowNum] = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list").length;
+	if(clicked[rowNum]==0){
+		initialListLength[rowNum] = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list").length;
+		clicked[rowNum] = 1;
+	}
+	
+	listLength[rowNum] = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list").length;
+	if(listLength[rowNum] >= (initialListLength[rowNum]*3)){
+		//console.log($(".search-content_lists:eq("+rowNum+")").find(".search-content_list").length)
+		$(".search-content_lists:eq("+rowNum+")")
+			.find(".search-content_list:lt("+(initialListLength[rowNum]-initialListLength[rowNum]*3)+")").remove();	
+	}
+	
+	if(-listPosition[rowNum] > (initialListLength[rowNum]*100/3)){
+		listPosition[rowNum] = 0;
+		$(".slide-left-slidernav:eq("+rowNum+")").hide();
+		$(".search-content_lists:eq("+rowNum+")").css("transform","translateX(0%)");
+		$(".search-content_lists:eq("+rowNum+")").css("transition","0s");
+	} else {
+		listPosition[rowNum]-=100;
+		$(".slide-left-slidernav:eq("+rowNum+")").show();
+		$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%)");
+		$(".search-content_lists:eq("+rowNum+")").css("transition","750ms ease 0s");
+	}
+	console.log($(".search-content_lists:eq("+rowNum+")").find(".search-content_list:eq("+(initialListLength[rowNum]-1)+")").get())
+	const el = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list:eq("+(initialListLength[rowNum]-1)+")").get()
+	observer.observe(el);
 });
+
 
 $(function(){
 	$(".search_title").each(function(outsideIndex){
@@ -155,7 +186,7 @@ $(function(){
 						.append($("<article/>")
 							.append($("<a/>",{class: "search-content_list_link"})
 								.append($("<div/>",{class: "search-link-box"})
-									.append($("<img/>",{src: "/swan_stream/images/search/genre/"+(index+1)+".png"}))
+									.append($("<img/>",{src: "/swan_stream/images/search/genre/"+title+"/"+(index+1)+".png"}))
 									.append($("<div/>",{class: "search-link-box_title"})
 										.append($("<p/>",{text: items}))
 									)

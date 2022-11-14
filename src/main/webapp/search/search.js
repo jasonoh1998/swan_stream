@@ -10,7 +10,7 @@ $(function(){
 				$('<li/>')
 					.append($("<a/>",{class: "search-link"})
 						.append($("<div/>",{class: "search-link-box"})
-							.append($("<img/>",{src: "/swan_stream/images/search/genre/"+(index+1)+".png"}))
+							.append($("<img/>",{src: "/swan_stream/images/search/genre/"+$("#pageTitle").val()+"/"+(index+1)+".png"}))
 							.append($("<div/>",{class: "search-link-box_title"})
 								.append($("<p/>",{text: items}))
 							)
