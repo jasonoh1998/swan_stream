@@ -55,11 +55,11 @@ input[type="button"], input[type="submit"], button {
     padding: 0px;
 }
 
-/* form {
+form {
     display: block;
     margin-top: 0em;
-} */
-/* input {
+}
+input {
     writing-mode: horizontal-tb !important;
     text-rendering: auto;
     color: fieldtext;
@@ -82,7 +82,9 @@ input[type="button"], input[type="submit"], button {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 }
- */
+label {
+    cursor: default;
+}
 
 /* body */
 #root {
@@ -524,16 +526,6 @@ input.sign-up-password[type="text"] {
     padding: 0px 0px 0px 21px;
     cursor: pointer;
 }
-/* .signup-agreement-detail-check::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background: url("/swan_stream/images/login/nothing.svg") center center / contain no-repeat;
-    width: 12px;
-    height: 12px;
-} */
 .signup-agreement-detail-check-each {
     display: inline-block;
     position: absolute;
@@ -543,6 +535,13 @@ input.sign-up-password[type="text"] {
     height: 14px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
+}
+.signup-background::after{
+	background: url("/swan_stream/images/login/nothing.svg") center center / contain no-repeat;
+}
+.signup-background {
+    background: rgb(248, 47, 98);
+    border: 1px solid rgb(248, 47, 98);
 }
 .signup-agreement-detail-check-each::after {
     content: "";
