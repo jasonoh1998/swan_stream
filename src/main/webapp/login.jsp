@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="94609240244-db9vpso9a29hhj3vluq7e61804i2bpmh.apps.googleusercontent.com">
 	<title>Swan Stream</title>
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean">
@@ -13,6 +14,7 @@
 
     <link rel="stylesheet" href="/swan_stream/static/normalize.css">
     <link rel="stylesheet" href="/swan_stream/static/login.css">
+  
 </head>
 <body>
 <div id="root">
@@ -57,12 +59,15 @@
 									</button>
 								</li>
 								<li class="login-api-naver">
-									<button class="login-naver" type="button" src="/swan_stream/images/login/naverloginimg.svg onClick="naver_id_login();"> <!-- 네이버버튼 -->
+									<button class="login-naver" type="button" src="/swan_stream/images/login/naverloginimg.svg" onClick="naver_id_login;"> <!-- 네이버버튼 -->
 									</button>
+								<div id="naver_id_login"></div>
 								</li>
-									<li class="login-api-google">
-									<button class="login-google" type="button" src="/swan_stream/images/login/googleimg.svg" > <!-- 네이버버튼 -->
+								
+								<li class="login-api-google">
+									<button class="login-google" type="button" src="/swan_stream/images/login/googleimg.svg" onClick="onSignIn();" > <!-- 구글 버튼 -->
 									</button>
+									<div class="g-signin2" data-onsuccess="onSignIn"></div>
 								</li>
 							</ul>
 						
@@ -95,18 +100,27 @@ function kakaoLogin() {
 	});
 }
 </script>
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+ <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script>
+<script type="text/javascript">
 //네이버
-var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8438/swan_stream/login.jsp");
+	var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8438/swan_stream/login.jsp");
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("white", 2,40);
   	naver_id_login.setDomain("http://localhost:8438/swan_stream/login.jsp");
   	naver_id_login.setState(state);
   	naver_id_login.setPopup();
-  	naver_id_login.init_naver_id_login();   
-});
+  	naver_id_login.init_naver_id_login();
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  console.log('Name: ' + profile.getName());
+	  console.log('Image URL: ' + profile.getImageUrl());
+	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	}
 </script>
 </body>
 </html>

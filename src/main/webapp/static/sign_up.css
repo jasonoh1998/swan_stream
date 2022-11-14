@@ -1,4 +1,4 @@
-signUp.jsp/* global */
+/* global */
 *, ::before, ::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -54,12 +54,7 @@ input[type="button"], input[type="submit"], button {
     appearance: initial;
     padding: 0px;
 }
-.company-info-span > em {
-    font-weight: 700;
-}
-em {
-    font-style: normal;
-}
+
 /* form {
     display: block;
     margin-top: 0em;
@@ -380,6 +375,12 @@ em {
     margin-inline: 0px;
     padding-inline-start: 0px;
 }
+
+.company-info-detail::after {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+}
 /* .company-info-detail > ol, ul {
     padding: 0px;
     margin: 0px;
@@ -392,6 +393,12 @@ em {
     display: inline-block;
     position: relative;
     vertical-align: top;
+}
+.company-info-span > em {
+    font-weight: 700;
+}
+em {
+    font-style: normal;
 }
 .company-info > ul > li > button {
     color: inherit !important;

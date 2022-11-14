@@ -12,7 +12,7 @@
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
 
     <link rel="stylesheet" href="/swan_stream/static/normalize.css">
-    <link rel="stylesheet" href="/swan_stream/static/sign_up.css">
+    <link rel="stylesheet" href="/swan_stream/static/sign_up2.css">
 </head>
 <body>
 <div id="root">
@@ -54,6 +54,18 @@
 							
 							
 							
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+							  <label class="form-check-label" for="flexRadioDefault1">
+							    Default radio
+							  </label>
+							</div>
+			
+							
+							
+							
+							
+							
 			 				<div class="signup-check-containe-agreement">
 								<div class="signup-agreement-detail">
 										<div class="signup-agreement-detail-check">
@@ -61,38 +73,80 @@
 										</div>
 									</div>
 								
-								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="termsAgeOver">
-									<span class="signup-agreement-detail-check-each"></span>
-									<input name="termsAgeOver" id="termsAgeOver" type="checkbox" class="signup-agreement-detail-checkbox" value="false">만 14세 이상입니다</label>
+							
+							
+							
+							
+							
+							
+							
+							
+							<div class="signup_checker_container css-1btp4cx">
+								<div class="css-ddiry1">
+									<div class="css-1lsq3kr">
+									<span class="css-1sk4iij"></span>
+									전체 약관에 동의합니다
+									</div>
+									</div>
+									
+									
+									<div class="css-ddiry1">
+										<label class="css-1lsq3kr" for="termsAgeOver">
+										<span class="css-1sk4iij"></span>
+										<input name="termsAgeOver" id="termsAgeOver" type="checkbox" class="css-1wruydj" value="false">
+										만 14세 이상입니다
+										</label>
+									</div>
+									<div class="css-ddiry1">
+										<label class="css-1lsq3kr" for="terms[0]">
+										<span class="css-1sk4iij"></span>
+										<input name="terms[0]" id="terms[0]" type="checkbox" class="css-1wruydj" value="false">
+										왓챠피디아 서비스 이용약관에 동의합니다 (필수)
+										</label>
+									</div>
+									<div class="css-ddiry1">
+										<label class="css-1lsq3kr" for="terms[1]">
+										<span class="css-1sk4iij"></span>
+										<input name="terms[1]" id="terms[1]" type="checkbox" class="css-1wruydj" value="false">
+										왓챠 서비스 이용약관에 동의합니다 (필수)
+										</label>
+									</div>
+									<div class="css-ddiry1">
+										<label class="css-1lsq3kr" for="terms[2]">
+										<span class="css-1sk4iij"></span>
+										<input name="terms[2]" id="terms[2]" type="checkbox" class="css-1wruydj" value="false">
+										개인정보 수집 및 이용에 대한 안내에 동의합니다 (필수)
+										</label>
+									</div>
+									<div class="css-ddiry1">
+										<label class="css-1lsq3kr" for="marketing">
+										<span class="css-1sk4iij"></span>
+										<input name="marketing" id="marketing" type="checkbox" class="css-1wruydj" value="false">
+										신작 알림 이벤트 정보 수신에 동의합니다 (선택)
+										</label>
 								</div>
-								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="terms[0]">
-									<span class="signup-agreement-detail-check-each"></span>
-									<input name="terms[0]" id="terms[0]" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									왓챠피디아 서비스 이용약관에 동의합니다 (필수)</label>
-								</div>
-								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="terms[1]">
-									<span class="signup-agreement-detail-check-each"></span>
-									<input name="terms[1]" id="terms[1]" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									왓챠 서비스 이용약관에 동의합니다 (필수)</label>
-								</div>
-								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="terms[2]">
-									<span class="signup-agreement-detail-check-each"></span>
-									<input name="terms[2]" id="terms[2]" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									개인정보 수집 및 이용에 대한 안내에 동의합니다 (필수)</label>
-								</div>
-								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="marketing">
-									<span class="signup-agreement-detail-check-each"></span>
-									<input name="marketing" id="marketing" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									신작 알림 이벤트 정보 수신에 동의합니다 (선택)</label>
-								</div>
-							</div> 
-						</div> 
-						
+							</div>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 							
 							
 							<div class="sign-up-sign-up-button">
@@ -110,15 +164,15 @@
 						<span class="company-info-span">
 						<em>
 						<a href="/zendesk/login" rel="noopener noreferrer" target="_blank">고객센터(이용 및 결제 문의)</a>
-						</em>
-						<a href="mailto:cs@watcha.co.kr" rel="noreferrer noopener" target="_blank">cs@swan.co.kr</a>
-						<span> • </span>02-000-0000 (유료)
-						<em>제휴 및 대외 협력</em>
+						</em>&nbsp;&nbsp;
+						<a href="mailto:cs@watcha.co.kr" rel="noreferrer noopener" target="_blank">cs@watcha.co.kr</a>
+						<span> • </span>02-000-0000 (유료)&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
+						<em>제휴 및 대외 협력</em>&nbsp;&nbsp;
 						<a href="https://watcha.team/contact" rel="noopener noreferrer" target="_blank">https://swan_stream.team/contact</a></span><br>
-						<ul>
-							<li class="company-info-detail">주식회사 스완<span>&nbsp;/&nbsp;</span>
+						<ul class="css-0">
+							<li class="company-info-detail">주식회사 스<span>&nbsp;/&nbsp;</span>
 							</li>
-							<li class="company-info-detail">대표 짱짱맨<span>&nbsp;/&nbsp;</span>
+							<li class="company-info-detail">대표 짱짱<span>&nbsp;/&nbsp;</span>
 							</li>
 							<li class="company-info-detail">서울특별시 강남구 강남대로94길 20 삼오빌딩 6층<span>&nbsp;/&nbsp;</span>
 							</li>
