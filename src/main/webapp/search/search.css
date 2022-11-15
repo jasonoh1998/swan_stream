@@ -29,6 +29,9 @@
     padding-bottom: 3px;
     margin-left: 6px;
 }
+.unclickable {
+	pointer-events: none;
+}
 .show-more-button-link {
     color: rgb(132, 134, 141);
     font-size: 15px;

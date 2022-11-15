@@ -117,6 +117,12 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
+/* $(".slide-left-slidernav").dblclick(function(e){
+	e.preventDefault();
+});
+$(".slide-right-slidernav").dblclick(function(e){
+	e.preventDefault();
+}); */
 let listPosition = [0,0,0];
 let initialListLength = [0,0,0];
 let rowNum;
@@ -127,14 +133,25 @@ let options = {
 }
 let callback = (entries, observer) => {
 	entries.forEach((entry) => {
+		//console.log(entry.intersectionRatio)
 		if(entry.intersectionRatio==1){
-			$(".slide-right-slidernav:eq("+rowNum+")").css("pointer-events","none");
 			$(".slide-right-slidernav:eq("+rowNum+")").hide();
 		}
 	});
 };
 let observer = new IntersectionObserver(callback, options);
 
+
+$(window).on('resize', function(){
+	listPosition = [0,0,0];
+	$(".search-content_lists").css("transform","translateX(0)");
+	if(listPosition[rowNum]==0)
+		$(".slide-left-slidernav").hide();
+
+	setTimeout(function(){
+		$(".slide-right-slidernav").show();		
+	},700)
+});
 
 $(".slide-left-slidernav").hide();
 $(".slide-left-slidernav").click(function(){
@@ -143,15 +160,14 @@ $(".slide-left-slidernav").click(function(){
 	
 	if(listPosition[rowNum]==0)
 		$(".slide-left-slidernav:eq("+rowNum+")").hide();
-	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden")){
-		$(".slide-right-slidernav:eq("+rowNum+")").css("pointer-events","auto");
+	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden"))
 		$(".slide-right-slidernav:eq("+rowNum+")").show();
-	}
 	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%");
 });
-$(".slide-right-slidernav").click(function(){
+$(".slide-right-slidernav").on("click",function(){
 	rowNum = $(".slide-right-slidernav").index(this);
 	listPosition[rowNum]-=100;
+	
 	$(".slide-left-slidernav:eq("+rowNum+")").show();
 	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%)");
 	$(".search-content_lists:eq("+rowNum+")").css("transition","750ms ease 0s");
