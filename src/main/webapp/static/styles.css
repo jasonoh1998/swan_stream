@@ -61,6 +61,10 @@ ol, ul {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
+p {
+    padding: 0px;
+    margin: 0px;
+}
 
 /* body */
 #root {
