@@ -387,13 +387,16 @@ h1, h3, p, hr {
     font-weight: 700;
     letter-spacing: -1px;
 }
-.login-content-top > a {
+.password-find {
     color: rgb(255, 255, 255);
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.4px;
     padding: 4px 0px 0px;
     opacity: 0.5;
+}
+.password-find:hover{
+	text-decoration: underline;
 }
 .login-content-middle {
     position: relative;

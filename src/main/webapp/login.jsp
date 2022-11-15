@@ -28,21 +28,20 @@
 			</ul>
 		</nav>
 		
-		
 		<main class="login-area">
 			<div src="/swan_stream/images/login/login.webp" class="login-area-image">
 				<main class="login-box">
 					<div class="login-content">
 						<div class="login-content-top">
 							<span>로그인</span>
-							<a href="#">비밀번호를 잊어버리셨나요?</a>
+							<a class="password-find" href="#">비밀번호를 잊어버리셨나요?</a>
 						</div>
 						<form>
 							<div class="login-content-middle">
-								<input name="email" class="login-email" autocomplete="off" data-valid="true" placeholder="이메일 (example@gmail.com)" type="email" value="">
+								<input name="email" class="login-email" autocomplete="off" data-valid="true" placeholder="이메일 (example@gmail.com)" type="email" >
 							</div>
 							<div class="login-content-middle">
-								<input name="password" class="login-password" autocomplete="off" data-valid="true" placeholder="비밀번호" type="password" value="">
+								<input name="password" class="login-password" autocomplete="off" data-valid="true" placeholder="비밀번호" type="password" >
 							</div>
 							<div class="login-login-button">
 								<button type="submit" class="login-login-button-click">로그인</button>
@@ -76,33 +75,55 @@
 		</main>
 	</div>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+	let email_valid = false;
+	let password_valid = true;
+	$(".login-login-button-click").attr("disabled", true);
+	$(".login-email").on("keypress", function() {
+	    let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
+	    if(!re) {
+	        console.log("wrong email")
+	        email_valid = false;
+	    } else {
+	    	console.log("correct email")
+	    	email_valid = true;
+	    }
+		if(email_valid == true && password_valid == true){
+			$(".login-login-button-click").attr("disabled", false);
+		}
+		else{
+			$(".login-login-button-click").attr("disabled", true);
+		}
+	})
+
+</script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
-//카카오
-//c9a61ca45804d295d5cd603ebcf28eb4
-window.Kakao.init("c9a61ca45804d295d5cd603ebcf28eb4");
-
-function kakaoLogin() {
-	window.Kakao.Auth.login({
-		scope:'profile, account_email, gender',
-		success: function(authobj) {
-			console.log(authobj);
-			window.Kakao.API.request({
-			url: '/v2/user/me',
-			success: res => {
-				const kakao_acconut = res.kakao_account;
-				console.log
-				}
-			
-			});
-		}
-	});
-}
+	//카카오
+	//c9a61ca45804d295d5cd603ebcf28eb4
+	window.Kakao.init("c9a61ca45804d295d5cd603ebcf28eb4");
+	function kakaoLogin() {
+		window.Kakao.Auth.login({
+			scope:'profile, account_email, gender',
+			success: function(authobj) {
+				console.log(authobj);
+				window.Kakao.API.request({
+				url: '/v2/user/me',
+				success: res => {
+					const kakao_acconut = res.kakao_account;
+					console.log
+					}
+				
+				});
+			}
+		});
+	}
 </script>
- <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-//네이버
+	//네이버
 	var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8438/swan_stream/login.jsp");
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("white", 2,40);
@@ -113,12 +134,12 @@ function kakaoLogin() {
 </script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>
-function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName());
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	function onSignIn(googleUser) {
+		var profile = googleUser.getBasicProfile();
+		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		console.log('Name: ' + profile.getName());
+		console.log('Image URL: ' + profile.getImageUrl());
+		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	}
 </script>
 </body>
