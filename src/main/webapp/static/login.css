@@ -1,0 +1,547 @@
+/* global */
+*, ::before, ::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+html, body {
+    background: rgb(0, 0, 0);
+    color: white;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+html[lang="ko-KR"] {
+    font-family: Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic", sans-serif;
+}
+:root {
+    --sat: env(safe-area-inset-top);
+    --sal: env(safe-area-inset-left);
+    --sar: env(safe-area-inset-right);
+    --sab: env(safe-area-inset-bottom);
+}
+html {
+    line-height: normal;
+}
+a {
+    outline: rgb(0, 0, 0);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+ol, ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    margin-block: 0px;
+    margin-inline: 0px;
+    padding-inline-start: 0px;
+}
+p {
+    padding: 0px;
+    margin: 0px;
+}
+button, input, optgroup, select, textarea {
+    line-height: normal;
+}
+input[type="button"], input[type="submit"], button {
+    cursor: pointer;
+    border: 0px none transparent;
+    outline: none 0px;
+    background: none;
+    appearance: initial;
+    padding: 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px;
+    margin-block: 0px;
+    margin-inline: 0px;
+}
+h1, h3, p, hr {
+    margin: 0px;
+}
+
+/* body */
+#root {
+    width: 100%;
+    height: 100%;
+}
+.main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* navigation bar */
+.navigation {
+    position: fixed;
+    top: 0;
+    z-index: 500;
+    font-size: 14px;
+    -webkit-letter-spacing: -0.4px;
+    -moz-letter-spacing: -0.4px;
+    -ms-letter-spacing: -0.4px;
+    letter-spacing: -0.4px;
+    width: 100%;
+    height: 72px;
+    padding: 0 4%;
+}
+.navigation-image {
+    position: relative;
+    z-index: 10001;
+    float: left;
+	background: url(/swan_stream/images/logo.svg) 0 21px no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 150px;
+}
+.navigation-login-area {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    right: -11px;
+    float: right;
+}
+.navigation-login-area:before, .navigation-login-area:after {
+    content: " ";
+    display: table;
+}
+.navigation-login-area:after {
+    clear: both;
+}
+.login-button {
+    display: inline-block;
+    background-color: #121218;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    -webkit-letter-spacing: -0.4px;
+    -moz-letter-spacing: -0.4px;
+    -ms-letter-spacing: -0.4px;
+    letter-spacing: -0.4px;
+    line-height: 21px;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 4px;
+    background: #fff;
+    color: #121218;
+    font-size: 13px;
+    font-weight: 700;
+    -webkit-letter-spacing: -0.3px;
+    -moz-letter-spacing: -0.3px;
+    -ms-letter-spacing: -0.3px;
+    letter-spacing: -0.3px;
+    padding: 5px 18px 6px;
+    border-radius: 40px;
+    margin: 23px 0 0;
+}
+@media (min-width: 1250px){
+	.navigation {
+	    padding: 0 50px;
+	}	
+}
+/* main page */
+.main-page-area {
+	-webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #000;
+}
+.main-slider {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    z-index: 499;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.slider {
+    background-color: #FFFFFF;
+    width: 1.25vw;
+    height: 1.25vw;
+    border-radius: 50%;
+    margin: 0 0 1.1111111111111112vw;
+    opacity: 0.2;
+    cursor: pointer;
+}
+.on {
+	opacity: 1;
+}
+#main-page-wallpaper1,
+#main-page-wallpaper2,
+#main-page-wallpaper3,
+#main-page-wallpaper4,
+#main-page-wallpaper5 {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+#main-page-wallpaper1::before,
+#main-page-wallpaper2::before,
+#main-page-wallpaper3::before,
+#main-page-wallpaper4::before,
+#main-page-wallpaper5::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    background: url("/swan_stream/images/login/main/1.webp") center center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 500ms ease 0s;
+}
+#main-page-wallpaper1::before {
+    background: url("/swan_stream/images/login/main/1.webp") center center / cover no-repeat;
+}
+#main-page-wallpaper2::before {
+    background: url("/swan_stream/images/login/main/2.webp") center center / cover no-repeat;
+}
+#main-page-wallpaper3::before {
+    background: url("/swan_stream/images/login/main/3.webp") center center / cover no-repeat;
+}
+#main-page-wallpaper4::before {
+    background: url("/swan_stream/images/login/main/4.webp") center center / cover no-repeat;
+}
+#main-page-wallpaper5::before {
+    background: url("/swan_stream/images/login/main/5.webp") center center / cover no-repeat;
+}
+#main-page-wallpaper1::after,
+#main-page-wallpaper2::after,
+#main-page-wallpaper3::after,
+#main-page-wallpaper4::after,
+#main-page-wallpaper5::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    opacity: 0.63;
+}
+.main-page-content {
+    position: relative;
+    z-index: 100;
+    text-align: center;
+}
+.main-page-content > h3 {
+    color: #fff;
+    font-size: 3.4722222222222223vw;
+    font-weight: 400;
+    -webkit-letter-spacing: -0.24305555555555555vw;
+    -moz-letter-spacing: -0.24305555555555555vw;
+    -ms-letter-spacing: -0.24305555555555555vw;
+    letter-spacing: -0.24305555555555555vw;
+    line-height: 4.375vw;
+    white-space: pre-wrap;
+    margin-bottom: 1.1111111111111112vw;
+}
+.main-page-content > h4 {
+    color: #fff;
+    font-size: 1.5277777777777777vw;
+    font-weight: 400;
+    -webkit-letter-spacing: -0.04861111111111111vw;
+    -moz-letter-spacing: -0.04861111111111111vw;
+    -ms-letter-spacing: -0.04861111111111111vw;
+    letter-spacing: -0.04861111111111111vw;
+    line-height: 2.2916666666666665vw;
+    margin-bottom: 3.75vw;
+    opacity: 0.65;
+}
+.main-subscription {
+    text-align: center;
+}
+.main-subscription > a {
+    display: inline-block;
+    background-color: #F82F62;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    -webkit-letter-spacing: -0.1px;
+    -moz-letter-spacing: -0.1px;
+    -ms-letter-spacing: -0.1px;
+    letter-spacing: -0.1px;
+    line-height: 51px;
+    text-align: center;
+    width: 100%;
+    height: 52px;
+    border-radius: 40px;
+    font-size: 1.3888888888888888vw;
+    font-weight: 700;
+    -webkit-letter-spacing: -0.0625vw;
+    -moz-letter-spacing: -0.0625vw;
+    -ms-letter-spacing: -0.0625vw;
+    letter-spacing: -0.0625vw;
+    line-height: 4.166666666666666vw;
+    width: auto;
+    min-width: 13.125vw;
+    height: 4.166666666666666vw;
+    padding: 0 1.5625vw;
+    border-radius: 2.083333333333333vw;
+}
+.main-page-arrow-box {
+    position: absolute;
+    bottom: 5.208333333333334vw;
+    left: 50%;
+    z-index: 100;
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+.main-page-arrow-reverse {
+    display: inline-block;
+    -webkit-transform: rotate3d(0,0,1,90deg);
+    -ms-transform: rotate3d(0,0,1,90deg);
+    transform: rotate3d(0,0,1,90deg);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU2LjMgKDgxNzE2KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5BcnRib2FyZDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxnIGlkPSJBcnRib2FyZCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBvbHlnb24gaWQ9IlBhdGgiIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0ibm9uemVybyIgcG9pbnRzPSIxOS42OTM2MTY4IDExLjIxODg4IDQuOTU1ODk4OTUgMTEuMjE4ODggMTEuMTk2NzA3NCAxNy4zOTU0MTg5IDkuNDgxNDQgMTkuMDkyNDk2OCAwLjMgMTAuMDA1NjQyMSAyLjAxNTI2NzM3IDguMzA4NTY0MjEgMi4wMTU4NzM2OCA4LjMwOTE3MDUzIDkuNDgxNDQgMC45MiAxMS4xOTY3MDc0IDIuNjE3MDc3ODkgNC45NTU4OTg5NSA4Ljc5MzYxNjg0IDE5LjY5MzYxNjggOC43OTM2MTY4NCI+PC9wb2x5Z29uPgogICAgPC9nPgo8L3N2Zz4=) center no-repeat;
+    background-size: 1.7361111111111112vw 1.7361111111111112vw;
+    width: 3.3333333333333335vw;
+    height: 3.3333333333333335vw;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+}
+
+/* login part */
+.login-area {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #000;
+}
+.login-area-image {
+    height: 100vh;
+}
+.login-area-image::before {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    background: url("/swan_stream/images/login/login.webp") center center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 500ms ease 0s;
+}
+.login-area-image::after {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    background: rgb(18, 18, 24);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+.login-box {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+.login-content {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 300px;
+}
+.login-content > p {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin: 15px 0px 13px;
+    opacity: 0.6;
+}
+.login-content-top {
+    display: flex;
+    align-items: flex-start;
+    margin: 0px 0px 14px;
+}
+.login-content-top > span {
+    flex: 1 1 0%;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.password-find {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    padding: 4px 0px 0px;
+    opacity: 0.5;
+}
+.password-find:hover{
+	text-decoration: underline;
+}
+.login-content-middle {
+    position: relative;
+    width: 100%;
+}
+input.login-email[type="email"] {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    line-height: normal;
+    border-color: rgba(154, 151, 161, 0.2);
+}
+.login-email {
+    width: 100%;
+    padding: 10px 44px 10px 14px;
+    border-radius: 4px 4px 0px 0px;
+}
+.login-content-middle::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/check.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+input.login-email[type="email"],
+input.login-email[type="number"],
+input.login-email[type="password"],
+input.login-email[type="search"],
+input.login-email[type="tel"],
+input.login-email[type="text"] {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    border-width: 1px 1px 0px;
+    border-style: solid;
+    border-color: rgb(212, 212, 212);
+    border-image: initial;
+}
+
+input.login-password[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    line-height: normal;
+    border-color: rgba(154, 151, 161, 0.2);
+    border-top-width: 1px;
+}
+input.login-password[type="email"],
+input.login-password[type="number"],
+input.login-password[type="password"],
+input.login-password[type="search"],
+input.login-password[type="tel"],
+input.login-password[type="text"] {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    border-width: 0px 1px 1px;
+    border-style: solid;
+    border-color: rgb(212, 212, 212);
+    border-image: initial;
+}
+.login-password {
+    width: 100%;
+    padding: 10px 44px 10px 14px;
+    border-radius: 0px 0px 4px 4px;
+}
+.login-login-button {
+    width: 100%;
+    padding: 0px 0px 21px;
+    border-bottom: 1px solid rgba(154, 151, 161, 0.2);
+    margin: 16px 0px 0px;
+}
+.login-login-button-click {
+    background-color: rgb(248, 47, 98);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    text-align: center;
+    width: 100%;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 47px;
+    height: 48px;
+}
+.login-login-button-click:disabled {
+    opacity: 0.3;
+}
+.login-api-group { /* ul 태그 */
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    text-align: center;
+}
+login-api-group::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+login-api-group::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+.login-kakao {  /*카카오버튼*/
+    vertical-align: top;
+    width: 38px;
+    height: 38px;
+    background: url("/swan_stream/images/login/kakaologo.svg") 0% 0% / cover no-repeat;
+}
+login-kakao::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+login-kakao::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+.login-naver {  /*네이버버튼*/
+    vertical-align: top;
+    width: 38px;
+    height: 38px;
+    background: url("/swan_stream/images/login/naverloginimg.svg") 0% 0% / cover no-repeat;
+}
+login-naver::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+login-naver::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+.login-google {  /*네이버버튼*/
+    vertical-align: top;
+    width: 38px;
+    height: 38px;
+    background: url("/swan_stream/images/login/googleimg.svg") 0% 0% / cover no-repeat;
+}
+login-google::before {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+login-google::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
