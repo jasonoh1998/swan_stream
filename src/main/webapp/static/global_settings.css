@@ -60,10 +60,6 @@ h1, h2, h3, h4, h5, h6 {
 h1, h3, p, hr {
     margin: 0px;
 }
-form {
-    display: block;
-    margin-top: 0em;
-}
 input {
     writing-mode: horizontal-tb !important;
     text-rendering: auto;
