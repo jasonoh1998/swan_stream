@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko-KR">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,8 @@
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
 
     <link rel="stylesheet" href="/swan_stream/static/normalize.css">
+    <link rel="stylesheet" href="/swan_stream/static/global_settings.css">
+    <link rel="stylesheet" href="/swan_stream/static/login_navigation.css">
     <link rel="stylesheet" href="/swan_stream/static/sign_up.css">
 </head>
 <body>
@@ -19,9 +21,9 @@
 	<div class="main">
 		<nav class="navigation">
 			<a class="navigation-image" href="#"></a>
-			<ul class="navigation-sign-up-area">
+			<ul class="navigation-login-area">
 				<li>
-					<a class="sign-up-button" href="login.jsp">로그인</a>
+					<a class="login-button" href="login.jsp">로그인</a>
 				</li>
 			</ul>
 		</nav>
@@ -82,41 +84,10 @@
 							<p class="think-through">결제 정보요? 충분히 둘러보시고 입력해도 늦지 않아요</p>
 						</form>
 					</div>
-					
-					<footer class="company-info">
-						<span class="company-info-span">
-						<em>
-						<a href="/zendesk/login" rel="noopener noreferrer" target="_blank">고객센터(이용 및 결제 문의)</a>
-						</em>
-						<a href="mailto:cs@watcha.co.kr" rel="noreferrer noopener" target="_blank">cs@swan.co.kr</a>
-						<span> • </span>02-000-0000 (유료)
-						<em>제휴 및 대외 협력</em>
-						<a href="https://watcha.team/contact" rel="noopener noreferrer" target="_blank">https://swan_stream.team/contact</a></span><br>
-						<ul>
-							<li class="company-info-detail">주식회사 스완<span>&nbsp;/&nbsp;</span>
-							</li>
-							<li class="company-info-detail">대표 짱짱맨<span>&nbsp;/&nbsp;</span>
-							</li>
-							<li class="company-info-detail">서울특별시 강남구 강남대로94길 20 삼오빌딩 6층<span>&nbsp;/&nbsp;</span>
-							</li>
-							<li class="company-info-detail">사업자등록번호 000-00-00000<span>&nbsp;/&nbsp;</span>
-							</li>
-							<li class="company-info-detail">통신판매업 신고번호 제 0000-서울서초-0000호<span>&nbsp;/&nbsp;</span>
-							</li>
-							<li class="company-info-detail">대표번호 02-000-0000<span>&nbsp;/&nbsp;</span>
-							</li>
-							<li class="personal-info"><button type="button">개인정보 처리 방침</button>
-							</li>
-							<span>&nbsp;/&nbsp;</span>
-							<li class="personal-info"><button type="button">청소년 보호정책</button>
-							</li>
-						</ul>
-					</footer>
 				</main>
 			</div>
 		</main>
 	</div>
-	<div disabled="" class="ggacdogi"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>

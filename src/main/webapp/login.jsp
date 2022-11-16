@@ -13,6 +13,8 @@
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
 
     <link rel="stylesheet" href="/swan_stream/static/normalize.css">
+    <link rel="stylesheet" href="/swan_stream/static/global_settings.css">
+    <link rel="stylesheet" href="/swan_stream/static/login_navigation.css">
     <link rel="stylesheet" href="/swan_stream/static/login.css">
   
 </head>
@@ -37,10 +39,10 @@
 							<a class="password-find" href="#">비밀번호를 잊어버리셨나요?</a>
 						</div>
 						<form>
-							<div class="login-content-middle">
+							<div id="id-box" class="login-content-middle">
 								<input name="email" class="login-email" autocomplete="off" data-valid="false" placeholder="이메일 (example@gmail.com)" type="email" autofocus>
 							</div>
-							<div class="login-content-middle">
+							<div id="password-box" class="login-content-middle">
 								<input name="password" class="login-password" autocomplete="off" data-valid="false" placeholder="비밀번호" type="password" >
 							</div>
 							<div class="login-login-button">
@@ -77,28 +79,50 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
 	let email_valid = false;
-	let password_valid = true;
+	let password_valid = false;
 	$(".login-login-button-click").attr("disabled", true);
-	$(".login-email").on("keypress", function() {
+	$(".login-email").on("keyup", function() {
 	    let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
-	    if(!re) {
-	        console.log("wrong email")
+		if($(this).val().length == 0){
+			$("#id-box").removeClass();
+	        $("#id-box").addClass("login-content-middle");
 	        email_valid = false;
-	    } else {
-	    	console.log("correct email")
-	    	email_valid = true;
-	    }
+		} else if(!re) {
+	        $("#id-box").removeClass();
+	        $("#id-box").addClass("login-content-middle-wrong");
+	        email_valid = false;
+		} else {
+	        $("#id-box").removeClass();
+	        $("#id-box").addClass("login-content-middle-correct");
+	        email_valid = true;
+		}
+		button_show(email_valid, password_valid);
+	})
+	$(".login-password").on("keyup", function() {
+		if($(this).val().length == 0){
+			$("#password-box").removeClass();
+	        $("#password-box").addClass("login-content-middle");
+	        password_valid = false;	
+		}
+		else if($(this).val().length < 5) {
+	        $("#password-box").removeClass();
+	        $("#password-box").addClass("login-content-middle-wrong");
+	        password_valid = false;
+		} else {
+	        $("#password-box").removeClass();
+	        $("#password-box").addClass("login-content-middle-correct");
+	        password_valid = true;
+		}
+		button_show(email_valid, password_valid);
+	})
+	
+	function button_show(email_valid, password_valid) {
 		if(email_valid == true && password_valid == true){
-			$(".login-login-button-click").attr("disabled", false);
+			$(".login-login-button-click").attr("disabled", false);			
+		} else {
+			$(".login-login-button-click").attr("disabled", true);			
 		}
-		else{
-			$(".login-login-button-click").attr("disabled", true);
-		}
-	})
-	$(".login-email").focus(function(){
-		console.log($(this).val().length)
-	})
-
+	}
 </script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
