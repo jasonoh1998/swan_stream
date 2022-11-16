@@ -39,7 +39,7 @@
 							<a class="password-find" href="#">비밀번호를 잊어버리셨나요?</a>
 						</div>
 						<form>
-							<div id="id-box" class="login-content-middle">
+							<div id="email-box" class="login-content-middle">
 								<input name="email" class="login-email" autocomplete="off" data-valid="false" placeholder="이메일 (example@gmail.com)" type="email" autofocus>
 							</div>
 							<div id="password-box" class="login-content-middle">
@@ -84,16 +84,16 @@
 	$(".login-email").on("keyup", function() {
 	    let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
 		if($(this).val().length == 0){
-			$("#id-box").removeClass();
-	        $("#id-box").addClass("login-content-middle");
+			$("#email-box").removeClass();
+	        $("#email-box").addClass("login-content-middle");
 	        email_valid = false;
 		} else if(!re) {
-	        $("#id-box").removeClass();
-	        $("#id-box").addClass("login-content-middle-wrong");
+	        $("#email-box").removeClass();
+	        $("#email-box").addClass("login-content-middle-wrong");
 	        email_valid = false;
 		} else {
-	        $("#id-box").removeClass();
-	        $("#id-box").addClass("login-content-middle-correct");
+	        $("#email-box").removeClass();
+	        $("#email-box").addClass("login-content-middle-correct");
 	        email_valid = true;
 		}
 		button_show(email_valid, password_valid);
