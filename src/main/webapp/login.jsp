@@ -22,7 +22,7 @@
 <div id="root">
 	<div class="main">
 		<nav class="navigation">
-			<a class="navigation-image" href="#"></a>
+			<a class="navigation-image" href="/swan_stream/main.jsp"></a>
 			<ul class="navigation-login-area">
 				<li>
 					<a class="login-button" href="signUp.jsp">회원가입</a>

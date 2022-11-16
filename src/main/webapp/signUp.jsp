@@ -20,7 +20,7 @@
 <div id="root">
 	<div class="main">
 		<nav class="navigation">
-			<a class="navigation-image" href="#"></a>
+			<a class="navigation-image" href="/swan_stream/main.jsp"></a>
 			<ul class="navigation-login-area">
 				<li>
 					<a class="login-button" href="login.jsp">로그인</a>
@@ -54,28 +54,22 @@
 									<input name="termsAgeOver" id="termsAgeOver" type="checkbox" class="signup-agreement-detail-checkbox" value="false">만 14세 이상입니다</label>
 								</div>
 								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="terms[0]">
-									<span class="signup-agreement-detail-check-each"></span>
-									<input name="terms[0]" id="terms[0]" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									왓챠피디아 서비스 이용약관에 동의합니다 (필수)</label>
-								</div>
-								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="terms[1]">
+									<label class="signup-agreement-detail-check">
 									<span class="signup-agreement-detail-check-each"></span>
 									<input name="terms[1]" id="terms[1]" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									왓챠 서비스 이용약관에 동의합니다 (필수)</label>
+									서비스 이용약관에 동의합니다 (필수)</label>
 								</div>
 								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="terms[2]">
+									<label class="signup-agreement-detail-check">
 									<span class="signup-agreement-detail-check-each"></span>
 									<input name="terms[2]" id="terms[2]" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
 									개인정보 수집 및 이용에 대한 안내에 동의합니다 (필수)</label>
 								</div>
 								<div class="signup-agreement-detail">
-									<label class="signup-agreement-detail-check" for="marketing">
+									<label class="signup-agreement-detail-check">
 									<span class="signup-agreement-detail-check-each"></span>
 									<input name="marketing" id="marketing" type="checkbox" class="signup-agreement-detail-checkbox" value="false">
-									신작 알림 이벤트 정보 수신에 동의합니다 (선택)</label>
+									알림 이벤트 정보 수신에 동의합니다 (선택)</label>
 								</div>
 							</div>
 							<div class="sign-up-sign-up-button">
@@ -91,12 +85,76 @@
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
-let clicked = false;
+let email_valid = false;
+let password_valid = false;
+$(".login-login-button-click").attr("disabled", true);
+$(".login-email").on("keyup", function() {
+    let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
+	if($(this).val().length == 0){
+		$("#id-box").removeClass();
+        $("#id-box").addClass("login-content-middle");
+        email_valid = false;
+	} else if(!re) {
+        $("#id-box").removeClass();
+        $("#id-box").addClass("login-content-middle-wrong");
+        email_valid = false;
+	} else {
+        $("#id-box").removeClass();
+        $("#id-box").addClass("login-content-middle-correct");
+        email_valid = true;
+	}
+	button_show(email_valid, password_valid);
+})
+$(".login-password").on("keyup", function() {
+	if($(this).val().length == 0){
+		$("#password-box").removeClass();
+        $("#password-box").addClass("login-content-middle");
+        password_valid = false;	
+	}
+	else if($(this).val().length < 5) {
+        $("#password-box").removeClass();
+        $("#password-box").addClass("login-content-middle-wrong");
+        password_valid = false;
+	} else {
+        $("#password-box").removeClass();
+        $("#password-box").addClass("login-content-middle-correct");
+        password_valid = true;
+	}
+	button_show(email_valid, password_valid);
+})
+
+function button_show(email_valid, password_valid) {
+	if(email_valid == true && password_valid == true){
+		$(".login-login-button-click").attr("disabled", false);			
+	} else {
+		$(".login-login-button-click").attr("disabled", true);			
+	}
+}
+
+
 $(".signup-agreement-detail").click(function(event){
 	event.stopPropagation();
 	event.preventDefault();
-	$(this).find("span").toggleClass("signup-background");
-	//$(".signup-agreement-detail-check-each").toggleClass("signup-background");
+	if($(this).index() == 0){
+		if($(this).find("span").hasClass("signup-background")){
+			$(".signup-agreement-detail").find("span").removeClass("signup-background");
+		} else{
+			$(".signup-agreement-detail").find("span").addClass("signup-background");
+		}
+	} else if($(this).index() == 2 || $(this).index() == 3 || $(this).index() == 4) {
+		if($(".signup-agreement-detail:eq(0)").find("span").hasClass("signup-background")){
+			$(".signup-agreement-detail:eq(0)").find("span").removeClass("signup-background");
+		}
+		$(this).find("span").toggleClass("signup-background");
+	} else {
+		$(this).find("span").toggleClass("signup-background");
+	}
+	
+	if($(".signup-agreement-detail:eq(2)").find("span").hasClass("signup-background") &&
+	   $(".signup-agreement-detail:eq(3)").find("span").hasClass("signup-background")&&
+	   $(".signup-agreement-detail:eq(4)").find("span").hasClass("signup-background")){
+		$(".signup-agreement-detail:eq(0)").find("span").addClass("signup-background");
+	}
 });
 </script>
 </body>
