@@ -27,11 +27,21 @@
 				</li>
 			</ul>
 		</nav>
-		
 		<main class="find-password-area">
 			<div src="/swan_stream/images/login/login.jpg" class="find-password-image">
 				<main class="find-password-box">
 					<div class="find-password-content">
+						<button class="back-button" onclick="history.back()"><img src="/swan_stream/images/login/backcursor.svg" alt="login.jsp"></button>
+	               		<div class="replace-password-font">비밀번호 재설정</div>
+	                    <form>
+	                        <div class="find-password-email-block">
+	                        	<input name="email" class="find-password-input-email" autocomplete="off" data-valid="false" placeholder="이메일 (example@gmail.com)" type="email" value="">
+	                        </div>
+	                        <p class="find-password-email-explain-p">가입하신 이메일 주소를 입력해 주시면 비밀번호 재설정 메일이 발송됩니다. 메일 확인 후 새로운 비밀번호를 설정해 주세요.</p>
+	                        <div class="between-find-password-ok-button">
+	                        	<button type="submit" class="find-password-ok-button" disabled="">확인</button>
+	                        </div>
+	                    </form>
 					</div>
 				</main>
 			</div>

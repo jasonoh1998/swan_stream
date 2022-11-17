@@ -31,12 +31,12 @@
 		</nav>
 		
 		<main class="login-area">
-			<div src="/swan_stream/images/login/login.webp" class="login-area-image">
+			<div src="/swan_stream/images/login/login.jpg" class="login-area-image">
 				<main class="login-box">
 					<div class="login-content">
 						<div class="login-content-top">
 							<span>로그인</span>
-							<a class="password-find" href="#">비밀번호를 잊어버리셨나요?</a>
+							<a class="password-find" href="/swan_stream/findPassword.jsp">비밀번호를 잊어버리셨나요?</a>
 						</div>
 						<form>
 							<div id="email-box" class="login-content-middle">
