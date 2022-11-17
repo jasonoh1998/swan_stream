@@ -111,6 +111,7 @@ $(".sign-up-name").on("keyup", function() {
         $("#name-box").addClass("sign-up-content-middle-correct");
         name_valid = true;
 	}
+	button_show(name_valid, email_valid, password_valid);
 })
 $(".sign-up-email").on("keyup", function() {
     let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
@@ -127,6 +128,7 @@ $(".sign-up-email").on("keyup", function() {
         $("#email-box").addClass("sign-up-content-middle-correct");
         email_valid = true;
 	}
+	button_show(name_valid, email_valid, password_valid);
 })
 $(".sign-up-password").on("keyup", function() {
 	let re = /^(?=.*[A-Za-z\d])(?=.*[@$!%*#?&\d])(?=.*[A-Za-z@$!%*#?&])[A-Za-z\d@$!%*?&]{10,}/.test($(this).val());
@@ -144,6 +146,7 @@ $(".sign-up-password").on("keyup", function() {
         $("#password-box").addClass("sign-up-content-middle-correct");
         password_valid = true;
 	}
+	button_show(name_valid, email_valid, password_valid);
 })
 $(".sign-up-agreement").click(function(event){
 	event.stopPropagation();
