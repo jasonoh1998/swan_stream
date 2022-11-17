@@ -16,7 +16,7 @@
     position: relative;
     z-index: 10001;
     float: left;
-	background: url(/swan_stream/images/logo.svg) 0 21px no-repeat;
+	background: url(/swan_stream/images/logo.png) 0 21px no-repeat;
     background-size: contain;
     width: 200px;
     height: 150px;
