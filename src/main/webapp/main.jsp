@@ -103,6 +103,33 @@
 	</div>
 </div>
 <script>
+let timeout = null;
+let position;
+$(window).on("scroll",function(e){
+	clearTimeout(timeout);
+	timeout = setTimeout(function(){
+		position = [y_position_find(1),y_position_find(2),y_position_find(3),y_position_find(4),y_position_find(5)]
+		for (let i = 1; i < 5; i++){
+			if(y_position_find(i) > 0){
+				if(-y_position_find(i-1) < y_position_find(i)){
+					height = $("#main-page-wallpaper"+(i-1)).offset();
+					$("html, body").animate({scrollTop: height.top},300);
+				} else if(-y_position_find(i-1) > y_position_find(i)){
+					height = $("#main-page-wallpaper"+i).offset();
+					$("html, body").animate({scrollTop: height.top},300);
+				} else {
+					// equal to nothing
+				}
+				break;				
+			}
+		}
+	}
+	,2000);
+});
+function y_position_find(div_number){
+	return $("#main-page-wallpaper"+div_number).get(0).getBoundingClientRect().top
+}
+
 let height;
 $(function(){
 	height = $("#main-page-wallpaper1").offset();
@@ -127,9 +154,6 @@ $(".slider").click(function(){
 		height = $("#main-page-wallpaper5").offset();
 	}
 	$("html, body").animate({scrollTop: height.top},300);
-});
-$(".main-page-arrow").click(function(){
-	console.log($(this).index())
 });
 $(".main-page-arrow-reverse").click(function(){
 	height = $("#main-page-wallpaper1").offset();
