@@ -109,8 +109,10 @@ $(window).on("scroll",function(e){
 	clearTimeout(timeout);
 	timeout = setTimeout(function(){
 		position = [y_position_find(1),y_position_find(2),y_position_find(3),y_position_find(4),y_position_find(5)]
-		for (let i = 1; i < 5; i++){
+		for (let i = 1; i <= 5; i++){
 			if(y_position_find(i) > 0){
+				console.log(-y_position_find(i-1))
+				console.log(y_position_find(i))
 				if(-y_position_find(i-1) < y_position_find(i)){
 					height = $("#main-page-wallpaper"+(i-1)).offset();
 					$("html, body").animate({scrollTop: height.top},300);
