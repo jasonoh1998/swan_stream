@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/swan_stream/search/search.css">
+<link rel="stylesheet" href="/swan_stream/styles/search/search.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script defer src="/swan_stream/search/search.js"></script>
+<script defer src="/swan_stream/js/search/search.js"></script>
 </head>
 <body>
 <input id="pageTitle" type="hidden" value=${title } />

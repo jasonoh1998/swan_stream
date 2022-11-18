@@ -9,23 +9,29 @@
     <meta name="google-signin-client_id" content="94609240244-db9vpso9a29hhj3vluq7e61804i2bpmh.apps.googleusercontent.com">
 	<title>Swan Stream</title>
 	
+	<!-- fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean">
-    <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
 
-    <link rel="stylesheet" href="/swan_stream/static/normalize.css">
-    <link rel="stylesheet" href="/swan_stream/static/global_settings.css">
-    <link rel="stylesheet" href="/swan_stream/static/login_navigation.css">
-    <link rel="stylesheet" href="/swan_stream/static/login.css">
-  
+	<!-- global style sheets -->
+	<link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
+    <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
+    <link rel="stylesheet" href="/swan_stream/styles/global_settings.css">
+    <!-- login style sheets -->
+    <link rel="stylesheet" href="/swan_stream/styles/login/login_navigation.css">
+    <link rel="stylesheet" href="/swan_stream/styles/login/login.css">
+    
+    <!-- javascripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/login/login.js" defer></script>
 </head>
 <body>
 <div id="root">
 	<div class="main">
 		<nav class="navigation">
-			<a class="navigation-image" href="/swan_stream/main.jsp"></a>
+			<a class="navigation-image" href="/swan_stream"></a>
 			<ul class="navigation-login-area">
 				<li>
-					<a class="login-button" href="signUp.jsp">회원가입</a>
+					<a class="login-button" href="/swan_stream/signUp">회원가입</a>
 				</li>
 			</ul>
 		</nav>
@@ -36,7 +42,7 @@
 					<div class="login-content">
 						<div class="login-content-top">
 							<span>로그인</span>
-							<a class="password-find" href="/swan_stream/findPassword.jsp">비밀번호를 잊어버리셨나요?</a>
+							<a class="password-find" href="/swan_stream/findPassword">비밀번호를 잊어버리셨나요?</a>
 						</div>
 						<form>
 							<div id="email-box" class="login-content-middle">
@@ -50,80 +56,29 @@
 							</div>
 						</form>
 						
-						
-						
 						<p>다른 방법으로 로그인하기</p>
-							<ul class="login-api-group">    <!-- 로그인API그룹-->
-								<li>
-									<button class="login-kakao" type="button" onClick="kakaoLogin();"> <!-- 카카오버튼 -->
-									</button>
-								</li>
-								<li>
-									<button class="login-naver" type="button"> <!-- 네이버버튼 -->
-										<div id="naver_id_login" style="opacity: 0"></div>
-									</button>
-								</li>
-								<li>
-									<button class="login-google" type="button" > <!-- 구글 버튼 -->
-										<div class="g-signin2" data-onsuccess="onSignIn" style="width: 38px; height: 38px; opacity: 0;"></div>
-									</button>
-								</li>
-							</ul>
-						
+						<ul class="login-api-group">    <!-- 로그인API그룹-->
+							<li>
+								<button class="login-kakao" type="button" onClick="kakaoLogin();"> <!-- 카카오버튼 -->
+								</button>
+							</li>
+							<li>
+								<button class="login-naver" type="button"> <!-- 네이버버튼 -->
+									<div id="naver_id_login" style="opacity: 0"></div>
+								</button>
+							</li>
+							<li>
+								<button class="login-google" type="button" > <!-- 구글 버튼 -->
+									<div class="g-signin2" data-onsuccess="onSignIn" style="width: 38px; height: 38px; opacity: 0;"></div>
+								</button>
+							</li>
+						</ul>
 					</div>
 				</main>
 			</div>
 		</main>
 	</div>
 </div>
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script>
-	let email_valid = false;
-	let password_valid = false;
-	$(".login-login-button-click").attr("disabled", true);
-	$(".login-email").on("keyup", function() {
-	    let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
-		if($(this).val().length == 0){
-			$("#email-box").removeClass();
-	        $("#email-box").addClass("login-content-middle");
-	        email_valid = false;
-		} else if(!re) {
-	        $("#email-box").removeClass();
-	        $("#email-box").addClass("login-content-middle-wrong");
-	        email_valid = false;
-		} else {
-	        $("#email-box").removeClass();
-	        $("#email-box").addClass("login-content-middle-correct");
-	        email_valid = true;
-		}
-		button_show(email_valid, password_valid);
-	})
-	$(".login-password").on("keyup", function() {
-		if($(this).val().length == 0){
-			$("#password-box").removeClass();
-	        $("#password-box").addClass("login-content-middle");
-	        password_valid = false;	
-		}
-		else if($(this).val().length < 5) {
-	        $("#password-box").removeClass();
-	        $("#password-box").addClass("login-content-middle-wrong");
-	        password_valid = false;
-		} else {
-	        $("#password-box").removeClass();
-	        $("#password-box").addClass("login-content-middle-correct");
-	        password_valid = true;
-		}
-		button_show(email_valid, password_valid);
-	})
-	
-	function button_show(email_valid, password_valid) {
-		if(email_valid == true && password_valid == true){
-			$(".login-login-button-click").attr("disabled", false);			
-		} else {
-			$(".login-login-button-click").attr("disabled", true);			
-		}
-	}
-</script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
 	//카카오

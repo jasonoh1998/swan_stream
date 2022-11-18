@@ -1,67 +1,3 @@
-/* global setting */
-:root {
-    --sat: env(safe-area-inset-top);
-    --sal: env(safe-area-inset-left);
-    --sar: env(safe-area-inset-right);
-    --sab: env(safe-area-inset-bottom);
-}
-html, body {
-    background: rgb(0, 0, 0);
-    color: white;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-}
-html[lang="ko-KR"] {
-    font-family: Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic", sans-serif;
-}
-html {
-    line-height: normal;
-}
-body {
-    background: rgb(0, 0, 0);
-}
-input[type="button"],
-input[type="submit"],
-button {
-    cursor: pointer;
-    border: 0px none transparent;
-    outline: none 0px;
-    background: none;
-    appearance: initial;
-    padding: 0px;
-}
-button, input, optgroup, select, textarea {
-    line-height: normal;
-}
-a {
-    outline: rgb(0, 0, 0);
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    padding: 0px;
-    margin: 0px;
-    margin-block: 0px;
-    margin-inline: 0px;
-}
-h1, h3, p, hr {
-    margin: 0px;
-}
-ol, ul {
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-    margin-block: 0px;
-    margin-inline: 0px;
-    padding-inline-start: 0px;
-}
-*, ::before, ::after {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-}
-
 /* body */
 #root {
     width: 100%;
@@ -82,7 +18,7 @@ ol, ul {
 @media (max-width: 600px){
 	#main {
 	    padding: 56px 0 0;
-	}	
+	}
 }
 
 /* new subscription tag */
@@ -151,11 +87,11 @@ ol, ul {
 }
 .logo-link {
     display: block;
-    margin: 24px 0 0 26px;
+    margin: 12px 0 0 -12px;
 }
 .logo {
     vertical-align: top;
-    width: 185px;
+    width: 240px;
 }
 .content-section {
     padding: 0 16px;
@@ -306,9 +242,9 @@ ol, ul {
     display: none;
 }
 .hidden-logo-box > a > img{
-	margin-bottom: 3px;
-    width: 132px;
-    height: 39px;
+	margin-bottom: 2px;
+    width: 200px;
+    height: 33.333px;
 }
 #top-navigation-fixed {
     position: fixed;

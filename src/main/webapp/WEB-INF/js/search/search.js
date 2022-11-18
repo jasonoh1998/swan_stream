@@ -1,11 +1,11 @@
 $(function(){
 	$.ajax({
-		url: "/swan_stream/search/getSearchTitle.do",
+		url: "/swan_stream/search/getSearchTitle",
 		type: "post",
 		data: "title="+$("#pageTitle").val(),
 		dataType: "json",
 		success: function(data) {
-			$.each(data.list, function(index, items){
+			$.each(data, function(index, items){
 				//console.log(index, items)
 				$('<li/>')
 					.append($("<a/>",{class: "search-link"})

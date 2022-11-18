@@ -12,8 +12,8 @@
         <div class="hidden-logo">
         	<div class="hidden-logo-display"></div>
         	<div class="hidden-logo-box">
-        		<a href="/swan_stream/video/videoHome.do">
-        			<img alt="Watcha" src="/swan_stream/images/logo.svg">
+        		<a href="/swan_stream/home">
+        			<img alt="SwanStream" src="/swan_stream/images/logo.png">
     			</a>
         	</div>
         </div>

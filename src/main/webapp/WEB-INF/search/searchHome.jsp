@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/swan_stream/search/search.css">
+<link rel="stylesheet" href="/swan_stream/styles/search/search.css">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 			<div class="show-more-button">
-				<a class="show-more-button-link" href="/swan_stream/search/searchTitle.do?title='video_genre'">
+				<a class="show-more-button-link" href="/swan_stream/search/searchTitle?title='video_genre'">
 					모두 보기
 				</a>
 			</div>
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			<div class="show-more-button">
-				<a class="show-more-button-link" href="/swan_stream/search/searchTitle.do?title='webtoon_genre'">
+				<a class="show-more-button-link" href="/swan_stream/search/searchTitle?title='webtoon_genre'">
 					모두 보기
 				</a>
 			</div>
@@ -89,7 +89,7 @@
 				</div>
 			</div>
 			<div class="show-more-button">
-				<a class="show-more-button-link" href="/swan_stream/search/searchTitle.do?title='video_nation'">
+				<a class="show-more-button-link" href="/swan_stream/search/searchTitle?title='video_nation'">
 					모두 보기
 				</a>
 			</div>
@@ -175,7 +175,6 @@ $(".slide-right-slidernav").on("click",function(){
 	observer.observe(target);
 });
 
-
 $(function(){
 	$(".search_title").each(function(outsideIndex){
 		let title = $(this)[0].innerText;
@@ -183,12 +182,12 @@ $(function(){
 		else if(title === "웹툰 장르") title = "webtoon_genre";
 		else if(title === "비디오 국가") title = "video_nation";
 		$.ajax({
-			url: "/swan_stream/search/getSearchTitle.do",
+			url: "/swan_stream/search/getSearchTitle",
 			type: "post",
 			data: "title="+title,
 			dataType: "json",
 			success: function(data) {
-				$.each(data.list, function(index, items){
+				$.each(data, function(index, items){
 					//console.log(index, items)
 					$("<li/>",{class: "search-content_list"})
 						.append($("<article/>")

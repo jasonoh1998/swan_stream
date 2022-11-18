@@ -1,4 +1,4 @@
-/* navigation bar */
+/* login navigation bar */
 .navigation {
     position: fixed;
     top: 0;
@@ -18,9 +18,9 @@
     float: left;
 	background: url(/swan_stream/images/logo.png) 0 21px no-repeat;
     background-size: contain;
-    width: 200px;
+    width: 240px;
     height: 150px;
-    margin-top: -10px;
+    margin-top: -3px;
 }
 .navigation-login-area {
     display: -webkit-box;
