@@ -11,47 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import search.service.SearchService;
-
 @Component
 @Controller
-public class HomeController {
-	@Autowired
-	private SearchService searchService;
-	
+public class HomeController { // this is a videoController
 	@GetMapping(value="/home")
 	public String index(Model model) {
-		return "index";
-	}
-	@GetMapping(value="/webtoon")
-	public String webtoon(Model model) {
-		model.addAttribute("display", "./webtoon/webtoonHome.jsp");
-		return "index";
-	}
-	
-	@PostMapping(value="/search/getSearchTitle")
-	@ResponseBody
-	public List<String> getSearchTitle(@RequestParam("title") String title, Model model) {
-		System.out.println(searchService.getSearchTitle(title));
-		//model.addAttribute("display", "./search/getSearchTitle.jsp");
-		return searchService.getSearchTitle(title);
-	}
-	
-	@GetMapping(value="/search/searchTitle")
-	public String searchTitle(@RequestParam("title") String title, Model model) {
-		String titleKor = title.replace("'", "");
-		if(titleKor.equals("video_genre")) {
-			titleKor = "비디오 장르";
-		} else if(titleKor.equals("webtoon_genre")) {
-			titleKor = "웹툰 장르";
-		} else if(titleKor.equals("video_nation")) {
-			titleKor = "비디오 국가";
-		} else {
-			titleKor = "";
-		}
-		model.addAttribute("title", title);
-		model.addAttribute("titleKor", titleKor);
-		model.addAttribute("display", "./search/searchTitle.jsp");
 		return "index";
 	}
 }
