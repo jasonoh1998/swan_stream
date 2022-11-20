@@ -3,11 +3,11 @@
  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!-- 	<typeAliases>
-		<typeAlias type="search.bean.searchDTO" alias="search"/>
-	</typeAliases>	 -->
+	<typeAliases>
+		<typeAlias type="main.bean.MainDTO" alias="main" />
+	</typeAliases>
 <!-- 	<mappers>
-		<mapper resource="search/dao/searchMapper.xml" />
+		<mapper resource="main/dao/mainMapper.xml" />
 	</mappers> -->
 </configuration>
 

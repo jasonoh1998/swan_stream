@@ -39,17 +39,19 @@
 				<main class="sign-up-box">
 					<div class="sign-up-content">
 						<div class="sign-up-content-top">회원가입</div>
-						<form> 
+						<form id="sign-up-form"> 
 						
 							<div id="name-box" class="sign-up-content-middle">
 								<input name="name" class="sign-up-name" autocomplete="off" placeholder="이름 (2자 이상)" type="text" value="">
 							</div>
 							<div id="email-box" class="sign-up-content-middle">	
-								<input name="name" class="sign-up-email" autocomplete="off" data-valid="true" placeholder="이메일 (example@gmail.com)" type="email" value="">
+								<input name="email" class="sign-up-email" autocomplete="off" data-valid="true" placeholder="이메일 (example@gmail.com)" type="email" value="">
 							</div>
 							<div id="password-box" class="sign-up-content-middle">
 								<input name="password" class="sign-up-password" autocomplete="off" data-valid="false" placeholder="영문, 숫자, 특문 중 2개 조합 10자 이상" type="password" value>
 							</div>
+							
+							<div class="error-message" hidden>이미 존재하는 이메일입니다.</div>
 							
 			 				<div class="sign-up-agreements">
 								<div class="sign-up-agreement">
@@ -60,34 +62,34 @@
 								<div class="sign-up-agreement">
 									<label class="sign-up-agreement-detail" for="termsAgeOver">
 										<span class="sign-up-agreement-check"></span>
-										<input name="termsAgeOver" id="termsAgeOver" type="checkbox" class="sign-up-agreement-checkbox" value="false">
+										<input id="age_restriction" type="checkbox" class="sign-up-agreement-checkbox" value="false">
 										만 14세 이상입니다
 									</label>
 								</div>
 								<div class="sign-up-agreement">
 									<label class="sign-up-agreement-detail">
 										<span class="sign-up-agreement-check"></span>
-										<input name="terms[1]" id="terms[1]" type="checkbox" class="sign-up-agreement-checkbox" value="false">
+										<input id="terms[1]" type="checkbox" class="sign-up-agreement-checkbox" value="false">
 										서비스 이용약관에 동의합니다 (필수)
 									</label>
 								</div>
 								<div class="sign-up-agreement">
 									<label class="sign-up-agreement-detail">
 										<span class="sign-up-agreement-check"></span>
-										<input name="terms[2]" id="terms[2]" type="checkbox" class="sign-up-agreement-checkbox" value="false">
+										<input id="terms[2]" type="checkbox" class="sign-up-agreement-checkbox" value="false">
 										개인정보 수집 및 이용에 대한 안내에 동의합니다 (필수)
 									</label>
 								</div>
 								<div class="sign-up-agreement">
 									<label class="sign-up-agreement-detail">
 										<span class="sign-up-agreement-check"></span>
-										<input name="marketing" id="marketing" type="checkbox" class="sign-up-agreement-checkbox" value="false">
+										<input id="marketing_agreement" type="checkbox" class="sign-up-agreement-checkbox" value="false">
 										알림 이벤트 정보 수신에 동의합니다 (선택)
 									</label>
 								</div>
 							</div>
 							<div class="create-account-button-box">
-								<button type="submit" class="create-account-button">계정 생성하기</button>
+								<button type="button" class="create-account-button">계정 생성하기</button>
 							</div>
 							<p>결제 정보요? 충분히 둘러보시고 입력해도 늦지 않아요</p>
 						</form>

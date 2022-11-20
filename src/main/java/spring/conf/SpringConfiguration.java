@@ -40,7 +40,8 @@ public class SpringConfiguration {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("search/dao/searchMapper.xml"));
+		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("main/dao/mainMapper.xml")); // ??? how to have two mapper???
+		//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("search/dao/searchMapper.xml"));
 		return sqlSessionFactoryBean.getObject();
 	}
 	

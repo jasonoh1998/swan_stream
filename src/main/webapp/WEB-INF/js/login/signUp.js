@@ -81,7 +81,6 @@ $(".sign-up-agreement").click(function(event){
 	}
 	button_show(name_valid, email_valid, password_valid);
 });
-
 function button_show(name_valid, email_valid, password_valid) {
 	if(
 		name_valid == true && email_valid == true && password_valid == true &&
@@ -93,3 +92,37 @@ function button_show(name_valid, email_valid, password_valid) {
 		$(".create-account-button").attr("disabled", true);			
 	}
 }
+
+
+$(".create-account-button").click(function() {
+	let age_restriction = $(".sign-up-agreement:eq(2)").find("span").hasClass("sign-up-background") == false ? 0 : 1;
+	let marketing_agreement = $(".sign-up-agreement:eq(5)").find("span").hasClass("sign-up-background") == false ? 0 : 1;
+	let form_data = $("#sign-up-form").serializeArray();
+	form_data.push({name: 'age_restriction', value: age_restriction});
+	form_data.push({name: 'marketing_agreement', value: marketing_agreement});
+	$("#name-box").css("opacity","0.3");
+	$("#email-box").css("opacity","0.3");
+	$("#password-box").css("opacity","0.3");
+	setTimeout(function() {
+		$.ajax({
+			type: "post",
+			url: "/swan_stream/mainUserDataSave",
+			data: form_data,
+			success: function(){
+				console.log("connected");
+				$("#name-box").css("opacity","1");
+				$("#email-box").css("opacity","1");
+				$("#password-box").css("opacity","1");
+				$(".error-message").hide();
+				location.href="/swan_stream/login";
+			},
+			error: function(error) {
+				$(".error-message").show();
+				$("#name-box").css("opacity","1");
+				$("#email-box").css("opacity","1");
+				$("#password-box").css("opacity","1");
+				//console.log(error);
+			}
+		})
+    }, 1500);
+});

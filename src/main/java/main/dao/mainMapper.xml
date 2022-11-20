@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mainSQL">
+ 	<resultMap type="main.bean.MainDTO" id="mainResult">
+		<result property="name" column="NAME"/>
+		<result property="email" column="EMAIL"/>
+		<result property="password" column="PASSWORD"/>
+		<result property="age_restriction" column="AGE_RESTRICTION"/>
+		<result property="marketing_agreement" column="MARKETING_AGREEMENT"/>
+		<result property="logtime" column="LOGTIME"/>
+	</resultMap>
+	
+	<!-- 회원정보 정장 -->
+	<insert id="mainUserDataSave" parameterType="main">
+		insert into user_data values(#{name}, #{email}, #{password}, #{age_restriction}, #{marketing_agreement}, sysdate)
+	</insert>
+</mapper>
