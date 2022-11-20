@@ -109,7 +109,6 @@ $(".create-account-button").click(function() {
 			url: "/swan_stream/mainUserDataSave",
 			data: form_data,
 			success: function(){
-				console.log("connected");
 				$("#name-box").css("opacity","1");
 				$("#email-box").css("opacity","1");
 				$("#password-box").css("opacity","1");

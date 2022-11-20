@@ -44,15 +44,18 @@
 							<span>로그인</span>
 							<a class="password-find" href="/swan_stream/findPassword">비밀번호를 잊어버리셨나요?</a>
 						</div>
-						<form>
+						<form id="login-form">
 							<div id="email-box" class="login-content-middle">
 								<input name="email" class="login-email" autocomplete="off" data-valid="false" placeholder="이메일 (example@gmail.com)" type="email" autofocus>
 							</div>
 							<div id="password-box" class="login-content-middle">
 								<input name="password" class="login-password" autocomplete="off" data-valid="false" placeholder="비밀번호" type="password" >
 							</div>
+							
+							<div class="error-message" hidden>이메일 주소 혹은 비밀번호를 다시 확인해주세요</div>
+							
 							<div class="login-login-button">
-								<button type="submit" class="login-login-button-click">로그인</button>
+								<button type="button" class="login-login-button-click">로그인</button>
 							</div>
 						</form>
 						

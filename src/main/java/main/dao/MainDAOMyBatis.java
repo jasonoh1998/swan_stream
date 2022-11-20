@@ -1,5 +1,7 @@
 package main.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,5 +18,10 @@ public class MainDAOMyBatis implements MainDAO {
 	@Override
 	public void mainUserDataSave(MainDTO mainDTO) {
 		sqlSession.insert("mainSQL.mainUserDataSave", mainDTO);
+	}
+
+	@Override
+	public MainDTO getUser(Map<String, String> map) {
+		return sqlSession.selectOne("mainSQL.getUser", map);
 	}
 }

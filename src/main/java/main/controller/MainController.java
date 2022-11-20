@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import main.bean.MainDTO;
@@ -43,5 +44,11 @@ public class MainController {
 	@ResponseBody
 	public void mainUserDataSave(@ModelAttribute MainDTO mainDTO) {
 		mainService.mainUserDataSave(mainDTO);
+	}
+	
+	@PostMapping(value="/mainUserExist")
+	@ResponseBody
+	public String mainUserExist(@RequestParam("email") String email, @RequestParam("password") String password) {
+		return mainService.mainUserExist(email, password);
 	}
 }

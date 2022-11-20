@@ -17,7 +17,7 @@ $(".login-email").on("keyup", function() {
         email_valid = true;
 	}
 	button_show(email_valid, password_valid);
-})
+});
 $(".login-password").on("keyup", function() {
 	if($(this).val().length == 0){
 		$("#password-box").removeClass();
@@ -43,3 +43,31 @@ function button_show(email_valid, password_valid) {
 		$(".login-login-button-click").attr("disabled", true);			
 	}
 }
+
+
+$(".login-login-button-click").click(function() {	
+	$("#email-box").css("opacity","0.3");
+	$("#password-box").css("opacity","0.3");
+	setTimeout(function() {
+		$.ajax({
+			type: "post",
+			url: "/swan_stream/mainUserExist",
+			data: $("#login-form").serialize(),
+			success: function(data){
+				$("#name-box").css("opacity","1");
+				$("#email-box").css("opacity","1");
+				$("#password-box").css("opacity","1");
+				if(data == 'exist'){
+					location.href="/swan_stream/home";
+					$(".error-message").hide();
+				} else if(data=='non_exist'){
+					$(".error-message").show();
+				}
+				
+			},
+			error: function(error) {
+				//console.log(error);
+			}
+		})
+    }, 1500);
+});

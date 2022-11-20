@@ -22,6 +22,7 @@
 	<link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
     <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
     <link rel="stylesheet" href="/swan_stream/styles/global_settings.css">
+    <!-- index style sheets -->
     <link rel="stylesheet" href="/swan_stream/styles/home_content.css">
     <link rel="stylesheet" href="/swan_stream/styles/styles.css">
     

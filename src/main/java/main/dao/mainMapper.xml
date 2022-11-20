@@ -16,4 +16,9 @@
 	<insert id="mainUserDataSave" parameterType="main">
 		insert into user_data values(#{name}, #{email}, #{password}, #{age_restriction}, #{marketing_agreement}, sysdate)
 	</insert>
+	
+	<!-- 로그인 -->
+	<select id="getUser" parameterType="java.util.Map" resultType="main">
+		select * from user_data where email='${email}' and password='${password}'
+	</select>
 </mapper>

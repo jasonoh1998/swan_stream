@@ -27,7 +27,7 @@ public class SearchController {
 	
 	@PostMapping(value="/search/getSearchTitle")
 	@ResponseBody
-	public List<String> getSearchTitle(@RequestParam("title") String title, Model model) {
+	public List<String> getSearchTitle(@RequestParam("title") String title) {
 		return searchService.getSearchTitle(title);
 	}
 	
