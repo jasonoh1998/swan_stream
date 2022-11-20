@@ -8,6 +8,12 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<!-- 에러 페이지 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/404Error.jsp</location>
+	</error-page>
 
 	<display-name>swan_stream</display-name>
 	 <servlet>
