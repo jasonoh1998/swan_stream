@@ -61,11 +61,6 @@
                             </a>
                         </li>
                         <li class="setting">
-                            <a href="#/notices">
-                                <div class="setting-box">공지사항</div>
-                            </a>
-                        </li>
-                        <li class="setting">
                             <a href="#/evaluate">
                                 <div class="setting-box">평가하기</div>
                             </a>                                        
@@ -77,7 +72,7 @@
                         </li>
                         <li class="setting">
                             <button>
-                                <div class="setting-box">로그아웃</div>
+                                <div class="setting-box" onclick="location.href='/swan_stream/'">로그아웃</div>
                             </button>                                       
                         </li>
                     </ul>

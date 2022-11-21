@@ -1,4 +1,9 @@
 $(function(){
+	$(window).on('load', function () {
+		setTimeout(function(){
+			$('#loading').hide();
+		},500);
+	});
 
 	// profile section hide and show on click
     let profile_clicked = false;

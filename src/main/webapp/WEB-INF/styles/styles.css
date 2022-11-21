@@ -1,3 +1,39 @@
+/* loading */
+#loading {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+}
+#loading-box {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #2f0000;
+	z-index: 99;
+}
+
+#loading-image {
+	position: absolute;
+    margin: auto;
+    top: -56px;
+    left: -240px;
+    right: 0;
+    bottom: 0;
+	z-index: 100;
+}
+
+@media (max-width: 600px){
+	#loading-image {
+		top: 0;
+    	left: 0;
+	}
+}
+
 /* body */
 #root {
     width: 100%;

@@ -33,6 +33,8 @@
 <body>
     <div id="root">
         <div id="main">
+        	<jsp:include page="./loading.jsp" />
+
             <!-- new subscription advertisement for non-membership members -->
 <!--             <div id="new-sub">
                 <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket">
