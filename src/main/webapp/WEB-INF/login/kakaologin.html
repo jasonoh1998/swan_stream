@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>KaKao Login Service</title>
+</head>
+<body>
+
+<a href="javascript:kakaoLogin();">
+	<img src="/swan_stream/images/login/kakaologo.svg">
+</a>
+
+
+
+
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+	//c9a61ca45804d295d5cd603ebcf28eb4
+	window.Kakao.init("c9a61ca45804d295d5cd603ebcf28eb4");
+	
+	function kakaoLogin() {
+		window.Kakao.Auth.login({
+			scope:'profile, account_email, gender',
+			success: function(authobj) {
+				console.log(authobj);
+				window.Kakao.API.request({
+				url: '/v2/user/me',
+				success: res => {
+					const kakao_acconut = res.kakao_account;
+					console.log
+					}
+				
+				});
+			}
+		});
+	}
+</script>
+</body>
+</html>
