@@ -11,20 +11,19 @@
     <!-- style sheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean">
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/swan_stream/static/normalize.css">
-    <link rel="stylesheet" href="/swan_stream/static/home_content.css">
-    <link rel="stylesheet" href="/swan_stream/static/styles.css">
-	<link rel="stylesheet" href="/swan_stream/content/content.css">
+
+    <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
+    <link rel="stylesheet" href="/swan_stream/styles/global.css">
+    <link rel="stylesheet" href="/swan_stream/styles/styles.css">
+	<link rel="stylesheet" href="/swan_stream/styles/content.css">
 </head>
 <body>
 <div id="root">
     <div id="main">
     
    	    <!-- navigation area -->
-        <jsp:include page="/navigation/leftNav.jsp" />
-		<jsp:include page="/navigation/topNav.jsp" />
+        <jsp:include page="../navigation/leftNav.jsp" />
+		<jsp:include page="../navigation/topNav.jsp" />
 		
 		<main id="content">
 			<div></div>

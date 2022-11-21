@@ -32,6 +32,10 @@
 	<!-- storage -->
 	<context:component-scan base-package="storage.service" />
 	<context:component-scan base-package="storage.dao" />
+	
+	<!-- contents -->
+	<context:component-scan base-package="contents.service" />
+	<context:component-scan base-package="contents.dao" />
 
 	<context:component-scan base-package="spring.conf" />
 </beans>
