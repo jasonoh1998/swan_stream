@@ -5,9 +5,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -37,11 +39,11 @@ public class SpringConfiguration {
 	
 	@Bean
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		ApplicationContext applicationContext = new FileSystemXmlApplicationContext();
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
-		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("main/dao/mainMapper.xml")); // ??? how to have two mapper???
-		//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("search/dao/searchMapper.xml"));
+		sqlSessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:spring/mybatis-config.xml"));
+		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:spring/mapper/**/*.xml"));
 		return sqlSessionFactoryBean.getObject();
 	}
 	
