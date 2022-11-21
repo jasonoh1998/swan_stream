@@ -1,4 +1,4 @@
-package home.controller;
+package storage.controller;
 
 import java.util.List;
 
@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Component
 @Controller
-public class HomeController { // this is a videoController
-	@GetMapping(value="/home")
+public class StorageController { // this is a videoController
+	@GetMapping(value="/storage")
 	public String index(Model model) {
-		model.addAttribute("page", "video");
+		model.addAttribute("display", "./storage/storageHome.jsp");
+		model.addAttribute("page", "storage");
 		return "index";
 	}
 }

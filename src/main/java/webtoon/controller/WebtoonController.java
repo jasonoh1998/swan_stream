@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Component
 @Controller
-public class VideoController {
+public class WebtoonController {
 	@GetMapping(value="/webtoon")
 	public String webtoon(Model model) {
 		model.addAttribute("display", "./webtoon/webtoonHome.jsp");
+		model.addAttribute("page", "webtoon");
 		return "index";
 	}
 }

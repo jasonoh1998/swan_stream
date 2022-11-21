@@ -5,6 +5,8 @@
 <head>
 </head>
 <body>
+<!-- left navigation bar highlight -->
+<input id="left-navigation-highlight" type="hidden" value=${page }>
 
 <main id="content">
 	<div></div>

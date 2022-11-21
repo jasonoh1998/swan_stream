@@ -7,6 +7,9 @@
 </head>
 <body>
 
+<!-- left navigation bar highlight -->
+<input id="left-navigation-highlight" type="hidden" value=${page }>
+
 <main id="content" class="search-main">
 	<div></div>
 	<div class="content-margin">
@@ -117,12 +120,43 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
-/* $(".slide-left-slidernav").dblclick(function(e){
-	e.preventDefault();
+// loads lists of titles from database onload
+$(function(){
+	$(".slide-left-slidernav").hide();
+	
+	$(".search_title").each(function(outsideIndex){
+		let title = $(this)[0].innerText;
+		if(title === "비디오 장르") title = "video_genre";
+		else if(title === "웹툰 장르") title = "webtoon_genre";
+		else if(title === "비디오 국가") title = "video_nation";
+		$.ajax({
+			url: "/swan_stream/search/getSearchTitle",
+			type: "post",
+			data: "title="+title,
+			dataType: "json",
+			success: function(data) {
+				$.each(data, function(index, items){
+					//console.log(index, items)
+					$("<li/>",{class: "search-content_list", onclick: "location.href='/swan_stream/searchContent?tag="+items+"'"})
+						.append($("<article/>")
+							.append($("<a/>",{class: "search-content_list_link"})
+								.append($("<div/>",{class: "search-link-box"})
+									.append($("<img/>",{src: "/swan_stream/images/search/genre/"+title+"/"+(index+1)+".png"}))
+									.append($("<div/>",{class: "search-link-box_title"})
+										.append($("<p/>",{text: items}))
+									)
+								)
+							)
+						).appendTo($(".search-content_lists:eq("+outsideIndex+")"))
+				});
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+	});
 });
-$(".slide-right-slidernav").dblclick(function(e){
-	e.preventDefault();
-}); */
+
 let listPosition = [0,0,0];
 let initialListLength = [0,0,0];
 let rowNum;
@@ -130,7 +164,7 @@ let options = {
     root: null,
     rootMargin: "0px",
 	threshold: 1
-}
+};
 let callback = (entries, observer) => {
 	entries.forEach((entry) => {
 		//console.log(entry.intersectionRatio)
@@ -153,7 +187,6 @@ $(window).on('resize', function(){
 	},700)
 });
 
-$(".slide-left-slidernav").hide();
 $(".slide-left-slidernav").click(function(){
 	rowNum = $(".slide-left-slidernav").index(this);
 	listPosition[rowNum]+=100;
@@ -173,40 +206,6 @@ $(".slide-right-slidernav").on("click",function(){
 	$(".search-content_lists:eq("+rowNum+")").css("transition","750ms ease 0s");
 	let target = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list:eq("+(initialListLength[rowNum]-1)+")").get(0);
 	observer.observe(target);
-});
-
-$(function(){
-	$(".search_title").each(function(outsideIndex){
-		let title = $(this)[0].innerText;
-		if(title === "비디오 장르") title = "video_genre";
-		else if(title === "웹툰 장르") title = "webtoon_genre";
-		else if(title === "비디오 국가") title = "video_nation";
-		$.ajax({
-			url: "/swan_stream/search/getSearchTitle",
-			type: "post",
-			data: "title="+title,
-			dataType: "json",
-			success: function(data) {
-				$.each(data, function(index, items){
-					//console.log(index, items)
-					$("<li/>",{class: "search-content_list"})
-						.append($("<article/>")
-							.append($("<a/>",{class: "search-content_list_link"})
-								.append($("<div/>",{class: "search-link-box"})
-									.append($("<img/>",{src: "/swan_stream/images/search/genre/"+title+"/"+(index+1)+".png"}))
-									.append($("<div/>",{class: "search-link-box_title"})
-										.append($("<p/>",{text: items}))
-									)
-								)
-							)
-						).appendTo($(".search-content_lists:eq("+outsideIndex+")"))
-				});
-			},
-			error: function(err){
-				console.log(err);
-			}
-		});
-	});
 });
 </script>
 </body>

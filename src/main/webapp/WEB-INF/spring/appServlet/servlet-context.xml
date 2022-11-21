@@ -20,5 +20,8 @@
 	<context:component-scan base-package="main.controller" /> <!-- login page controller -->
 	<context:component-scan base-package="home.controller" /> <!-- video page controller -->
 	<context:component-scan base-package="webtoon.controller" /> <!-- webtoon page controller -->
+	<context:component-scan base-package="discovery.controller" /> <!-- discovery page controller -->
 	<context:component-scan base-package="search.controller" /> <!-- search page controller -->
+	<context:component-scan base-package="rate.controller" /> <!-- rate page controller -->
+	<context:component-scan base-package="storage.controller" /> <!-- storage page controller -->
 </beans>

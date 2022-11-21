@@ -1,4 +1,4 @@
-package home.controller;
+package rate.controller;
 
 import java.util.List;
 
@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Component
 @Controller
-public class HomeController { // this is a videoController
-	@GetMapping(value="/home")
+public class RateController { // this is a videoController
+	@GetMapping(value="/rate")
 	public String index(Model model) {
-		model.addAttribute("page", "video");
+		model.addAttribute("display", "./rate/rateHome.jsp");
+		model.addAttribute("page", "rate");
 		return "index";
 	}
 }

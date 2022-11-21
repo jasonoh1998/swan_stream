@@ -3,21 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="/swan_stream/styles/search/search.css">
 </head>
 <body>
-
-<!-- left navigation bar highlight -->
-<input id="left-navigation-highlight" type="hidden" value=${page }>
-
 <main id="content">
 	<div></div>
 	<div class="content-margin">
 	    <div class="content_header">
-			<h1 class="content_header_title">웹툰</h1>
+			<h1 class="content_header_title">???</h1>
 			<hr class="content_header_divider">
+			${tag }
 	    </div>
 	</div>
 </main>
-
 </body>
 </html>

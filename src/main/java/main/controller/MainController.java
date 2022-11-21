@@ -3,6 +3,7 @@ package main.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,7 +49,11 @@ public class MainController {
 	
 	@PostMapping(value="/mainUserExist")
 	@ResponseBody
-	public String mainUserExist(@RequestParam("email") String email, @RequestParam("password") String password) {
-		return mainService.mainUserExist(email, password);
+	public String mainUserExist(@RequestParam("email") String email, @RequestParam("password") String password, Model model) {
+		String userExist = mainService.mainUserExist(email, password);
+		if(userExist == "exist") {
+			model.addAttribute("userExist", userExist);
+		}
+		return userExist;
 	}
 }

@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-
 <!-- left navigation bar highlight -->
 <input id="left-navigation-highlight" type="hidden" value=${page }>
 
@@ -13,11 +14,10 @@
 	<div></div>
 	<div class="content-margin">
 	    <div class="content_header">
-			<h1 class="content_header_title">웹툰</h1>
+			<h1 class="content_header_title">보관함</h1>
 			<hr class="content_header_divider">
 	    </div>
 	</div>
 </main>
-
 </body>
 </html>

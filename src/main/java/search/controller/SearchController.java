@@ -22,13 +22,8 @@ public class SearchController {
 	@GetMapping(value="/search")
 	public String search(Model model) {
 		model.addAttribute("display", "./search/searchHome.jsp");
+		model.addAttribute("page", "search");
 		return "index";
-	}
-	
-	@PostMapping(value="/search/getSearchTitle")
-	@ResponseBody
-	public List<String> getSearchTitle(@RequestParam("title") String title) {
-		return searchService.getSearchTitle(title);
 	}
 	
 	@GetMapping(value="/search/searchTitle")
@@ -46,6 +41,19 @@ public class SearchController {
 		model.addAttribute("title", title);
 		model.addAttribute("titleKor", titleKor);
 		model.addAttribute("display", "./search/searchTitle.jsp");
+		return "index";
+	}
+	
+	@PostMapping(value="/search/getSearchTitle")
+	@ResponseBody
+	public List<String> getSearchTitle(@RequestParam("title") String title) {
+		return searchService.getSearchTitle(title);
+	}
+	
+	@GetMapping(value="/searchContent")
+	public String searchContent(@RequestParam("tag") String tag, Model model) {
+		model.addAttribute("display", "./search/searchContent.jsp");
+		model.addAttribute("tag", tag);
 		return "index";
 	}
 }

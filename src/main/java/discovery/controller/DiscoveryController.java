@@ -1,4 +1,4 @@
-package home.controller;
+package discovery.controller;
 
 import java.util.List;
 
@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Component
 @Controller
-public class HomeController { // this is a videoController
-	@GetMapping(value="/home")
+public class DiscoveryController { // this is a videoController
+	@GetMapping(value="/discovery")
 	public String index(Model model) {
-		model.addAttribute("page", "video");
+		model.addAttribute("display", "./discovery/discoveryHome.jsp");
+		model.addAttribute("page", "discovery");
 		return "index";
 	}
 }

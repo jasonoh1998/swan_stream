@@ -9,9 +9,29 @@
 	<context:component-scan base-package="main.service" />
 	<context:component-scan base-package="main.dao" />
 	
+	<!-- video/home -->
+	<context:component-scan base-package="home.service" />
+	<context:component-scan base-package="home.dao" />
+	
+	<!-- webtoon -->
+	<context:component-scan base-package="webtoon.service" />
+	<context:component-scan base-package="webtoon.dao" />
+	
+	<!-- discovery -->
+	<context:component-scan base-package="discovery.service" />
+	<context:component-scan base-package="discovery.dao" />
+	
 	<!-- search -->
 	<context:component-scan base-package="search.service" />
 	<context:component-scan base-package="search.dao" />
+	
+	<!-- rate -->
+	<context:component-scan base-package="rate.service" />
+	<context:component-scan base-package="rate.dao" />
+	
+	<!-- storage -->
+	<context:component-scan base-package="storage.service" />
+	<context:component-scan base-package="storage.dao" />
 
 	<context:component-scan base-package="spring.conf" />
 </beans>
