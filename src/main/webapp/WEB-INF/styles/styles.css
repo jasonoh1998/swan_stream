@@ -33,6 +33,10 @@
     	left: 0;
 	}
 }
+p {
+    padding: 0px;
+    margin: 0px;
+}
 
 /* body */
 #root {
