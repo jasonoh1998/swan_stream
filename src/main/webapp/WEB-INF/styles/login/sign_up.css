@@ -1,0 +1,226 @@
+/* body */
+#root {
+    width: 100%;
+    height: 100%;
+}
+.main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* sign-up section */
+.sign-up-area {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #000;
+}
+.sign-up-area-image {
+    height: 100vh;
+}
+.sign-up-area-image::before {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    background: url("/swan_stream/images/login/login.jpg") center center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 500ms ease 0s;
+}
+.sign-up-area-image::after {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    background: rgb(18, 18, 24);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+.sign-up-box {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+.sign-up-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 300px;
+}
+.sign-up-content-top {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 0px 0px 14px;
+}
+.sign-up-content-middle,
+.sign-up-content-middle-correct,
+.sign-up-content-middle-wrong {
+    position: relative;
+    width: 100%;
+}
+.sign-up-content-middle-correct::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/check.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+.sign-up-content-middle-wrong::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/xmark.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+input.sign-up-name[type="text"],
+input.sign-up-email[type="email"],
+input.sign-up-password[type="password"] {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    border: 1px solid #d4d4d4;
+    border-top-width: 1px;
+    border-bottom-width: 0;
+}
+.sign-up-name {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px 4px 0px 0px;
+}
+.sign-up-email {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 0px;
+}
+.sign-up-password {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.sign-up-agreements {
+    margin: 16px 0px 0px;
+}
+.sign-up-agreement {
+    margin: 6px 0px;
+}
+.sign-up-agreement-detail {
+    display: block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    padding: 0px 0px 0px 21px;
+    cursor: pointer;
+}
+.sign-up-agreement-check {
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+.sign-up-agreement-check::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+}
+.sign-up-agreement-checkbox {
+    position: absolute;
+    visibility: hidden;
+    appearance: none;
+}
+
+.sign-up-background::after{
+	background: url("/swan_stream/images/login/nothing.svg") center center / contain no-repeat;
+}
+.sign-up-background {
+    background: rgb(248, 47, 98);
+    border: 1px solid rgb(248, 47, 98);
+}
+
+.create-account-button-box {
+    width: 100%;
+    margin: 16px 0px 14px;
+}
+.create-account-button {
+    background-color: #F82F62;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    -webkit-letter-spacing: -0.1px;
+    -moz-letter-spacing: -0.1px;
+    -ms-letter-spacing: -0.1px;
+    letter-spacing: -0.1px;
+    line-height: 51px;
+    text-align: center;
+    width: 100%;
+    height: 52px;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 47px;
+    height: 48px;
+}
+.create-account-button:disabled {
+    opacity: 0.3;
+}
+form > p {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+
+
+

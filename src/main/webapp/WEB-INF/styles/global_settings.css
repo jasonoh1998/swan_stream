@@ -1,0 +1,116 @@
+/* global */
+*, ::before, ::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+html, body {
+    background: rgb(0, 0, 0);
+    color: white;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+html[lang="ko-KR"] {
+    font-family: Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic", sans-serif;
+}
+:root {
+    --sat: env(safe-area-inset-top);
+    --sal: env(safe-area-inset-left);
+    --sar: env(safe-area-inset-right);
+    --sab: env(safe-area-inset-bottom);
+}
+html {
+    line-height: normal;
+}
+a {
+    outline: rgb(0, 0, 0);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+ol, ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    margin-block: 0px;
+    margin-inline: 0px;
+    padding-inline-start: 0px;
+}
+p {
+    padding: 0px;
+    margin: 0px;
+}
+button, input, optgroup, select, textarea {
+    line-height: normal;
+}
+input[type="button"], input[type="submit"], button {
+    cursor: pointer;
+    border: 0px none transparent;
+    outline: none 0px;
+    background: none;
+    appearance: initial;
+    padding: 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    padding: 0px;
+    margin: 0px;
+    margin-block: 0px;
+    margin-inline: 0px;
+}
+h1, h3, p, hr {
+    margin: 0px;
+}
+input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+input[type="button"],
+input[type="submit"],
+button {
+    cursor: pointer;
+    border: 0px none transparent;
+    outline: none 0px;
+    background: none;
+    appearance: initial;
+    padding: 0px;
+}
+input:focus{
+    outline: none;
+}
+::placeholder {
+  opacity: 0.6;
+}
+::-ms-input-placeholder {
+  opacity: 0.6;
+}
+label {
+    cursor: default;
+}
+
+.error-message {
+	color: rgb(248, 47, 98);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    text-align: center;
+    padding: 15px 0px 0px;
+}

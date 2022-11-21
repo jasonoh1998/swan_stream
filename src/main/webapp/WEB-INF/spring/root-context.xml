@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- login -->
+	<context:component-scan base-package="main.service" />
+	<context:component-scan base-package="main.dao" />
+	
+	<!-- video/home -->
+	<context:component-scan base-package="home.service" />
+	<context:component-scan base-package="home.dao" />
+	
+	<!-- webtoon -->
+	<context:component-scan base-package="webtoon.service" />
+	<context:component-scan base-package="webtoon.dao" />
+	
+	<!-- discovery -->
+	<context:component-scan base-package="discovery.service" />
+	<context:component-scan base-package="discovery.dao" />
+	
+	<!-- search -->
+	<context:component-scan base-package="search.service" />
+	<context:component-scan base-package="search.dao" />
+	
+	<!-- rate -->
+	<context:component-scan base-package="rate.service" />
+	<context:component-scan base-package="rate.dao" />
+	
+	<!-- storage -->
+	<context:component-scan base-package="storage.service" />
+	<context:component-scan base-package="storage.dao" />
+
+	<context:component-scan base-package="spring.conf" />
+</beans>
