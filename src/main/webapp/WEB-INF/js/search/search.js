@@ -8,7 +8,7 @@ $(function(){
 			$.each(data, function(index, items){
 				//console.log(index, items)
 				$('<li/>')
-					.append($("<a/>",{class: "search-link"})
+					.append($("<a/>",{class: "search-link", onclick: "location.href='/swan_stream/searchContent?tag="+items+"'"})
 						.append($("<div/>",{class: "search-link-box"})
 							.append($("<img/>",{src: "/swan_stream/images/search/genre/"+$("#pageTitle").val()+"/"+(index+1)+".png"}))
 							.append($("<div/>",{class: "search-link-box_title"})

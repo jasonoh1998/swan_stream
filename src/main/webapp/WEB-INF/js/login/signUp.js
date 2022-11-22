@@ -73,6 +73,7 @@ $(".sign-up-agreement").click(function(event){
 	}
 	
 	if(
+		$(".sign-up-agreement:eq(1)").find("span").hasClass("sign-up-background") &&
 		$(".sign-up-agreement:eq(2)").find("span").hasClass("sign-up-background") &&
 		$(".sign-up-agreement:eq(3)").find("span").hasClass("sign-up-background")&&
 		$(".sign-up-agreement:eq(4)").find("span").hasClass("sign-up-background")

@@ -14,7 +14,9 @@
 	
 	<!-- 회원정보 정장 -->
 	<insert id="mainUserDataSave" parameterType="main">
-		insert into user_data values(#{name}, #{email}, #{password}, #{age_restriction}, #{marketing_agreement}, sysdate)
+		insert into user_data
+			(name, email, password, age_restriction, marketing_agreement, logtime)
+			values(#{name}, #{email}, #{password}, #{age_restriction}, #{marketing_agreement}, sysdate)
 	</insert>
 	
 	<!-- 로그인 -->
