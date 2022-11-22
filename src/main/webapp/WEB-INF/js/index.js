@@ -1,10 +1,10 @@
-$(function(){
-	$(window).on('load', function () {
-		setTimeout(function(){
-			$('#loading').hide();
-		},500);
-	});
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#loading').hide();
+	},500);
+});
 
+$(function(){
 	// profile section hide and show on click
     let profile_clicked = false;
     $(document).click(function(e) {

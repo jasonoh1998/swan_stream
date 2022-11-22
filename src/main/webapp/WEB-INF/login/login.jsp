@@ -108,10 +108,10 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 	//네이버
-	var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8080/swan_stream/login.jsp");
+	var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8080/swan_stream/login");
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("green", 1);
-  	naver_id_login.setDomain("http://localhost:8080/swan_stream/login.jsp");
+  	naver_id_login.setDomain("http://localhost:8080/swan_stream/login");
   	naver_id_login.setState(state);
   	naver_id_login.setPopup();
   	naver_id_login.init_naver_id_login();

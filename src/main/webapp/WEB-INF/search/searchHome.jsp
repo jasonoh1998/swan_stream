@@ -27,7 +27,7 @@
 				</a>
 			</div>
 	    </div>
-	    <div class="search-content">
+	    <div id="slider-class" class="search-content">
 	    	<button type="button" class="slide-left-slidernav">
 	    		<span>
 	    			<svg width="10" height="40" viewBox="0 0 10 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -62,7 +62,7 @@
 				</a>
 			</div>
 	    </div>
-	    <div class="search-content">
+	    <div id="slider-class" class="search-content">
 	    	<button type="button" class="slide-left-slidernav">
 	    		<span>
 	    			<svg width="10" height="40" viewBox="0 0 10 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -97,7 +97,7 @@
 				</a>
 			</div>
 	    </div>
-	    <div class="search-content">
+	    <div id="slider-class" class="search-content">
 	    	<button type="button" class="slide-left-slidernav">
 	    		<span>
 	    			<svg width="10" height="40" viewBox="0 0 10 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -175,16 +175,13 @@ let callback = (entries, observer) => {
 };
 let observer = new IntersectionObserver(callback, options);
 
-
 $(window).on('resize', function(){
-	listPosition = [0,0,0];
-	$(".search-content_lists").css("transform","translateX(0)");
-	if(listPosition[rowNum]==0)
-		$(".slide-left-slidernav").hide();
-
+	$(".slide-left-slidernav").hide();
+	$(".slide-right-slidernav").show();
 	setTimeout(function(){
-		$(".slide-right-slidernav").show();		
-	},700)
+		listPosition = [0,0,0];
+		$(".search-content_lists").css("transform","translateX(0)");
+	},400)
 });
 
 $(".slide-left-slidernav").click(function(){
@@ -196,6 +193,10 @@ $(".slide-left-slidernav").click(function(){
 	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden"))
 		$(".slide-right-slidernav:eq("+rowNum+")").show();
 	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%");
+	$(".slide-left-slidernav").attr("disabled", true);
+	setTimeout(function(){
+		$(".slide-left-slidernav").attr("disabled", false);		
+	},700);
 });
 $(".slide-right-slidernav").on("click",function(){
 	rowNum = $(".slide-right-slidernav").index(this);
@@ -206,6 +207,10 @@ $(".slide-right-slidernav").on("click",function(){
 	$(".search-content_lists:eq("+rowNum+")").css("transition","750ms ease 0s");
 	let target = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list:eq("+(initialListLength[rowNum]-1)+")").get(0);
 	observer.observe(target);
+	$(".slide-right-slidernav").attr("disabled", true);
+	setTimeout(function(){
+		$(".slide-right-slidernav").attr("disabled", false);
+	},700);
 });
 </script>
 </body>
