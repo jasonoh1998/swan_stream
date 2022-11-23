@@ -100,7 +100,9 @@
 				Kakao.API.request({
 					url: '/v2/user/me',
 					success: function(response) {
-						console.log(response.kakao_account.email);
+						console.log(response);
+						let email = response.kakao_account.email;
+						console.log(email);
 						verified = true;
 					},
 					fail: function(error) {
