@@ -23,4 +23,9 @@
 	<select id="getUser" parameterType="java.util.Map" resultType="main">
 		select * from user_data where email='${email}' and password='${password}'
 	</select>
+	
+	<!-- 카카오 로그인 -->
+	<select id="getUserKakao" parameterType="String" resultType="main">
+		
+	</select>
 </mapper>
