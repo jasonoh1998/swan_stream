@@ -58,11 +58,11 @@
 								<button type="button" class="login-login-button-click">로그인</button>
 							</div>
 						</form>
-						
+
 						<p>다른 방법으로 로그인하기</p>
 						<ul class="login-api-group">    <!-- 로그인API그룹-->
 							<li>
-								<button class="login-kakao" type="button" onClick="kakaoLogin();"> <!-- 카카오버튼 -->
+								<button class="login-kakao" type="button" onClick="kakao();"> <!-- 카카오버튼 -->
 								</button>
 							</li>
 							<li>
@@ -84,25 +84,47 @@
 </div>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
-	//카카오
-	//c9a61ca45804d295d5cd603ebcf28eb4
-	window.Kakao.init("c9a61ca45804d295d5cd603ebcf28eb4");
+	let verified = false;
+	Kakao.init("41f920e3d740c2839237f511d980ba5c"); // 카카오 발급 키
+	//console.log(Kakao.isInitialized()); // check if kakao button available
+	function kakao(){
+		if(verified == false){
+			kakaoLogin();
+		} else{
+			kakaoLogout();
+		}
+	}
 	function kakaoLogin() {
-		window.Kakao.Auth.login({
-			scope:'profile, account_email, gender',
-			success: function(authobj) {
-				console.log(authobj);
-				window.Kakao.API.request({
-				url: '/v2/user/me',
-				success: res => {
-					const kakao_acconut = res.kakao_account;
-					console.log
+		Kakao.Auth.login({
+			success: function(response) {
+				Kakao.API.request({
+					url: '/v2/user/me',
+					success: function(response) {
+						console.log(response.kakao_account.email);
+						verified = true;
+					},
+					fail: function(error) {
+						console.log(error);
 					}
-				
 				});
 			}
 		});
 	}
+	function kakaoLogout() {
+		if (Kakao.Auth.getAccessToken()) {
+		    Kakao.API.request({
+				url: '/v1/user/unlink',
+				success: function (response) {
+					//console.log(response);
+					verified = false;
+				},
+				fail: function (error) {
+					console.log(error);
+				},
+		    })
+		    Kakao.Auth.setAccessToken(undefined)
+		}
+	}  
 </script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
