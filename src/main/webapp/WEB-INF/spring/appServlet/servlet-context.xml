@@ -16,6 +16,8 @@
 	<mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
 	<mvc:resources location="/WEB-INF/styles/" mapping="/styles/**" />
+	<mvc:resources location="/WEB-INF/video/" mapping="/video/**" />
+	
 	
 	<context:component-scan base-package="main.controller" /> <!-- login page controller -->
 	<context:component-scan base-package="home.controller" /> <!-- video page controller -->
