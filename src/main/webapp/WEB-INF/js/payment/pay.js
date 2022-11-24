@@ -1,7 +1,6 @@
 const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const modal2 = document.querySelector('.modal2');
-const modal3 = document.querySelector('.modal3');
 const modal4 = document.querySelector('.modal4');
 const modal5 = document.querySelector('.modal5');
 const modal6 = document.querySelector('.modal6');
@@ -23,6 +22,7 @@ const modal21 = document.querySelector('.modal21');
 const modal22 = document.querySelector('.modal22');
 const modal23 = document.querySelector('.modal23');
 const pay_info = document.querySelector('.pay-info');
+const basic = document.querySelector('.basic');
 
 const modal_body = document.querySelector('.modal_body');
 
@@ -121,11 +121,11 @@ modal.addEventListener('click', (event) => {
     }
 });
 
-// 모델1 -> 모델3 으로 이동
+// 모델1 -> 모델3 으로 이동  // basic으로 이동 이거 건드림 
 $(document).on("click", ".css-1w1rfj81", function(){
     if (modal.classList.contains('show')) {
         modal.classList.toggle('show');
-        modal3.classList.toggle('show3');
+        basic.classList.toggle('show');
     }
 });
 
@@ -177,20 +177,20 @@ $(document).on("click", ".pre-btn2", function(){
 
 // 모델3 -> 모델1으로 이동
 $(document).on("click", ".css-1w1rfj82", function(){
-    if (modal3.classList.contains('show3')) {
+    if (basic.classList.contains('show')) {
         modal.classList.toggle('show');
-        modal3.classList.toggle('show3');
+        basic.classList.toggle('show');
     }
 });
 
-modal3.addEventListener('click', (event) => {
+basic.addEventListener('click', (event) => {
     if(!modal5.classList.contains('show5')) {
-        if(event.target == modal3) { 
-            modal3.classList.toggle('show3');
+        if(event.target == basic) { 
+            basic.classList.toggle('show');
         }
     }
-    if(modal5.classList.contains('show5') && modal3.classList.contains('show3')) {
-        if(event.target == modal3) { 
+    if(modal5.classList.contains('show5') && basic.classList.contains('show')) {
+        if(event.target == basic) { 
             modal5.classList.toggle('show5');
         }
     }
@@ -204,7 +204,7 @@ modal3.addEventListener('click', (event) => {
 // 모델4
 // modal4 화면 (베이직 결제화면) 띄우기 // 확인완료 
 two_btn2.addEventListener('click', function() { 
-    modal3.classList.toggle('show3');
+    basic.classList.toggle('show');
     modal4.classList.toggle('show4'); 
 });
 
@@ -1453,30 +1453,6 @@ back_btn23.addEventListener('click', () => {
     }
 });
 
-// 버튼 모음 
-// 버튼2에서 결제화면 바로 띄워보기 // 확인완료  
-btnOpenPopup2.addEventListener('click', () => { 
-    modal2.classList.toggle('show2');
-
-    if (modal2.classList.contains('show2')) {
-        body.style.overflow = 'hidden';
-    }
-    if (modal.classList.contains('show')) {
-        modal.classList.toggle('show');
-    }
-});
-
-btnOpenPopup3.addEventListener('click', () => { 
-    modal4.classList.toggle('show4');
-
-    if (modal4.classList.contains('show4')) {
-        body.style.overflow = 'hidden';
-    }
-    if (modal.classList.contains('show')) {
-        modal.classList.toggle('show');
-    }
-});
-
 // 프리미엄 결제화면에서 back-btn 뒤로가기 버튼
 back_btn.addEventListener('click', () => { 
     if (modal2.classList.contains('show2')) {
@@ -1493,7 +1469,9 @@ $(document).on("click", ".x-btn", function(){
     if (modal2.classList.contains('show2')) {
         modal2.classList.toggle('show2');
     }
-    if (modal3.classList.contains('show3')) {
-        modal3.classList.toggle('show3');
+    if (basic.classList.contains('show')) {
+        basic.classList.toggle('show');
     }
 });
+
+

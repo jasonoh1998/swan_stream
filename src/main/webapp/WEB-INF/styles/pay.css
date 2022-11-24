@@ -1,12 +1,40 @@
-@charset "UTF-8";
+body {
+    background-color: #141517;
+}
 
 /*
 .modal-um {   
 }
 */
-
 .modal-main {
     display: inline-block;
+}
+
+.basic { 
+    position: fixed;
+    inset: 0px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 10px;
+    text-align: center;
+    overflow: auto;
+    z-index: 1000; 
+}
+.basic.show {
+    display: block;
+}
+.basic-body {
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    vertical-align: middle;
+    border: 1px solid rgb(35, 36, 38);
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    padding: 10px;
 }
 
 .modal {
@@ -20,10 +48,9 @@
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 10px;
     text-align: center;
-    /* overflow: auto;*/
-    /* z-index: -10; */
+    overflow: auto;
+    z-index: 1000; 
 }
-
 .modal2 {
     position: fixed;
     top: 0;
@@ -32,8 +59,8 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1001;
 }
-
 .modal3 {
     position: fixed;
     inset: 0px;
@@ -45,7 +72,8 @@
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 10px;
     text-align: center;
-    /*overflow: auto;*/
+    overflow: auto;
+    z-index: 1002;
 }
 
 /*
@@ -73,12 +101,14 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1003;
+    
 }
 
 .modal5 {
-    /* position: fixed; */
-    position: relative;
-    width: 350px;
+    position: fixed;
+    /* position: relative; */
+    width: 400px;
     /* 원래는 400 */
     padding: 33px 44px;
     text-align: left;
@@ -89,13 +119,14 @@
     background-color: rgb(25, 26, 28);
     border-radius: 15px;
     inset: 0px;
-    top: 0;
+    top: 7%;
     left: 0;
-    height: 50%;
+    height: 35%;
     display: none;
     font-size: 10px;
     text-align: center;
-    overflow: auto;
+    /* overflow: auto; */
+    z-index: 1004;
     /* z-index: 10; */
 }
 
@@ -107,6 +138,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1005;
 }
 
 .modal7 {
@@ -117,6 +149,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1006;
 }
 
 .modal8 {
@@ -127,6 +160,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1007;
 }
 
 .modal9 {
@@ -137,6 +171,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1008;
 }
 
 .modal10 {
@@ -147,6 +182,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1009;
 }
 
 .modal11 {
@@ -157,6 +193,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1010;
 }
 
 .modal12 {
@@ -167,6 +204,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1011;
 }
 
 .modal13 {
@@ -177,6 +215,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1012;
 }
 
 .modal14 {
@@ -187,6 +226,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1013;
 }
 
 .modal15 {
@@ -197,6 +237,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1014;
 }
 
 .modal16 {
@@ -207,6 +248,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1015;
 }
 
 .modal17 {
@@ -217,6 +259,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1016;
 }
 
 .modal18 {
@@ -227,6 +270,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1017;
 }
 
 .modal19 {
@@ -237,6 +281,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1018;
 }
 
 .modal20 {
@@ -247,6 +292,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1019;
 }
 
 .modal21 {
@@ -257,6 +303,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1020;
 }
 
 .modal22 {
@@ -267,6 +314,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1021;
 }
 
 .modal23 {
@@ -277,6 +325,7 @@
     height: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1022;
 }
 /*
 .pay-info {
@@ -289,11 +338,11 @@
 }
 */
 .pay-info {
-    position: relative;
+    position: fixed;
     padding: 33px 44px;
     text-align: left;
     box-sizing: border-box;
-    margin: 143px auto; /* 원래는 30px*/
+    margin: 200px auto; /* 원래는 30px*/
     border-radius: 15px;
     inset: 0px;
     top: 0;
@@ -302,7 +351,7 @@
     display: none;
     font-size: 10px;
     text-align: center;
-    overflow: auto;
+    z-index: 1023;
 }
 
 .modal.show {
