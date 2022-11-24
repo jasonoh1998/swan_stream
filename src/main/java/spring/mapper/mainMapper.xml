@@ -26,6 +26,6 @@
 	
 	<!-- 카카오 로그인 -->
 	<select id="getUserKakao" parameterType="String" resultType="main">
-		
+		select * from user_data where email='${email}'
 	</select>
 </mapper>

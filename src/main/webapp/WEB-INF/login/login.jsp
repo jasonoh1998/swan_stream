@@ -104,11 +104,30 @@
 						let email = response.kakao_account.email;
 						console.log(email);
 						verified = true;
+						
+						$.ajax({
+					         type: 'post',
+					         url: '/swan_stream/getUserKakao',
+					         data: 'email=' + email,
+					         success: function(data) {
+					            //alert(data);
+					            if(data == 'exist'){
+					            	location.href="http://localhost:8080/swan_stream/home"
+					            } else if(data == 'non_exist'){
+					            	location.href="http://localhost:8080/swan_stream/signUp"
+					            }
+					                   
+					         },
+					         error: function(err) {
+					            console.log(err);
+					         }
+					      }); 
 					},
 					fail: function(error) {
 						console.log(error);
 					}
 				});
+				
 			}
 		});
 	}
