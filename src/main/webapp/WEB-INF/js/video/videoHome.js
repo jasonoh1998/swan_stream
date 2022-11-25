@@ -1,5 +1,6 @@
 //화면 open시 로드될 데이터
 $(function(){
+	
 	//$("#movie-Contents").load("/swan_stream/WEB-INF/video/movie/basic_Contents.jsp");
 	//$("#tv-Contents").load("/swan_stream/video/tv_Program/tvshow.jsp");
 	//$("#movie-Contents").load("video/movie/basic_Contents");
@@ -445,6 +446,10 @@ function addTopTenSlide(){
 	
 	if($(window).width() < 1000){
 	
+	
+	$('.headcategory-copy').html($('.head-category').clone());
+	
+		
 	var ul = $('<ul>')
 	ul.addClass('topTen_slidelist');
 	

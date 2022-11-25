@@ -26,11 +26,14 @@
     <link rel="stylesheet" href="/swan_stream/styles/home_content.css">
     <link rel="stylesheet" href="/swan_stream/styles/styles.css">
     <link rel="stylesheet" href="/swan_stream/styles/video/videoHome.css" >
+    <link rel="stylesheet" href="/swan_stream/styles/webtoon/webtoonHome.css" >
     
     <!-- javascripts -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
     <script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
     <script type="text/javascript" src="/swan_stream/js/video/videoHome.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/webtoon/webtoonHome.js" defer></script>
+	
 </head>
 <body>
     <div id="root">

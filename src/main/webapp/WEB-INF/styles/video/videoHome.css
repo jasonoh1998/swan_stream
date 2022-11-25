@@ -13,7 +13,7 @@
 	padding:0;
 	box-sizing:border-box;
 	/* background:black; */
-	color:white;
+	/* color:white; */
 	/* border-color:black; */
 	font-family:sans-serif;
 	
@@ -133,15 +133,15 @@ float:left; */
 
 /* 상단버튼 시작 */
 hr{
-	background:grey;
+	/* background:grey; */
 	height:1px;
 	border:0;
-	border-color:red;
+/* 	border-color:red; */
 }
 .head-category{
 	top:0;
 	position:sticky;
-	z-index:9999;
+	/* z-index:9999; */
 }
 
 .head-category > button{
@@ -153,6 +153,7 @@ hr{
 	font-size:1.5em;
 	background:black;
 	border-color:grey;
+	/* border-width:15px; */
 	border-radius: 30px 30px 30px 30px/50% 50% 50% 50%;
 	/* top-left-x top-right-x bottom-right-x bottom-left-x /
 	top-left-y top-right-y bottom-right-y bottom-left-y */
@@ -160,7 +161,8 @@ hr{
 .head-category > button.category{
 	background:white;
 	color:black;
- */}
+	border-color:red;
+ }
 /* 상단버튼 끝 */
 
 
