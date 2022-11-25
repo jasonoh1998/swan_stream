@@ -46,8 +46,8 @@ function button_show(email_valid, password_valid) {
 }
 
 $(".login-login-button-click").click(function() {	
-	$("#email-box").css("opacity","0.3");
-	$("#password-box").css("opacity","0.3");
+	$("#email-box").css("opacity","0.3");   
+	$("#password-box").css("opacity","0.3"); 
 	setTimeout(function() {
 		$.ajax({
 			type: "post",

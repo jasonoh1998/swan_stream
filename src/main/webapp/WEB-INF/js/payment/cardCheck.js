@@ -84,6 +84,37 @@ function button_show(card_valid, contract_valid, birth_valid) {
 
 
 
+$(".precard-btn").click(function() {	
+	$("#email-box").css("opacity","0.3");   
+	$("#password-box").css("opacity","0.3");
+	// 클릭시 box들 밝기 줄여주고 
+	setTimeout(function() {
+		$.ajax({
+			type: "post",
+			url: "/swan_stream/mainUserExist", // 요청 어디로갈지 수정 
+			data: $("#pre-form").serialize(),  // form 이름만 바꿔주자 
+			
+			success: function(data){
+				$("#name-box").css("opacity","1");
+				$("#email-box").css("opacity","1");
+				$("#password-box").css("opacity","1");
+				if(data == 'exist'){
+					location.href="/swan_stream/home";
+					$(".error-message").hide();
+				} else if(data=='non_exist'){
+					$(".error-message").show();
+				}
+				
+			},
+			error: function(error) {
+				//console.log(error);
+			}
+		})
+    }, 1500);
+});
+
+
+
 
 
 

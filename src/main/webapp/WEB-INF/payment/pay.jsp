@@ -157,7 +157,7 @@
                             프리미엄 요금제
                             <button type="button" class="back-btn">다시 선택하기</button>
                         </div>
-                        <form class="css-11zhy3w">
+                        <form id="pre-form">
                             <div class="css-10kc5g1">
                                 <li class="css-1t5l6f">
                                     <label for="card" class="css-1vh85ml">
@@ -188,7 +188,7 @@
                                                         <input name="cardNumber" class="pre-cardInput" id="cardNumber"
                                                             placeholder="•••• •••• •••• ••••" type="text"  
                                                             autocomplete="off" data-valid="false" 
-                                                            maxlength ="20">
+                                                            maxlength ="19">
                                                     </div>
                                                     <div class="css-44dtsk"></div>
                                                 </div>
