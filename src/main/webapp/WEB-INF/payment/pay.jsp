@@ -184,9 +184,11 @@
                                                     <div class="css-1byzlfr">카드번호</div>
                                                 </div>
                                                 <div class="css-0">
-                                                    <div class="css-k5snl0">
-                                                        <input name="cardNumber" class="css-7lsjjs" id="cardNumber"
-                                                            placeholder="•••• •••• •••• ••••" type="text" value>
+                                                    <div class="pre-card" id="pre-cardNumber">
+                                                        <input name="cardNumber" class="pre-cardInput" id="cardNumber"
+                                                            placeholder="•••• •••• •••• ••••" type="text"  
+                                                            autocomplete="off" data-valid="false" 
+                                                            maxlength ="20">
                                                     </div>
                                                     <div class="css-44dtsk"></div>
                                                 </div>
@@ -196,9 +198,10 @@
                                                     <div class="css-1byzlfr">카드 유효기간</div>
                                                 </div>
                                                 <div class="css-0">
-                                                    <div class="css-k5snl0">
-                                                        <input type="text" name="cardExpiry" class="css-7lsjjs"
-                                                            id="cardExpiry" placeholder="MM / YY" type="text" value>
+                                                    <div class="contract-card" id="pre-contractNumber">
+                                                        <input type ="text" class="pre-contractInput" id="cardExpiry"
+                                                               name="cardExpiry" placeholder="MM / YY" type="text" 
+                                                               maxlength ="5" value>
                                                     </div>
                                                     <div class="css-44dtsk"></div>
                                                 </div>
@@ -209,8 +212,9 @@
                                                     <div class="css-1torjku">사업자번호 10자리</div>
                                                 </div>
                                                 <div class="css-0">
-                                                    <div class="css-k5snl0">
-                                                        <input name="rrn" class="css-7lsjjs" id="rrn" type="text" value>
+                                                    <div class="birth-card" id="pre-birthNumber">
+                                                        <input name="rrn" class="pre-birthInput" id="cardBirth"
+                                                         type="text"  maxlength ="6" value>
                                                     </div>
                                                 </div>
                                             </label>
@@ -312,7 +316,8 @@
                                 </li>
                             </div>
                             <p class="css-1pe9h62">월 12,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                            <button disabled type="submit" class="css-kwrtu1"
+                            <!-- button type button으로 바꿔야함 -->
+                            <button type="submit" class="precard-btn"
                                 style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">결제
                                 수단 등록</button>
                         </form>
