@@ -3,7 +3,8 @@
 :root{
 	--webtoonBannerSize3p:-200%;
 	--webtoonBannerSize4p:-300%;
-	
+	--webtoonExclusive2p:-100%;
+	--webtoonExclusive3p:-200%;
 }
 * {
 	margin:0;
@@ -202,10 +203,10 @@ display:none;
 left:0;
 }
 #exclusiveToon_slide02:checked ~ .exclusiveToon_slidelist .exclusiveToon_slideitem {
-left:var(--size2);
+left:var(--webtoonExclusive2p);
 }
 #exclusiveToon_slide03:checked ~ .exclusiveToon_slidelist .exclusiveToon_slideitem {
-left:var(--size);
+left:var(--webtoonExclusive3p);
 
 }
 

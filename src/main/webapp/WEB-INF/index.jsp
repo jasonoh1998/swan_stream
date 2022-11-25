@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean">
     
     <!-- bootstrap -->
-    <!-- 
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	 -->
+	
 	<!-- global style sheets -->
 	<link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
     <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
@@ -27,13 +27,17 @@
     <link rel="stylesheet" href="/swan_stream/styles/styles.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/pay.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/cardCheck.css">
-    
+    <link rel="stylesheet" href="/swan_stream/styles/video/videoHome.css" >
+    <link rel="stylesheet" href="/swan_stream/styles/webtoon/webtoonHome.css" >
+     
     <!-- javascripts -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
+    <script type="text/javascript" src="/swan_stream/js/video/videoHome.js" defer></script>
+     <script type="text/javascript" src="/swan_stream/js/webtoon/webtoonHome.js" defer></script>
     
 </head>
 <body>

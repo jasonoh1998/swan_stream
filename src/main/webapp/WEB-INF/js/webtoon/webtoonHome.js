@@ -418,12 +418,11 @@ function addExclusiveToonSlide(){
 	
 	}
 	$('.exclusiveToon_slidebox').append(ul);
-	$('#exclusiveToon_slide03:checked','.exclusiveToon_slidelist .exclusiveToon_slideitem').css(
-		"left","-150%"
-	)
+	
 	
 	var theme=document.querySelector(':root');
-	theme.style.setProperty('--size','-150%');       
+	theme.style.setProperty('--webtoonExclusive2p','-100%'); 
+	theme.style.setProperty('--webtoonExclusive3p','-150%');       
 	
 	}else if($(window).width() < 1600){
 	
@@ -453,8 +452,8 @@ function addExclusiveToonSlide(){
 	}
 	$('.exclusiveToon_slidebox').append(ul);
 	var theme=document.querySelector(':root');
-	theme.style.setProperty('--size2','-100%');  
-	
+	theme.style.setProperty('--webtoonExclusive2p','-100%');  
+	theme.style.setProperty('--webtoonExclusive3p','-200%');
 	}else{
 	
 	var ul = $('<ul>')
@@ -488,7 +487,8 @@ function addExclusiveToonSlide(){
 	
 	
 	var theme=document.querySelector(':root');
-	theme.style.setProperty('--size2','-42%');  
+	theme.style.setProperty('--webtoonExclusive2p','-42%');  
+	theme.style.setProperty('--webtoonExclusive3p','-200%');
 	}
 
 }
