@@ -104,11 +104,30 @@
 						let email = response.kakao_account.email;
 						console.log(email);
 						verified = true;
+						
+						$.ajax({
+					         type: 'post',
+					         url: '/swan_stream/getUserKakao',
+					         data: 'email=' + email,
+					         success: function(data) {
+					            //alert(data);
+					            if(data == 'exist'){
+					            	location.href="http://localhost:8080/swan_stream/home"
+					            } else if(data == 'non_exist'){
+					            	location.href="http://localhost:8080/swan_stream/signUp"
+					            }
+					                   
+					         },
+					         error: function(err) {
+					            console.log(err);
+					         }
+					      }); 
 					},
 					fail: function(error) {
 						console.log(error);
 					}
 				});
+				
 			}
 		});
 	}
@@ -139,6 +158,19 @@
   	naver_id_login.setState(state);
   	naver_id_login.setPopup();
   	naver_id_login.init_naver_id_login();
+</script>
+<script type="text/javascript">
+  var naver_id_login = new naver_id_login("hr0i2zsIsYgV1e6y88ha", "http://localhost:8080/swan_stream/login");
+  // 접근 토큰 값 출력
+  alert(naver_id_login.oauthParams.access_token);
+  // 네이버 사용자 프로필 조회
+  naver_id_login.get_naver_userprofile("naverSignInCallback()");
+  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+  function naverSignInCallback() {
+    alert(naver_id_login.getProfileData('email'));
+    alert(naver_id_login.getProfileData('nickname'));
+    alert(naver_id_login.getProfileData('age'));
+  }
 </script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>

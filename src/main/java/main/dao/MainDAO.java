@@ -10,4 +10,7 @@ public interface MainDAO {
 
 	public MainDTO getUser(Map<String, String> map);
 
+	public MainDTO getUserKakao(String email);
+
+
 }
