@@ -1,9 +1,9 @@
 let email_valid = false;
-let password_valid = false;
+let password_valid = false; 
 $(".login-login-button-click").attr("disabled", true);
 $(".login-email").on("keyup", function() {
     let re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).val());
-	if($(this).val().length == 0){
+	if($(this).val().length == 0){ 
 		$("#email-box").removeClass();
         $("#email-box").addClass("login-content-middle");
         email_valid = false;
@@ -18,6 +18,7 @@ $(".login-email").on("keyup", function() {
 	}
 	button_show(email_valid, password_valid);
 });
+
 $(".login-password").on("keyup", function() {
 	if($(this).val().length == 0){
 		$("#password-box").removeClass();
@@ -36,14 +37,13 @@ $(".login-password").on("keyup", function() {
 	button_show(email_valid, password_valid);
 })
 
-function button_show(email_valid, password_valid) {
-	if(email_valid == true && password_valid == true){
+function button_show(email_valid, password_valid) {  
+	if(email_valid == true && password_valid == true){  
 		$(".login-login-button-click").attr("disabled", false);			
 	} else {
 		$(".login-login-button-click").attr("disabled", true);			
 	}
 }
-
 
 $(".login-login-button-click").click(function() {	
 	$("#email-box").css("opacity","0.3");

@@ -10,14 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swan Stream</title>
+	
 	<!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean">
     
     <!-- bootstrap -->
-    <!-- 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	 -->
+	
 	<!-- global style sheets -->
 	<link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
     <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
@@ -25,16 +25,15 @@
     <!-- index style sheets -->
     <link rel="stylesheet" href="/swan_stream/styles/home_content.css">
     <link rel="stylesheet" href="/swan_stream/styles/styles.css">
-    <link rel="stylesheet" href="/swan_stream/styles/payment/pay.css">
-    <link rel="stylesheet" href="/swan_stream/styles/payment/cardCheck.css">
+    <link rel="stylesheet" href="/swan_stream/styles/video/videoHome.css" >
+    <link rel="stylesheet" href="/swan_stream/styles/webtoon/webtoonHome.css" >
     
     <!-- javascripts -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
-	<script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
-	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
-	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
-	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
-    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+    <script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
+    <script type="text/javascript" src="/swan_stream/js/video/videoHome.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/webtoon/webtoonHome.js" defer></script>
+	
 </head>
 <body>
     <div id="root">
@@ -42,24 +41,22 @@
         	<jsp:include page="./loading.jsp" />
 
             <!-- new subscription advertisement for non-membership members -->
-            <div id="new-sub">
+<!--             <div id="new-sub">
                 <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket">
                 <div class="new-sub_content">
                     <div class="new-sub_description">
                         <p>첫 구독 시 2주 무료!</p>
                         <p>지금 구독 시작하고 모든 콘텐츠를 무제한 감상해보세요.</p>
                     </div>
-                    <button class="new-sub_button btn-open-popup txt1">무료 이용 시작</button>
+                    <button class="new-sub_button">무료 이용 시작</button>
                 </div>
-            </div>
+            </div> -->
             
             
             <!-- navigation area -->
             <jsp:include page="./navigation/leftNav.jsp" />
 			<jsp:include page="./navigation/topNav.jsp" />
 			
-			<!-- pay area -->
-			<jsp:include page="./payment/pay.jsp" />
 			
             <!-- main content area -->
          	<c:if test="${empty display }">
@@ -94,11 +91,10 @@
             		<img alt="SwanStream" src="/swan_stream/images/copyright_logo.svg" />
 					Copyright © 2022 by <em style="font-weight: 700;">SwanStream.dev</em> All rights reserved.
             	</div>
-            </footer>  
+            </footer>
+            
+            
         </div>
     </div>
 </body>
 </html>
-
-
-
