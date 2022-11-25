@@ -130,6 +130,7 @@
 }
 .search-content-lists {
     position: relative;
+    display: flex;
     z-index: 0;
     white-space: nowrap;
     margin: 0px -6px;
