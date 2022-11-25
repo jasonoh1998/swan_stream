@@ -8,4 +8,6 @@ public interface MainService {
 
 	public String mainUserExist(String email, String password);
 
+	public String getUserKakao(String email);
+
 }

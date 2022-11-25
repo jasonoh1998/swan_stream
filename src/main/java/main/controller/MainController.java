@@ -56,4 +56,14 @@ public class MainController {
 		}
 		return userExist;
 	}
+	
+	@PostMapping(value="/getUserKakao")
+	@ResponseBody
+	public String getUserKakao(@RequestParam String email) {
+		//System.out.println(email);
+		String str = mainService.getUserKakao(email);
+		return str;
+	}
+	
+	
 }

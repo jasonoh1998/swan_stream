@@ -28,4 +28,15 @@ public class MainServiceImpl implements MainService {
 		if(mainDTO == null) return "non_exist";
 		else return "exist";
 	}
+
+	@Override
+	public String getUserKakao(String email) {
+		//DB
+		MainDTO mainDTO = mainDAO.getUserKakao(email);
+		
+		if(mainDTO == null)
+			return "non_exist";
+		else
+			return "exist";
+	}
 }
