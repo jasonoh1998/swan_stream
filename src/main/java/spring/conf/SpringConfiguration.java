@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource("classpath:spring/db.properties")
-@EnableTransactionManagement
+@EnableTransactionManagement // 트랜젝션 처리를 허용해주는 어노테이션
 public class SpringConfiguration {
 	@Value("${jdbc.driver}")
 	private String driver;
@@ -46,6 +46,7 @@ public class SpringConfiguration {
 		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:spring/mapper/**/*.xml"));
 		return sqlSessionFactoryBean.getObject();
 	}
+	
 	
 	@Bean
 	public SqlSessionTemplate sqlSession() throws Exception {
