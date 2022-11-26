@@ -69,6 +69,7 @@ public class MainController {
 	@ResponseBody
 	public String mainUserExist(@RequestParam("email") String email, @RequestParam("password") String password, Model model, HttpSession session) {
 		String userExist = mainService.mainUserExist(email, password);
+		// 위에 메서드 실행시키면 2개중 하나를 가져옴 if(mainDTO == null) return "non_exist"; // else return "exist";
 		if(userExist == "exist") {
 			model.addAttribute("userExist", userExist);
 			session.setAttribute("email", email);

@@ -81,29 +81,35 @@ function button_show(card_valid, contract_valid, birth_valid) {
 	}
 }
 
-
-
-
+// DB에 카드 정보 넣기 
 $(".precard-btn").click(function() {	
-	$("#email-box").css("opacity","0.3");   
-	$("#password-box").css("opacity","0.3");
+	$("#cardNumber").css("opacity","0.3");   
+	$("#cardExpiry").css("opacity","0.3");
+	$("#cardBirth").css("opacity","0.3");
 	// 클릭시 box들 밝기 줄여주고 
+	
+	alert($("#pre-form").serialize());  
 	setTimeout(function() {
 		$.ajax({
 			type: "post",
-			url: "/swan_stream/mainUserExist", // 요청 어디로갈지 수정 
+			url: "/swan_stream/pay", // 요청 어디로갈지 수정 
 			data: $("#pre-form").serialize(),  // form 이름만 바꿔주자 
 			
+			// user_id가 필요한데 일단은 먼저 내거만 넣어보자 
 			success: function(data){
-				$("#name-box").css("opacity","1");
-				$("#email-box").css("opacity","1");
-				$("#password-box").css("opacity","1");
+				
+				$("#cardNumber").css("opacity","1");   
+				$("#cardExpiry").css("opacity","1");
+				$("#cardBirth").css("opacity","1");
+				
+				/*
 				if(data == 'exist'){
 					location.href="/swan_stream/home";
 					$(".error-message").hide();
 				} else if(data=='non_exist'){
 					$(".error-message").show();
 				}
+				*/
 				
 			},
 			error: function(error) {
