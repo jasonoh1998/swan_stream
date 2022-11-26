@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+/*
+ pre-card 첫화면  length = 0 일때  
+ pre-card-correct = 성공 
+ pre-card-wrong  = 실패화면
+*/
+
+/*
+.login-content-middle,
+.login-content-middle-correct,
+.login-content-middle-wrong
+*/
+
+.pre-card,
+.pre-card-correct,
+.pre-card-wrong {
+    position: relative;
+    width: 100%;
+}
+
+.pre-cardInput {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px;
+    background: rgb(14, 14, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
+input.pre-cardInput[type="text"],
+input.pre-cardInput[type="number"],
+input.pre-cardInput[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+.pre-card-correct::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/check.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+.pre-card-wrong::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/xmark.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+} 
+
+/* contract  유효기간 */
+
+.contract-card {
+    position: relative;
+    width: 100%;
+}
+
+.pre-contractInput {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px;
+    background: rgb(14, 14, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
+input.pre-contractInput[type="text"],
+input.pre-contractInput[type="number"],
+input.pre-contractInput[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+.birth-card {
+	position: relative;
+    width: 100%;
+}
+
+.pre-birthInput {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px;
+    background: rgb(14, 14, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
+input.pre-birthInput[type="text"],
+input.pre-birthInput[type="number"],
+input.pre-birthInput[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+
+
+
+
