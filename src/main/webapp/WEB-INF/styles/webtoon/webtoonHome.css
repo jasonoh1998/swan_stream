@@ -156,8 +156,12 @@ float:left; */
 	display:block;
 	width:20%;
 	float:left;
+	transition:0.3s;
 }
-	
+
+.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv:hover{
+	transform:scale(1.5);
+}	
 .exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv > a {
 	display:block;
 	text-align:center;

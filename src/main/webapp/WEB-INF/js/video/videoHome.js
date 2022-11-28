@@ -6,8 +6,8 @@ $(function(){
 	//$("#movie-Contents").load("video/movie/basic_Contents");
 	//$("#tv-Contents").load("video/tv_Program/basic_Contents");
 	addBanner();
-//	setTopTen_SlideNum();
-//	addTopTenSlide();
+	//setTopTen_SlideNum();
+	//addTopTenSlide();
 	$("#movie-Contents").load("/swan_stream/video/movie/basic_Contents.html");
 	$("#tv-Contents").load("/swan_stream/video/tv_Program/basic_Contents.html");
 });
@@ -15,299 +15,265 @@ $(function(){
 
 //화면 open시 화면 사이즈에 따라 로드될 배너 개수
 function addBanner(){
-	var image = [];
-	var titleSpan = ['TOP 100', 
-				'왓챠 익스클루시브', 
-				'왓챠 익스클루시브', 
-				'추천 리스트',
-				'NEW!',
-				'스테디셀러',
-				'베스트 셀렉션'
-				];
-	var titleH3 = ['애니메이션 BEST', 
-				'아메리칸 러스트', 
-				'완벽한 도쿄의 맛',
-				'연말까지 완주 도전!',
-				'새로운 에피소드',
-				'왓챠 최고 인기작',
-				'오직 왓챠에서!'
-				];
-	var titleP = ['4분기 인기작부터 추억 소환 탑골 애니까지!',
-		'녹슬어 버린 꿈과 희망', 
-		'도쿄 맛집 추천! 완벽을 추구하는 셰프들',
-		'정주행 욕구를 자극하는 해외 시리즈 모음',
-		'다음 화를 기다렸다면? 지금 확인하기!',
-		'뭘 볼지 모르겠다면 여기서 골라보세요!',
-		'왓챠 독점 오리지널 & 익스클루시브 콘텐츠'
-		];
 	
-	
-	
-	image.push($('<img>',{
-				'src':"https://an2-img.amz.wtchn.net/image/v2/lE2orIrrKp2bE-PiLqTA1A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk1qVTBPRE0yTURreU1EQXdOVFE0TmlJc0luRWlPamd3ZlEubWJBangzc0ZYMXBNRUFWbjZDLW5IaWJJSFZnUWtYa3c4dmRNY2RDSHo1QQ",
-				'alt':'banner1'		
-	})
-	)
-	
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/_P8sh_raT155ajmziLZtwg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk9EUTVNRGN5T0RjME9ETTVNVEUxTnlJc0luRWlPamd3ZlEuU2tTQU9RaUZnTXVkSDZ1b3pYZC1fSE01SXJlYng5V2EwUkplODFSRnFGYw',
-				'alt':'banner2'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/FOesZZU9fNrfvLoaj7lgyw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk9EUTVNRGd5TURFeU1UWXhORFV6TkNJc0luRWlPamd3ZlEuMVdOY1RQTlFsaHB4c19Kc1QtNkFuRWxiemhVbC1KRmZpaWZvUS1sSlFRUQ',
-				'alt':'banner3'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/4V9x9LpV4i4ICMjS_K1l9Q.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk9EUTVNRGMzTkRneU1EUXdPREV5TWlJc0luRWlPamd3ZlEuaDRoTmhYRGhBeHZCUnBpMFZXVzROYnFMNmttYjJJekktZl92VnhfdzdlUQ',
-				'alt':'banner4'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/mkx_Z82Yqc5aSF3tzb3-rg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk9EUTVNRFUyTURFeU5qTTNPVFk1TlNJc0luRWlPamd3ZlEuR1dMaUlGQ2pSUEFNcFBYX2pXRkZ2Nmlya0hzMi1sNE44dzhvWXF2N0ttOA',
-				'alt':'banner5	'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/xPIQO-vUIyOHCTBVj6rzsw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk5qVTNPRFF6TlRjd05UQTVNemsyTUNJc0luRWlPamd3ZlEuX0s0NTFIUDdYWEFkU1BsRTJOUEZoMlJ2cWs2OFMzYllCYTdyTzJnRldYTQ',
-				'alt':'banner6'		
-	})
-	)		
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/GT97LfTQqs_zm5Tc_ZEgXg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZMk56VTFPREEzT0RJM01USTVNamszTWlJc0luRWlPamd3ZlEueTJlcXhzbzNDOEpzNkxBRDFmZnBCaWVPd3d0NmpyeVQtTXVWRnZKd1pIOA',
-				'alt':'banner7'		
-	})
-	)
-	
-	$('.bannerbox').empty();
-	if($(window).width()<900){
-	for(i=0;i<7;i++){
-		var input=$('<input>');
-		input.attr({
-					'type':'radio',
-					'name':'banner',
-					'id':'banner0'+(i+1)
-		})
-		
-		if(i==0){
-			input.attr('checked',true);
-		}
-		$('.bannerbox').append(input);
-	}
-		
-	$('.bannerbox').append($('<ul>').addClass("bannerlist"));
-	
-	
-	for(i=0;i<7;i++){
-		
-		var div=$('<div>');
-		div.css({"align-items": "left"})
-		var div2=$('<div>');
-		div2.addClass('banneritemDiv');
-		div2.css({"width" : "100%"});
-		var a=$('<a>');
-		var li=$('<li>');
-		li.addClass("banneritem");
-		
-		
-		
-		div.append($('<span>').html(titleSpan[i])).append($('<h3>').html(titleH3[i])).append($('<p>').html(titleP[i]));
-		a.append(image[i]);
-		div2.append(div).append(a);
-		li.append(div2);
-		$('.bannerlist').append(li);
-	}
-	$('.bannerbox').append($('<div>').addClass("banner-control"));
-	
-	for(i=0;i<7;i++){
-		var label1=$('<label>');
-		var label2=$('<label>');
-		
-		label1.addClass("prev");
-		label2.addClass("next");
-		
-		if(i==0){
-			label1.attr('for','banner0'+7);
-		}else{
-			label1.attr('for','banner0'+(i));
-		}
-		
-		if(i==6){
-			label2.attr('for','banner0'+1);
-		}else{
-			label2.attr('for','banner0'+(i+2));
-		}
-		
-		var div=$('<div>');
-		div.addClass("control0"+(i+1));
-		
-		div.append(label1).append(label2);
-		$('.banner-control').append(div);
-	}
-	
-	var position=document.querySelector(':root');
-	position.style.setProperty('--bannerSize3p','-200%');
-	position.style.setProperty('--bannerSize4p','-300%'); 
-	
-	
-	}else if($(window).width()<1500){
-	      
 
-	for(i=0;i<4;i++){
-		var input=$('<input>');
-		input.attr({
-					'type':'radio',
-					'name':'banner',
-					'id':'banner0'+(i+1)
-		})
-		
-		if(i==0){
-			input.attr('checked',true);
-		}
-		$('.bannerbox').append(input);
-	}
-		
-	$('.bannerbox').append($('<ul>').addClass("bannerlist"));
-	
-	
-	for(i=0;i<4;i++){
-		
-		var li=$('<li>');
-		li.addClass("banneritem");
-		
-		for(k=0;k<2;k++){
-		var div=$('<div>');
-		div.css({"align-items": "left"})
-		var div2=$('<div>');
-		div2.addClass('banneritemDiv');
-		div2.css({"width" : "50%"});
-		var a=$('<a>');
-		
-		if(((k)+(i*2))!=7){
-
-			div.append($('<span>').html(titleSpan[((k)+(i*2))])).append($('<h3>').html(titleH3[((k)+(i*2))])).append($('<p>').html(titleP[((k)+(i*2))]));
-			a.append(image[((k)+(i*2))]);
-			div2.append(div).append(a);
-			li.append(div2);
+	$.ajax({
+			type:'post',
+			url:'/swan_stream/video/getBanner',
+			dataType:'json',
+			success:function(data){
+				//alert(JSON.stringify(data));
+				var image = [];
+				var titleSpan =[];
+				var titleH3=[];
+				var titleP=[];
+				
+				$.each(data,function(index,items){
+						image.push($('<img>',{
+										'src':items.bannerImage,
+										'alt':'banner'
+						}))
+						
+						titleSpan.push(items.bannerTitle);
+						titleH3.push(items.bannerExpression);
+						titleP.push(items.bannerExplain);
+				
+				})//$.each
+				
+				$('.bannerbox').empty();
+				if($(window).width()<900){
+				for(i=0;i<7;i++){
+					var input=$('<input>');
+					input.attr({
+								'type':'radio',
+								'name':'banner',
+								'id':'banner0'+(i+1)
+					})
+					
+					if(i==0){
+						input.attr('checked',true);
+					}
+					$('.bannerbox').append(input);
+				}
+					
+				$('.bannerbox').append($('<ul>').addClass("bannerlist"));
+				
+				
+				for(i=0;i<7;i++){
+					
+					var div=$('<div>');
+					div.css({"align-items": "left"})
+					var div2=$('<div>');
+					div2.addClass('banneritemDiv');
+					div2.css({"width" : "100%"});
+					var a=$('<a>');
+					var li=$('<li>');
+					li.addClass("banneritem");
+					
+					
+					
+					div.append($('<span>').html(titleSpan[i])).append($('<h3>').html(titleH3[i])).append($('<p>').html(titleP[i]));
+					a.append(image[i]);
+					div2.append(div).append(a);
+					li.append(div2);
+					$('.bannerlist').append(li);
+				}
+				$('.bannerbox').append($('<div>').addClass("banner-control"));
+				
+				for(i=0;i<7;i++){
+					var label1=$('<label>');
+					var label2=$('<label>');
+					
+					label1.addClass("prev");
+					label2.addClass("next");
+					
+					if(i==0){
+						label1.attr('for','banner0'+7);
+					}else{
+						label1.attr('for','banner0'+(i));
+					}
+					
+					if(i==6){
+						label2.attr('for','banner0'+1);
+					}else{
+						label2.attr('for','banner0'+(i+2));
+					}
+					
+					var div=$('<div>');
+					div.addClass("control0"+(i+1));
+					
+					div.append(label1).append(label2);
+					$('.banner-control').append(div);
+				}
+				
+				var position=document.querySelector(':root');
+				position.style.setProperty('--bannerSize3p','-200%');
+				position.style.setProperty('--bannerSize4p','-300%'); 
+				
+				
+				}else if($(window).width()<1500){
+				      
+			
+				for(i=0;i<4;i++){
+					var input=$('<input>');
+					input.attr({
+								'type':'radio',
+								'name':'banner',
+								'id':'banner0'+(i+1)
+					})
+					
+					if(i==0){
+						input.attr('checked',true);
+					}
+					$('.bannerbox').append(input);
+				}
+					
+				$('.bannerbox').append($('<ul>').addClass("bannerlist"));
+				
+				
+				for(i=0;i<4;i++){
+					
+					var li=$('<li>');
+					li.addClass("banneritem");
+					
+					for(k=0;k<2;k++){
+					var div=$('<div>');
+					div.css({"align-items": "left"})
+					var div2=$('<div>');
+					div2.addClass('banneritemDiv');
+					div2.css({"width" : "50%"});
+					var a=$('<a>');
+					
+					if(((k)+(i*2))!=7){
+			
+						div.append($('<span>').html(titleSpan[((k)+(i*2))])).append($('<h3>').html(titleH3[((k)+(i*2))])).append($('<p>').html(titleP[((k)+(i*2))]));
+						a.append(image[((k)+(i*2))]);
+						div2.append(div).append(a);
+						li.append(div2);
+						}
+					}
+					$('.bannerlist').append(li);
+				}
+				
+				
+				$('.bannerbox').append($('<div>').addClass("banner-control"));
+				
+				for(i=0;i<4;i++){
+					var label1=$('<label>');
+					var label2=$('<label>');
+					
+					label1.addClass("prev");
+					label2.addClass("next");
+					
+					if(i==0){
+						label1.attr('for','banner0'+4);
+					}else{
+						label1.attr('for','banner0'+(i));
+					}
+					
+					if(i==3){
+						label2.attr('for','banner0'+1);
+					}else{
+						label2.attr('for','banner0'+(i+2));
+					}
+					
+					var div=$('<div>');
+					div.addClass("control0"+(i+1));
+					
+					div.append(label1).append(label2);
+					$('.banner-control').append(div);
+				}
+				
+				var position=document.querySelector(':root');
+				position.style.setProperty('--bannerSize3p','-200%');
+				position.style.setProperty('--bannerSize4p','-250%'); 
+				
+			}else{
+				      
+			
+				for(i=0;i<3;i++){
+					var input=$('<input>');
+					input.attr({
+								'type':'radio',
+								'name':'banner',
+								'id':'banner0'+(i+1)
+					})
+					
+					if(i==0){
+						input.attr('checked',true);
+					}
+					$('.bannerbox').append(input);
+				}
+					
+				$('.bannerbox').append($('<ul>').addClass("bannerlist"));
+				
+				
+				for(i=0;i<3;i++){
+					
+					var li=$('<li>');
+					li.addClass("banneritem");
+					
+					for(k=0;k<3;k++){
+					var div=$('<div>');
+					div.css({"align-items": "left"})
+					var div2=$('<div>');
+					div2.addClass('banneritemDiv');
+					div2.css({"width" : "33%"});
+					var a=$('<a>');
+					
+					if((((k)+(i*3))!=7) && (((k)+(i*3))!=8)){
+			
+						div.append($('<span>').html(titleSpan[((k)+(i*3))])).append($('<h3>').html(titleH3[((k)+(i*3))])).append($('<p>').html(titleP[((k)+(i*3))]));
+						a.append(image[((k)+(i*3))]);
+						div2.append(div).append(a);
+						li.append(div2);
+						}
+					}
+					$('.bannerlist').append(li);
+				}
+				
+				
+				$('.bannerbox').append($('<div>').addClass("banner-control"));
+				
+				for(i=0;i<3;i++){
+					var label1=$('<label>');
+					var label2=$('<label>');
+					
+					label1.addClass("prev");
+					label2.addClass("next");
+					
+					if(i==0){
+						label1.attr('for','banner0'+3);
+					}else{
+						label1.attr('for','banner0'+(i));
+					}
+					
+					if(i==2){
+						label2.attr('for','banner0'+1);
+					}else{
+						label2.attr('for','banner0'+(i+2));
+					}
+					
+					var div=$('<div>');
+					div.addClass("control0"+(i+1));
+					
+					div.append(label1).append(label2);
+					$('.banner-control').append(div);
+				}
+				
+				var position=document.querySelector(':root');
+				position.style.setProperty('--bannerSize3p','-133%');
+				position.style.setProperty('--bannerSize4p','-300%'); 
+				
 			}
-		}
-		$('.bannerlist').append(li);
-	}
 	
-	
-	$('.bannerbox').append($('<div>').addClass("banner-control"));
-	
-	for(i=0;i<4;i++){
-		var label1=$('<label>');
-		var label2=$('<label>');
-		
-		label1.addClass("prev");
-		label2.addClass("next");
-		
-		if(i==0){
-			label1.attr('for','banner0'+4);
-		}else{
-			label1.attr('for','banner0'+(i));
-		}
-		
-		if(i==3){
-			label2.attr('for','banner0'+1);
-		}else{
-			label2.attr('for','banner0'+(i+2));
-		}
-		
-		var div=$('<div>');
-		div.addClass("control0"+(i+1));
-		
-		div.append(label1).append(label2);
-		$('.banner-control').append(div);
-	}
-	
-	var position=document.querySelector(':root');
-	position.style.setProperty('--bannerSize3p','-200%');
-	position.style.setProperty('--bannerSize4p','-250%'); 
-	
-}else{
-	      
-
-	for(i=0;i<3;i++){
-		var input=$('<input>');
-		input.attr({
-					'type':'radio',
-					'name':'banner',
-					'id':'banner0'+(i+1)
-		})
-		
-		if(i==0){
-			input.attr('checked',true);
-		}
-		$('.bannerbox').append(input);
-	}
-		
-	$('.bannerbox').append($('<ul>').addClass("bannerlist"));
-	
-	
-	for(i=0;i<3;i++){
-		
-		var li=$('<li>');
-		li.addClass("banneritem");
-		
-		for(k=0;k<3;k++){
-		var div=$('<div>');
-		div.css({"align-items": "left"})
-		var div2=$('<div>');
-		div2.addClass('banneritemDiv');
-		div2.css({"width" : "33%"});
-		var a=$('<a>');
-		
-		if((((k)+(i*3))!=7) && (((k)+(i*3))!=8)){
-
-			div.append($('<span>').html(titleSpan[((k)+(i*3))])).append($('<h3>').html(titleH3[((k)+(i*3))])).append($('<p>').html(titleP[((k)+(i*3))]));
-			a.append(image[((k)+(i*3))]);
-			div2.append(div).append(a);
-			li.append(div2);
+				
+			},
+			error:function(err){
+				console.log(err);
 			}
-		}
-		$('.bannerlist').append(li);
-	}
-	
-	
-	$('.bannerbox').append($('<div>').addClass("banner-control"));
-	
-	for(i=0;i<3;i++){
-		var label1=$('<label>');
-		var label2=$('<label>');
-		
-		label1.addClass("prev");
-		label2.addClass("next");
-		
-		if(i==0){
-			label1.attr('for','banner0'+3);
-		}else{
-			label1.attr('for','banner0'+(i));
-		}
-		
-		if(i==2){
-			label2.attr('for','banner0'+1);
-		}else{
-			label2.attr('for','banner0'+(i+2));
-		}
-		
-		var div=$('<div>');
-		div.addClass("control0"+(i+1));
-		
-		div.append(label1).append(label2);
-		$('.banner-control').append(div);
-	}
-	
-	var position=document.querySelector(':root');
-	position.style.setProperty('--bannerSize3p','-133%');
-	position.style.setProperty('--bannerSize4p','-300%'); 
-	
-}
-	
-	
+	});
+
 	
 }
 
@@ -523,7 +489,7 @@ function addTopTenSlide(){
 	$('.topTen_slidebox').append(ul);
 	var theme=document.querySelector(':root');
 	theme.style.setProperty('--size2','-100%');  
-	
+	theme.style.setProperty('--size','-200%');
 	}else{
 	
 	var ul = $('<ul>')
@@ -570,7 +536,7 @@ function setTopTen_SlideNum(){
 	$('.topTen_slide-control').remove();
 	
 	
-	if($(window).width() < 1300){
+	if($(window).width() < 1000){
 		for(i=0;i<3;i++){
 		//input태그 생성
 		var input_radio = $('<input>');

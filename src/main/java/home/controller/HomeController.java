@@ -1,18 +1,31 @@
 package home.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+
+import home.bean.HomeDTO;
+import home.service.HomeService;
 
 @Component
 @Controller
 @SessionAttributes("email")
 public class HomeController { // this is a videoController
+	
+	@Autowired
+	private HomeService homeService;
+	
 	
 	@GetMapping(value="/home")
 	public String index(Model model, HttpServletRequest request) {
@@ -30,7 +43,14 @@ public class HomeController { // this is a videoController
 		return "logout";
 	}
 	
-
+	@PostMapping(value="/video/getBanner")
+	@ResponseBody
+	public List<HomeDTO> getBanner() {
+		//System.out.println("컨트롤러 오냐?");
+		return homeService.getBanner();
+	}
+	
+	
 }
 
 
