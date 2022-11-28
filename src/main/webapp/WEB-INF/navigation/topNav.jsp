@@ -72,7 +72,7 @@
                         </li>
                         <li class="setting">
                             <button>
-                                <div class="setting-box" onclick="location.href='/swan_stream/'">로그아웃</div>
+                                <div class="setting-box" onclick="location.href='/swan_stream/logout'">로그아웃</div>
                             </button>                                       
                         </li>
                     </ul>

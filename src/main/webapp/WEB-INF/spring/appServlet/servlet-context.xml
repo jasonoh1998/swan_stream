@@ -17,6 +17,11 @@
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
 	<mvc:resources location="/WEB-INF/styles/" mapping="/styles/**" />
 	
+	<!-- 컨텐츠 로딩을 위한 js 사용 -->
+	<mvc:resources location="/WEB-INF/video/" mapping="/video/**" />
+	<mvc:resources location="/WEB-INF/webtoon/" mapping="/webtoon/**" />
+	
+	
 	<context:component-scan base-package="main.controller" /> <!-- login page controller -->
 	<context:component-scan base-package="home.controller" /> <!-- video page controller -->
 	<context:component-scan base-package="webtoon.controller" /> <!-- webtoon page controller -->
@@ -25,4 +30,6 @@
 	<context:component-scan base-package="rate.controller" /> <!-- rate page controller -->
 	<context:component-scan base-package="storage.controller" /> <!-- storage page controller -->
 	<context:component-scan base-package="contents.controller" /> <!-- contents page controller -->
+	<context:component-scan base-package="payment.controller" /> <!-- payment page controller -->
+	
 </beans>

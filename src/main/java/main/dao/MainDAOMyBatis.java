@@ -24,4 +24,11 @@ public class MainDAOMyBatis implements MainDAO {
 	public MainDTO getUser(Map<String, String> map) {
 		return sqlSession.selectOne("mainSQL.getUser", map);
 	}
+	
+	@Override
+	public MainDTO getUserKakao(String email) {
+		return sqlSession.selectOne("mainSQL.getUserKakao", email);
+	}
+
+	
 }

@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+:root{
+	--webtoonBannerSize3p:-200%;
+	--webtoonBannerSize4p:-300%;
+	--webtoonExclusive2p:-100%;
+	--webtoonExclusive3p:-200%;
+}
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	/* background:black; */
+	/* color:white; */
+	/* border-color:black; */
+	font-family:sans-serif;
+	
+}
+/* 배너 */
+ul, li {
+	list-style:none;
+}
+.webtoonBannerBox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+/* 	max-height:400px; */
+	
+}
+
+.webtoonBannerBox .webtoonBannerlist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+	/* background:red; */
+}
+.webtoonBannerBox .webtoonBannerlist .webtoonBanneritem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	background-color:#fff;
+	width:100%;
+	transition:all 1s;
+	background:none;
+}
+.webtoonBannerBox .webtoonBannerlist .webtoonBanneritem .webtoonBanneritemDiv{
+	display:inline-block;
+	max-width:100%;
+	
+}
+.webtoonBannerBox .webtoonBannerlist .webtoonBanneritem .webtoonBanneritemDiv > a {
+	display:block;
+	width:auto;
+	position:relative;
+	text-align:center;
+}
+.webtoonBannerBox .webtoonBannerlist .webtoonBanneritem .webtoonBanneritemDiv> a img {
+/* max-width:20%; 
+float:left; */
+	border-radius: 10px;
+	max-width:95%;
+}
+.webtoonBannerBox .webtoonBanner-control [class*="control"] label {
+	position:absolute;
+	/* z-index:9999; */
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	/* border-radius:50%; */
+	cursor:pointer;
+}
+.webtoonBannerBox .webtoonBanner-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.webtoonBannerBox .webtoonBanner-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="banner"] {
+	display:none;
+}
+#webtoonBanner01:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:0;
+}
+#webtoonBanner02:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:-100%;
+}
+#webtoonBanner03:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:var(--webtoonBannerSize3p);
+}
+#webtoonBanner04:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:var(--webtoonBannerSize4p);
+}
+#webtoonBanner05:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:-400%;
+}
+#webtoonBanner06:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:-500%;
+}
+#webtoonBanner07:checked ~ .webtoonBannerlist .webtoonBanneritem {
+	left:-600%;
+}
+
+
+.webtoonBanner-control [class*="control"] {
+	display:none;
+}
+#webtoonBanner01:checked ~ .webtoonBanner-control .control01 {
+	display:block;
+}
+#webtoonBanner02:checked ~ .webtoonBanner-control .control02 {
+	display:block;
+}
+#webtoonBanner03:checked ~ .webtoonBanner-control .control03 {
+	display:block;
+}
+#webtoonBanner04:checked ~ .webtoonBanner-control .control04 {
+	display:block;
+}
+#webtoonBanner05:checked ~ .webtoonBanner-control .control05 {
+	display:block;
+}
+#webtoonBanner06:checked ~ .webtoonBanner-control .control06 {
+	display:block;
+}
+#webtoonBanner07:checked ~ .webtoonBanner-control .control07 {
+	display:block;
+}
+/* 메인 슬라이드 끝 */
+
+
+
+
+/*웹툰 컨텐츠 */
+.exclusiveToon_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.exclusiveToon_slidebox .exclusiveToon_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+/* 	background:black;
+ */	width:100%;
+	transition:all 1s;
+	
+}
+.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+}
+.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.exclusiveToon_slidebox .exclusiveToon_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.exclusiveToon_slidebox .exclusiveToon_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.exclusiveToon_slidebox .exclusiveToon_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="exclusiveToon_slide"] {
+display:none;
+}
+#exclusiveToon_slide01:checked ~ .exclusiveToon_slidelist .exclusiveToon_slideitem {
+left:0;
+}
+#exclusiveToon_slide02:checked ~ .exclusiveToon_slidelist .exclusiveToon_slideitem {
+left:var(--webtoonExclusive2p);
+}
+#exclusiveToon_slide03:checked ~ .exclusiveToon_slidelist .exclusiveToon_slideitem {
+left:var(--webtoonExclusive3p);
+
+}
+
+
+.exclusiveToon_slide-control [class*="control"] {
+display:none;
+}
+#exclusiveToon_slide01:checked ~ .exclusiveToon_slide-control .control01 {
+display:block;
+}
+#exclusiveToon_slide02:checked ~ .exclusiveToon_slide-control .control02 {
+display:block;
+}
+#exclusiveToon_slide03:checked ~ .exclusiveToon_slide-control .control03 {
+display:block;
+}
+#exclusiveToon_slide04:checked ~ .exclusiveToon_slide-control .control04 {
+display:block;
+}
+
+/* 웹툰 컨텐츠 끝 */

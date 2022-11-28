@@ -137,7 +137,7 @@ $(function(){
 			success: function(data) {
 				$.each(data, function(index, items){
 					//console.log(index, items)
-					$("<li/>",{class: "search-content_list", onclick: "location.href='/swan_stream/searchContent?tag="+items+"'"})
+					$("<li/>",{class: "search-content_list", onclick: "location.href='/swan_stream/searchContent?domain="+title+"&tag="+items+"'"})
 						.append($("<article/>")
 							.append($("<a/>",{class: "search-content_list_link"})
 								.append($("<div/>",{class: "search-link-box"})
