@@ -137,7 +137,6 @@
 }
 .search-content-list {
     display: inline-block;
-    position: relative;
     vertical-align: top;
     padding: 0px 6px;
     cursor: pointer;
@@ -162,11 +161,6 @@
     height: 100%;
     object-fit: cover;
 }
-@media screen and (max-width: 47em){
-	.search-content-lists {
-	    margin: 0px -2px;
-	}
-}
 @media screen and (min-width: 56em){
 	.search-content-list {
 	    width: 25%;
@@ -182,10 +176,14 @@
 	    width: 16.6667%;
 	}	
 }
-
+@media screen and (max-width: 47em){
+	.search-content-lists {
+	    margin: 0px -2px;
+	}
+}
 
 .search-none {
-    display: flex;
+    display: none;
     flex-direction: column;
     -webkit-box-align: center;
     align-items: center;
