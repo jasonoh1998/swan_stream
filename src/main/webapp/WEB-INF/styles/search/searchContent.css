@@ -135,6 +135,7 @@
     white-space: nowrap;
     margin: 0px -6px;
 }
+
 .search-content-list {
     display: inline-block;
     vertical-align: top;
@@ -161,6 +162,7 @@
     height: 100%;
     object-fit: cover;
 }
+
 @media screen and (min-width: 56em){
 	.search-content-list {
 	    width: 25%;

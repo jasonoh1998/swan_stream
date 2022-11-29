@@ -62,6 +62,7 @@
     </section>
     <div class="search-content-display-margin">
     	<section class="search-content-input">
+
     	</section>
     </div>
 	<section class="search-none">
@@ -73,7 +74,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
 let timeout = null;
-let one_content = [];
+let search_content = [];
 $(window).resize(function n(){
 	clearTimeout(timeout);
 	// 71em 1136px > 6 items
@@ -81,99 +82,17 @@ $(window).resize(function n(){
 	// 56em 896px > 4 items
 	// rest > 3 items
 	timeout = setTimeout(function(){
-		let contents;
-		let one_content_length = one_content.length;
 		if($(window).width() > 1136){
-			$(".search-content-input").empty();
-			for(let row = 0; row < Math.ceil(one_content.length/6); row++){
-				contents = "";
-				for(let i = row*6; i < (row*6+6); i++){
-					if(one_content_length <= 0){
-						contents += "";
-					} else {
-						contents += one_content[i];
-					}
-					one_content_length-=1;
-				}
-				$(".search-content-input").append(
-					`<div class="search-content-line">
-						<div class="search-content-line-box">
-							<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-							+contents+
-					`		</ul>
-						</div>
-					</div>`
-				);
-			}
+			search_content_create(6);
 		}
 		else if($(window).width() > 996){
-			$(".search-content-input").empty();
-			for(let row = 0; row < Math.ceil(one_content.length/5); row++){
-				contents = "";
-				for(let i = row*5; i < (row*5+5); i++){
-					if(one_content_length <= 0){
-						contents += ""
-					} else {
-						contents += one_content[i];
-					}
-					one_content_length-=1;
-				}
-				$(".search-content-input").append(
-					`<div class="search-content-line">
-						<div class="search-content-line-box">
-							<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-							+contents+
-					`		</ul>
-						</div>
-					</div>`
-				);
-			}
+			search_content_create(5);
 		}
 		else if($(window).width() > 896) {
-			$(".search-content-input").empty();
-			for(let row = 0; row < Math.ceil(one_content.length/4); row++){
-				contents = "";
-				for(let i = row*4; i < (row*4+4); i++){
-					if(one_content_length <= 0){
-						contents += ""
-					} else {
-						contents += one_content[i];
-					}
-					one_content_length-=1;
-				}
-				$(".search-content-input").append(
-					`<div class="search-content-line">
-						<div class="search-content-line-box">
-							<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-							+contents+
-					`		</ul>
-						</div>
-					</div>`
-				);
-			}
+			search_content_create(4);
 		}
 		else {
-			$(".search-content-input").empty();
-			for(let row = 0; row < Math.ceil(one_content.length/3); row++){
-				contents = "";
-				for(let i = row*3; i < (row*3+3); i++){
-					if(one_content_length <= 0){
-						contents += ""
-					} else {
-						contents += one_content[i];
-					}
-					one_content_length-=1;
-				}
-				$(".search-content-input").append(
-					`<div class="search-content-line">
-						<div class="search-content-line-box">
-							<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-							+contents+
-					`		</ul>
-						</div>
-					</div>`
-				);
-			}
+			search_content_create(3);
 		}
 	}, 2000)
 });
@@ -197,103 +116,47 @@ $(function(){
 		$(".search-content-display-margin").show();
 		content_db();
 		setTimeout(function(){
-			let contents;
-			let one_content_length = one_content.length;
 			if($(window).width() > 1136){
-				$(".search-content-input").empty();
-				for(let row = 0; row < Math.ceil(one_content.length/6); row++){
-					contents = "";
-					for(let i = row*6; i < (row*6+6); i++){
-						if(one_content_length <= 0){
-							contents += ""
-						} else {
-							contents += one_content[i];
-						}
-						one_content_length-=1;
-					}
-					$(".search-content-input").append(
-						`<div class="search-content-line">
-							<div class="search-content-line-box">
-								<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-								+contents+
-						`		</ul>
-							</div>
-						</div>`
-					);
-				}
+				search_content_create(6);
 			}
 			else if($(window).width() > 996){
-				$(".search-content-input").empty();
-				for(let row = 0; row < Math.ceil(one_content.length/5); row++){
-					contents = "";
-					for(let i = row*5; i < (row*5+5); i++){
-						if(one_content_length <= 0){
-							contents += ""
-						} else {
-							contents += one_content[i];
-						}
-						one_content_length-=1;
-					}
-					$(".search-content-input").append(
-						`<div class="search-content-line">
-							<div class="search-content-line-box">
-								<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-								+contents+
-						`		</ul>
-							</div>
-						</div>`
-					);
-				}
+				search_content_create(5);
 			}
 			else if($(window).width() > 896) {
-				$(".search-content-input").empty();
-				for(let row = 0; row < Math.ceil(one_content.length/4); row++){
-					contents = "";
-					for(let i = row*4; i < (row*4+4); i++){
-						if(one_content_length <= 0){
-							contents += ""
-						} else {
-							contents += one_content[i];
-						}
-						one_content_length-=1;
-					}
-					$(".search-content-input").append(
-						`<div class="search-content-line">
-							<div class="search-content-line-box">
-								<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-								+contents+
-						`		</ul>
-							</div>
-						</div>`
-					);
-				}
+				search_content_create(4);
 			}
 			else {
-				$(".search-content-input").empty();
-				for(let row = 0; row < Math.ceil(one_content.length/3); row++){
-					contents = "";
-					for(let i = row*3; i < (row*3+3); i++){
-						if(one_content_length <= 0){
-							contents += ""
-						} else {
-							contents += one_content[i];
-						}
-						one_content_length-=1;
-					}
-					$(".search-content-input").append(
-						`<div class="search-content-line">
-							<div class="search-content-line-box">
-								<ul class="search-content-lists" style="transform: translate3d(0%, 0px, 0px);">`
-								+contents+
-						`		</ul>
-							</div>
-						</div>`
-					);
-				}
-			}		
+				search_content_create(3);
+			}
 		},1000)
 	}
 });
+function search_content_create(r){
+	$(".search-content-input").empty();
+	
+	//search_content > index, movie_title, movie_id
+	let search_content_length = search_content.length;
+	
+	for(let row = 0; row < Math.ceil(search_content.length/r); row++){
+		$('<div/>',{class: "search-content-line"})
+			.append($("<div/>",{class: "search-content-line-box"})
+				.append($("<ul/>",{id:"row"+row, class: "search-content-lists", style: "transform: translate3d(0%, 0px, 0px);"}))
+		).appendTo($(".search-content-input"));
+		for(let i = row*r; i < (row*r+r); i++){
+			if(search_content[i] != null){
+				$('<li/>',{class: "search-content-list"})
+					.append($("<article/>")
+						.append($("<a/>",{class: "search-content-link", href:"contents?title='"+search_content[i][1]+"'"})
+							.append($("<div/>",{class: "search-link-img-wrapper"})
+								.append($("<img/>",{class: "search-link-img", src:"/swan_stream/images/banner_images/"+search_content[i][2]+".jpg"}))
+						)
+					)
+				).appendTo($(".search-content-lists:eq("+row+")"));
+			}
+		}
+	}
+}
+
 let total_tag_pressed = 0;
 setTimeout(function(){
 	if($(".search-content-tag-lists > li > button").hasClass("search-tag-button-selected"))
@@ -339,6 +202,11 @@ $(".search-content-type-lists > li").click(function() {
 	content_db(); // access database using tag
 	window.dispatchEvent(new Event('resize'));
 });
+
+$(".search-content-list").on("mouseover", function(){
+	console.log("hello")
+})
+
 function content_db() {
 	let tagArray = [];
 	$(".search-content-tag-lists > li").each(function(){
@@ -354,49 +222,19 @@ function content_db() {
 		url: "/swan_stream/search/getSearchMovieData",
 		data: tagParams, // put array of tag selected
 		success: function(data){
-			one_content = []
+			search_content = []
 			$.each(data, function(index, items){
 				if ($(".search-content-type-selected").text() == "전체"){
-					one_content.push(
-						`<li class="search-content-list">
-							<article>
-								<a class="search-content-link" href="#contents/${title}">
-									<div class="search-link-img-wrapper">
-										<img src="/swan_stream/images/banner_images/\${items.movie_id}.jpg" class="search-link-img" />
-									</div>
-								</a>
-							</article>
-						</li>`
-					)
+					search_content.push([index, items.movie_title, items.movie_id]);
 				}
 				else if($(".search-content-type-selected").text() == "영화"){
 					if(items.content_type == "영화"){
-						one_content.push(
-							`<li class="search-content-list">
-								<article>
-									<a class="search-content-link" href="#contents/${title}">
-										<div class="search-link-img-wrapper">
-											<img src="/swan_stream/images/banner_images/\${items.movie_id}.jpg" class="search-link-img" />
-										</div>
-									</a>
-								</article>
-							</li>`
-						)
+						search_content.push([index, items.movie_title, items.movie_id]);
 					}
 				}
 				else if($(".search-content-type-selected").text() == "TV 프로그램"){
 					if(items.content_type == "TV 프로그램"){
-						one_content.push(
-							`<li class="search-content-list">
-								<article>
-									<a class="search-content-link" href="#contents/${title}">
-										<div class="search-link-img-wrapper">
-											<img src="/swan_stream/images/banner_images/\${items.movie_id}.jpg" class="search-link-img" />
-										</div>
-									</a>
-								</article>
-							</li>`
-						)
+						search_content.push([index, items.movie_title, items.movie_id]);
 					}
 				}
 				//console.log(items.movie_id)
