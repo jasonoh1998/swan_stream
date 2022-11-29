@@ -23,8 +23,10 @@
 	
 	<!-- email로 card 번호 가져오기 -->
 	<select id="cardShow" parameterType="String" resultType="payment">
-		select * from user_card where email='${email}' and user_id=1
+		select rownum, card_number from
+		(select * from user_card order by logtime desc) 
+		where rownum = 1 and email ='${email}'	
 	</select>
-	
-	
+
 </mapper>
+

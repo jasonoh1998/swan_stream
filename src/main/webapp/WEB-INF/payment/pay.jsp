@@ -892,7 +892,7 @@
                                 </li>
                             </div>
                             <p class="css-1pe9h62">월 12,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                            <button disabled type="submit" class="css-1h9ez8n"
+                            <button type="button" class="css-1h9ez8n"
                                 style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">결제
                                 수단 등록</button>
                         </form>
@@ -1173,7 +1173,7 @@
                                 </li>
                             </div>
                             <p class="css-1pe9h62">월 12,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                            <button disabled type="submit" class="css-1h9ez8n"
+                            <button type="button" class="css-1h9ez8n modal-outbtn"
                                 style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">
                                 결제 수단 등록</button>
                         </form>
@@ -1385,7 +1385,7 @@
                                 <p class="css-1pe9h62">
                                     무료 이용 기간이 종료된 후 월 7,900원(VAT 포함)이 자동으로 결제됩니다.
                                 </p>
-                                <button disabled type="submit" class="css-1h9ez8n"
+                                <button type="button" class="css-1h9ez8n basic01-naver-outbtn" 
                                     style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">
                                     결제 수단 등록
                                 </button>
@@ -1813,7 +1813,7 @@
                                     </li>
                                 </div>
                                 <p class="css-1pe9h62">무료 이용 기간이 종료된 후 월 7,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                                <button disabled type="submit" class="css-1h9ez8n"
+                                <button type="button" class="css-1h9ez8n basic01-phone-outbtn"
                                     style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">
                                     결제 수단 등록</button>
                             </form>
@@ -2779,7 +2779,7 @@
                                     </li>
                                 </div>
                                 <p class="css-1pe9h62">무료 이용 기간이 종료된 후 3개월마다 20,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                                <button disabled type="submit" class="css-1h9ez8n"
+                                <button type="button" class="css-1h9ez8n basic03-naver-outbtn"
                                     style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">
                                     결제 수단 등록</button>
                             </form>
@@ -3207,7 +3207,7 @@
                                     </li>
                                 </div>
                                 <p class="css-1pe9h62">무료 이용 기간이 종료된 후 6개월마다 39,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                                <button disabled type="submit" class="css-1h9ez8n"
+                                <button type="button" class="css-1h9ez8n basic06-naver-outbtn"
                                     style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">
                                     결제 수단 등록</button>
                             </form>
@@ -3635,7 +3635,7 @@
                                     </li>
                                 </div>
                                 <p class="css-1pe9h62">무료 이용 기간이 종료된 후 12개월마다 73,900원(VAT 포함)이 자동으로 결제됩니다.</p>
-                                <button disabled type="submit" class="css-1h9ez8n"
+                                <button type="button" class="css-1h9ez8n basic12-naver-outbtn"
                                     style="width: 318px; padding: 15px 0px; font-weight: 700; font-size: 16px; line-height: 22px; margin: 0px auto;">
                                     결제 수단 등록</button>
                             </form>

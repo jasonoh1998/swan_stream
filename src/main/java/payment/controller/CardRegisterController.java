@@ -39,6 +39,7 @@ public class CardRegisterController {
 	
 		model.addAttribute("card", card); // 이거랑 위에 애너테이션이랑 같으면 세션에 저장된다는데 왜 안됌?
 		session.setAttribute("card", card);
+		// System.out.println("Controller에서 찍는 카드번호 " + card);
 		
 		return card;
 	}

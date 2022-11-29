@@ -39,14 +39,14 @@ public class PaymentController {
 			conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 			conn.setDoOutput(true);
 			
-			/*
+			
 			String param = "cid=TC0ONETIME&partner_order_id=partner_order_id&partner_user_id=partner_user_id&item_name=engitem&quantity=1&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8080/swan_stream/success&"
 					+ "fail_url=http://localhost:8080/swan_stream/fail&cancel_url=http://localhost:8080/swan_stream/fail";
-			*/
 			
+			/*
 			String param = "cid=TC0ONETIME&partner_order_id=partner_order_id&partner_user_id=partner_user_id&item_name=engitem&quantity=1&total_amount=2200&vat_amount=200&tax_free_amount=0&approval_url=http://localhost:8080/swan_stream/home&"
 					+ "fail_url=http://localhost:8080/swan_stream/home&cancel_url=http://localhost:8080/swan_stream/home";			
-			
+			*/
 			// 주는애
 			OutputStream outputStream = conn.getOutputStream();
 			DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
