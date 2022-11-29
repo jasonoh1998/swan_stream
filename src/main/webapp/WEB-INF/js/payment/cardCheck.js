@@ -14,12 +14,20 @@ $(".precard-btn").attr("disabled", true); // 버튼을 먼저 고장내고 시�
 // 카드번호 class="css-7lsjjs" id="cardNumber"
 $('.pre-cardInput').on("keyup", function(){
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
-	$(this).val($(this).val()
-		.replace(/[^0-9]/g, "")
-        .replace(/^(\d{4})(\d+)/g, `$1 $2`)
-        .replace(/^(\d{4}) (\d{4})(\d+)/g, `$1 $2 $3`)
-        .replace(/^(\d{4}) (\d{4}) (\d{4})(\d+)/g, `$1 $2 $3 $4`)
-    );
+	let str = $(this).val();
+    if (str.length == 4 || str.length == 9 || str.length == 14) {
+        if (e.keyCode == 8) {
+            $(this).val($(this).val().substring(0, str.length));
+        } else {
+            $(this).val($(this).val() + " ");
+        }
+    } else {
+        $(this).val($(this).val()
+            .replace(/[^0-9]/g, "")
+            .replace(/^(\d{4})(\d+)/g, `$1 $2`)
+            .replace(/^(\d{4}) (\d{4})(\d+)/g, `$1 $2 $3`)
+            .replace(/^(\d{4}) (\d{4}) (\d{4})(\d+)/g, `$1 $2 $3 $4`))
+    }
     
 	let re = /^[0-9]{4}[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{4}$/.test($(this).val());
 		
