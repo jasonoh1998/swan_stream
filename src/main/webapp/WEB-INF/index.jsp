@@ -36,6 +36,7 @@
 	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/payment/cardShow.js" defer></script>
     <script type="text/javascript" src="/swan_stream/js/video/videoHome.js" defer></script>
      <script type="text/javascript" src="/swan_stream/js/webtoon/webtoonHome.js" defer></script>
     
@@ -63,6 +64,7 @@
 			<jsp:include page="./navigation/topNav.jsp" />
 			
 			<!-- pay area -->
+			
 			<jsp:include page="./payment/pay.jsp" />
 			
             <!-- main content area -->

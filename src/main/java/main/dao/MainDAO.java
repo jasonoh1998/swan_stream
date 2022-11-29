@@ -12,5 +12,4 @@ public interface MainDAO {
 
 	public MainDTO getUserKakao(String email);
 
-
 }

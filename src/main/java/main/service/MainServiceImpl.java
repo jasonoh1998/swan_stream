@@ -25,6 +25,7 @@ public class MainServiceImpl implements MainService {
 		map.put("email", email);
 		map.put("password", password);
 		MainDTO mainDTO = mainDAO.getUser(map);
+		System.out.println(mainDTO);
 		if(mainDTO == null) return "non_exist";
 		else return "exist";
 	}

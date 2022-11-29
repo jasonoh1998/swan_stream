@@ -31,7 +31,6 @@ $('.pre-cardInput').on("keyup", function(){
 	button_show(card_valid, contract_valid, birth_valid);
 });
 
-
 // 카드 유효기간 4자리  class="css-7lsjjs" id="cardExpiry"
 $('.pre-contractInput').on("keyup", function(){
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
@@ -88,32 +87,27 @@ $(".precard-btn").click(function() {
 	$("#cardBirth").css("opacity","0.3");
 	// 클릭시 box들 밝기 줄여주고 
 	
-	alert($("#pre-form").serialize());  
+	alert($("#pre-form").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
+	// db갔다가 오는과정에서 실패함 
+	
 	setTimeout(function() {
 		$.ajax({
 			type: "post",
-			url: "/swan_stream/pay", // 요청 어디로갈지 수정 
-			data: $("#pre-form").serialize(),  // form 이름만 바꿔주자 
+			url: "/swan_stream/cardRegister", // 요청 어디로갈지 수정 
+			data: $("#pre-form").serialize(),  // form 이름만 바꿔주자
 			
 			// user_id가 필요한데 일단은 먼저 내거만 넣어보자 
 			success: function(data){
-				
+				console.log("email 넣기 성공");
 				$("#cardNumber").css("opacity","1");   
 				$("#cardExpiry").css("opacity","1");
 				$("#cardBirth").css("opacity","1");
-				
-				/*
-				if(data == 'exist'){
-					location.href="/swan_stream/home";
-					$(".error-message").hide();
-				} else if(data=='non_exist'){
-					$(".error-message").show();
-				}
-				*/
-				
+				location.href="/swan_stream/home"	
+			//	location.href="/swan_stream/login" 
 			},
 			error: function(error) {
-				//console.log(error);
+				alert("카드등록실패");
+				console.log(error);
 			}
 		})
     }, 1500);

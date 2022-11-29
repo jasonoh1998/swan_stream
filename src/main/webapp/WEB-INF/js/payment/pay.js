@@ -23,6 +23,8 @@ const modal22 = document.querySelector('.modal22');
 const modal23 = document.querySelector('.modal23');
 const pay_info = document.querySelector('.pay-info');
 const basic = document.querySelector('.basic');
+const precard_display = document.querySelector('.precard-display');
+
 
 const modal_body = document.querySelector('.modal_body');
 
@@ -37,6 +39,7 @@ const x_btn5 = document.querySelector('.x-btn5');
 const cl_btn = document.querySelector('.cl-btn');
 
 const back_btn = document.querySelector('.back-btn');
+const back_btn2 = document.querySelector('.back-btn2');
 const back_btn4 = document.querySelector('.back-btn4');
 const back_btn6 = document.querySelector('.back-btn6');
 const back_btn7 = document.querySelector('.back-btn7');
@@ -117,7 +120,7 @@ modal.addEventListener('click', (event) => {
         }
     }
     if(!modal.classList.contains('show')) {
-        body.style.overflow = 'auto';
+        //  body.style.overflow = 'auto';
     }
 });
 
@@ -144,7 +147,7 @@ modal2.addEventListener('click', (event) => {
         modal2.classList.toggle('show2');
     }
         if(!modal2.classList.contains('show2')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 
@@ -175,6 +178,47 @@ $(document).on("click", ".pre-btn2", function(){
 });
 
 
+// precard_display
+// precard-display-body 아무데나 누르면 나가짐 // 확인완료  
+precard_display.addEventListener('click', (event) => {
+    if(event.target == precard_display) { 
+        precard_display.classList.toggle('show');
+    }
+});
+
+// precard_display -> modal6 으로 프리미엄 결제화면 -> 네이버페이로
+$(document).on("click", ".pre-btn1", function(){
+    if (precard_display.classList.contains('show')) {
+        precard_display.classList.toggle('show');
+        modal6.classList.toggle('show6');
+    }
+});
+
+// precard_display -> modal7 으로 프리미엄 결제화면 -> 카카오페이로
+$(document).on("click", ".pre-btn3", function(){
+    if (precard_display.classList.contains('show')) {
+        precard_display.classList.toggle('show');
+        modal7.classList.toggle('show7');
+    }
+});
+
+// precard_display -> 모델8 로 이동
+// pre 카드 결제 에서 휴대폰 결제 로 이동
+$(document).on("click", ".pre-btn2", function(){
+    if (precard_display.classList.contains('show')) {
+        precard_display.classList.toggle('show');
+        modal8.classList.toggle('show8');
+    }
+});
+
+// 프리미엄 결제화면에서 back-btn 뒤로가기 버튼
+back_btn2.addEventListener('click', () => { 
+    if (precard_display.classList.contains('show')) {
+        precard_display.classList.toggle('show');
+        modal.classList.toggle('show');
+    }
+});
+
 // 모델3 -> 모델1으로 이동
 $(document).on("click", ".css-1w1rfj82", function(){
     if (basic.classList.contains('show')) {
@@ -195,7 +239,7 @@ basic.addEventListener('click', (event) => {
         }
     }
     if(!modal.classList.contains('show')) {
-        body.style.overflow = 'auto';
+        // body.style.overflow = 'auto';
     }
 });
 
@@ -216,7 +260,7 @@ modal4.addEventListener('click', (event) => {
         modal4.classList.toggle('show4');
     }
         if(!modal4.classList.contains('show4')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 // 베이직 결제화면 modal4 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -307,7 +351,7 @@ modal5.addEventListener('click', (event) => {
         modal5.classList.toggle('show5');
     }
         if(!modal5.classList.contains('show5')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 
@@ -382,7 +426,7 @@ modal7.addEventListener('click', (event) => {
         }
     }
     if(!modal7.classList.contains('show7')) {
-        body.style.overflow = 'auto';
+    //    body.style.overflow = 'auto';
     }
 });
         
@@ -429,7 +473,7 @@ modal8.addEventListener('click', (event) => {
         modal8.classList.toggle('show8');
     }
         if(!modal8.classList.contains('show8')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
         
@@ -475,7 +519,7 @@ modal9.addEventListener('click', (event) => {
         modal9.classList.toggle('show9');
     }
         if(!modal9.classList.contains('show9')) {
-            body.style.overflow = 'auto';
+    //        body.style.overflow = 'auto';
         }
 });
 // 베이직 결제화면 modal9 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -626,7 +670,7 @@ modal11.addEventListener('click', (event) => {
         modal11.classList.toggle('show11');
     }
         if(!modal11.classList.contains('show11')) {
-            body.style.overflow = 'auto';
+       //     body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal11 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -730,7 +774,7 @@ modal12.addEventListener('click', (event) => {
         modal12.classList.toggle('show12');
     }
         if(!modal12.classList.contains('show12')) {
-            body.style.overflow = 'auto';
+         //   body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal12 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -786,7 +830,7 @@ modal13.addEventListener('click', (event) => {
         modal13.classList.toggle('show13');
     }
         if(!modal13.classList.contains('show13')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal13 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -845,7 +889,7 @@ modal14.addEventListener('click', (event) => {
         modal14.classList.toggle('show14');
     }
         if(!modal14.classList.contains('show14')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal13 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -864,7 +908,7 @@ modal15.addEventListener('click', (event) => {
         modal15.classList.toggle('show15');
     }
         if(!modal15.classList.contains('show15')) {
-            body.style.overflow = 'auto';
+         //   body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal15 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -929,7 +973,7 @@ modal16.addEventListener('click', (event) => {
         }
     }
     if(!modal16.classList.contains('show16')) {
-        body.style.overflow = 'auto';
+     //   body.style.overflow = 'auto';
     }
 });
 
@@ -1036,7 +1080,7 @@ modal17.addEventListener('click', (event) => {
         modal17.classList.toggle('show17');
     }
         if(!modal17.classList.contains('show17')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal17 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -1098,7 +1142,7 @@ modal18.addEventListener('click', (event) => {
         }
     }
     if(!modal18.classList.contains('show18')) {
-        body.style.overflow = 'auto';
+     //   body.style.overflow = 'auto';
     }
 });
 
@@ -1166,7 +1210,7 @@ modal19.addEventListener('click', (event) => {
         modal19.classList.toggle('show19');
     }
         if(!modal19.classList.contains('show19')) {
-            body.style.overflow = 'auto';
+         //   body.style.overflow = 'auto';
         }
 });
 // 베이직 modal19 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -1233,7 +1277,7 @@ modal20.addEventListener('click', (event) => {
         }
     }
     if(!modal20.classList.contains('show20')) {
-        body.style.overflow = 'auto';
+    //    body.style.overflow = 'auto';
     }
 });
 
@@ -1262,7 +1306,7 @@ modal21.addEventListener('click', (event) => {
         modal21.classList.toggle('show21');
     }
         if(!modal21.classList.contains('show21')) {
-            body.style.overflow = 'auto';
+        //    body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal21 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -1375,7 +1419,7 @@ modal22.addEventListener('click', (event) => {
         modal22.classList.toggle('show22');
     }
         if(!modal22.classList.contains('show22')) {
-            body.style.overflow = 'auto';
+           // body.style.overflow = 'auto';
         }
 });
 // 베이직 휴대폰 결제화면 modal22 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
@@ -1442,7 +1486,7 @@ modal23.addEventListener('click', (event) => {
         modal23.classList.toggle('show23');
     }
         if(!modal23.classList.contains('show23')) {
-            body.style.overflow = 'auto';
+          //  body.style.overflow = 'auto';
         }
 });
 // 베이직 modal23 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동

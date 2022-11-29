@@ -2,28 +2,6 @@ body {
     background-color: #141517;
 }
 
-/*
-.login-email {
-    width: 100%;
-    padding: 10px 10px 10px 14px;
-    border-radius: 4px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-input.login-email[type="email"], input.login-password[type="password"] {
-    color: #333333;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    border: 1px solid #d4d4d4;
-    border-top-width: 1px;
-    border-bottom-width: 0;
-}
-name="cardInfo.cardNumber" class="css-nju2mk pre-card" id="pre-cardNumber"
-placeholder="•••• •••• •••• ••••" autofocus type="text
-*/
-
-
 @keyframes slidefade {
     0% {
         opacity: 0;
@@ -38,6 +16,41 @@ placeholder="•••• •••• •••• ••••" autofocus type
 .modal-main {
     display: inline-block;
 }
+
+.precard-display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    overflow: auto;
+}
+.precard-display.show {
+    display: block;
+}
+
+.precard-display-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    padding: 10px;
+
+    vertical-align: middle;
+    background-color: rgb(25, 26, 28);
+    border-radius: 4px;
+    border: 1px solid rgb(35, 36, 38);
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+    color: rgb(255, 255, 255);
+    text-align: left;
+    /* animation: slidefade 0.5s cubic-bezier(0, 0, 0.25, 0.25); */
+} 
+
 
 .basic { 
     position: fixed;
@@ -77,7 +90,7 @@ placeholder="•••• •••• •••• ••••" autofocus type
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 10px;
     text-align: center;
-    overflow: auto;
+    /* overflow: auto; */
     z-index: 1000; 
 }
 .modal2 {
@@ -89,37 +102,8 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1001;
-}
-.modal3 {
-    position: fixed;
-    inset: 0px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.4);
-    font-size: 10px;
-    text-align: center;
     overflow: auto;
-    z-index: 1002;
 }
-
-/*
-.modal3 {
-    position: fixed;
-    inset: 0px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.4);
-    font-size: 10px;
-    text-align: center;
-}
-*/
-
 
 /* modal4 베이직 결제 화면 */
 .modal4 {
@@ -131,9 +115,9 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1003;
-    
+    overflow: auto;
 }
-
+/*modal5 이곳  누르면 왓챠 지원 TV 목록*/
 .modal5 {
     position: fixed;
     /* position: relative; */
@@ -160,6 +144,7 @@ placeholder="•••• •••• •••• ••••" autofocus type
     animation: slidefade 0.35s ease-in-out;
 }
 
+/* 프리미엄 결제 네이버화면 */
 .modal6 {
     position: fixed;
     top: 0;
@@ -169,8 +154,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1005;
+    overflow: auto;
 }
 
+/* 프리미엄 결제화면 카카오페이*/
 .modal7 {
     position: fixed;
     top: 0;
@@ -180,8 +167,9 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1006;
+    overflow: auto;
 }
-
+/*프리미엄 결제화면 휴대폰 결제*/
 .modal8 {
     position: fixed;
     top: 0;
@@ -191,8 +179,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1007;
+    overflow: auto;
 }
 
+/*modal9 베이직 1개월 네이버 결제 화면*/
 .modal9 {
     position: fixed;
     top: 0;
@@ -202,8 +192,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1008;
+    overflow: auto;
 }
 
+/*modal10 베이직 1개월 카카오 결제 화면*/
 .modal10 {
     position: fixed;
     top: 0;
@@ -213,8 +205,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1009;
+    overflow: auto;
 }
 
+/* modal11 베이직 1개월 휴대폰 결제 화면 */
 .modal11 {
     position: fixed;
     top: 0;
@@ -224,8 +218,9 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1010;
+    overflow: auto;
 }
-
+/* modal12 베이직 결제 화면 3개월 카드결제  */
 .modal12 {
     position: fixed;
     top: 0;
@@ -235,8 +230,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1011;
+    overflow: auto;
 }
 
+/* modal13 베이직 결제 화면 6개월 카드결제 */
 .modal13 {
     position: fixed;
     top: 0;
@@ -246,8 +243,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1012;
+    overflow: auto;
 }
 
+/* modal14 베이직 결제 화면 12개월 카드결제 */
 .modal14 {
     position: fixed;
     top: 0;
@@ -257,8 +256,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1013;
+    overflow: auto;
 }
 
+/* modal15 베이직 결제 화면 3개월 네이버 */
 .modal15 {
     position: fixed;
     top: 0;
@@ -268,8 +269,9 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1014;
+    overflow: auto;
 }
-
+/* modal16 베이직 결제 화면 3개월 카카오 */
 .modal16 {
     position: fixed;
     top: 0;
@@ -279,8 +281,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1015;
+    overflow: auto;
 }
 
+/*  modal17 베이직 결제 화면 6개월 네이버 결제 */
 .modal17 {
     position: fixed;
     top: 0;
@@ -290,8 +294,9 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1016;
+    overflow: auto;
 }
-
+/* modal18 베이직 결제 화면 6개월 카카오 */
 .modal18 {
     position: fixed;
     top: 0;
@@ -301,8 +306,10 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1017;
+    overflow: auto;
 }
 
+/* modal19 베이직 결제 화면 12개월 네이버 결제 */
 .modal19 {
     position: fixed;
     top: 0;
@@ -312,8 +319,9 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1018;
+    overflow: auto;
 }
-
+/* modal20 베이직 결제 화면 12개월 카카오 결제*/
 .modal20 {
     position: fixed;
     top: 0;
@@ -323,6 +331,7 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1019;
+    overflow: auto;
 }
 
 .modal21 {
@@ -334,6 +343,7 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1020;
+    overflow: auto;
 }
 
 .modal22 {
@@ -345,6 +355,7 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1021;
+    overflow: auto;
 }
 
 .modal23 {
@@ -356,6 +367,7 @@ placeholder="•••• •••• •••• ••••" autofocus type
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1022;
+    overflow: auto;
 }
 /*
 .pay-info {
@@ -389,10 +401,6 @@ placeholder="•••• •••• •••• ••••" autofocus type
 }
 
 .modal2.show2 {
-    display: block;
-}
-
-.modal3.show3 {
     display: block;
 }
 
@@ -515,17 +523,8 @@ placeholder="•••• •••• •••• ••••" autofocus type
     transform: translateX(-50%) translateY(-50%);
     color: rgb(255, 255, 255);
     text-align: left;
-}
-
-.modal_body3 {
-    display: flex;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-    vertical-align: middle;
-    border: 1px solid rgb(35, 36, 38);
-    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-    padding: 10px;
-}
+    /* animation: slidefade 0.5s cubic-bezier(0, 0, 0.25, 0.25); */
+} 
 
 .modal_body4 {
     display: flex;
@@ -1357,7 +1356,7 @@ ul {
     inset: 0px;
     font-size: 10px;
     text-align: center;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .css-c77492 {
@@ -1470,14 +1469,6 @@ textarea {
 
 .css-z6cg4t:hover {
     background: rgba(255, 255, 255, 0.07);
-}
-
-.modal3::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-    margin-left: -0.25em;
 }
 
 /* 프리미엄 결제화면 */
@@ -1629,6 +1620,15 @@ input.css-7lsjjs[type="password"] {
 }
 
 .css-44dtsk {
+    color: rgb(218, 66, 65);
+    font-size: 11px;
+    letter-spacing: -0.37px;
+    line-height: 11px;
+    text-align: left;
+    height: 11px;
+    margin: 3px 0px 0px;
+}
+.precard-num {
     color: rgb(218, 66, 65);
     font-size: 11px;
     letter-spacing: -0.37px;
@@ -2154,3 +2154,34 @@ input.css-7lsjjs[type="password"] {
     text-align: center;
     width: 480px;
 }
+
+.css-1pngllu {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    line-height: 20px;
+    color: rgb(168, 168, 168);
+    margin-bottom: 5px;
+    margin-left: 28px;
+}
+
+.css-zql1e5 {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 18px;
+    color: rgb(186, 186, 193);
+    margin-top: 10px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+.css-e9fef0 {
+    color: rgb(248, 47, 98);
+    margin-left: 10px;
+}
+
+
+
+
+
