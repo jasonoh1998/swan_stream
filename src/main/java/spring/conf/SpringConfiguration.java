@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -44,6 +45,7 @@ public class SpringConfiguration {
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:spring/mybatis-config.xml"));
 		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:spring/mapper/**/*.xml"));
+		((ConfigurableApplicationContext) applicationContext).close();
 		return sqlSessionFactoryBean.getObject();
 	}
 	
