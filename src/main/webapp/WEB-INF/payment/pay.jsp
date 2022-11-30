@@ -4511,7 +4511,7 @@
                     잔여 기간 이용 가능합니다.
                 </p>
                 <div class="css-tqtwi4">
-                	<form action="post">
+                	<form>
                     	<button type="button" id="apibtn" class="css-1o9f1nz ">알겠어요</button>
                 	</form>
                 </div>
@@ -4668,7 +4668,8 @@
             </div>
         </div><!-- 프리미엄 카드 결제화면  카드번호 있을때-->
         
- 
+        
+
     </div><!-- model um-->
     
 </body>

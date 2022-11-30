@@ -12,22 +12,26 @@ let birth_valid = false; // 생년월일 6자리
 $(".precard-btn").attr("disabled", true); // 버튼을 먼저 고장내고 시작
 
 // 카드번호 class="css-7lsjjs" id="cardNumber"
-$('.pre-cardInput').on("keyup", function(){
+$('.pre-cardInput').on("keyup", function(e) {
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
+	$(this).val($(this).val().replace(/[^0-9]/g, ""))
 	let str = $(this).val();
-    if (str.length == 4 || str.length == 9 || str.length == 14) {
-        if (e.keyCode == 8) {
-            $(this).val($(this).val().substring(0, str.length));
+    if (str.length == 4 || str.length == 8 || str.length == 12) {
+		// 경우의수가 4 9 14일때 변화가 생김
+        if (e.keyCode == 8) { // 백스페이스의 키코드 
+            $(this).val($(this).val().substring(0, str.length - 1));
+            
+            // 눌렀을때 공백은 이미 지워지고 숫자 1개더지우는거니까 -1
         } else {
-            $(this).val($(this).val() + " ");
+        	
+            $(this).val($(this).val() + ' ');
+            // 이거는 숫자눌렀을때 공백추가
         }
-    } else {
-        $(this).val($(this).val()
-            .replace(/[^0-9]/g, "")
-            .replace(/^(\d{4})(\d+)/g, `$1 $2`)
-            .replace(/^(\d{4}) (\d{4})(\d+)/g, `$1 $2 $3`)
-            .replace(/^(\d{4}) (\d{4}) (\d{4})(\d+)/g, `$1 $2 $3 $4`))
     }
+    $(this).val($(this).val()
+        .replace(/^(\d{4})(\d+)/g, `$1 $2`)
+        .replace(/^(\d{4}) (\d{4})(\d+)/g, `$1 $2 $3`)
+        .replace(/^(\d{4}) (\d{4}) (\d{4})(\d+)/g, `$1 $2 $3 $4`));
     
 	let re = /^[0-9]{4}[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{4}$/.test($(this).val());
 		
@@ -49,15 +53,26 @@ $('.pre-cardInput').on("keyup", function(){
 
 
 // 카드 유효기간 4자리  class="css-7lsjjs" id="cardExpiry"
-$('.pre-contractInput').on("keyup", function(){
+$('.pre-contractInput').on("keyup", function(e) {
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
-	$(this).val($(this).val()
-		.replace(/[^0-9]/g, "")
-        .replace(/^(\d{2})(\d+)/g, `$1/$2`)
-    );
+	$(this).val($(this).val().replace(/[^0-9]/g, ""))
+	let str = $(this).val();
+    if (str.length == 2) {
+		// 경우의수가 2 일때 변화가 생김
+        if (e.keyCode == 8) { // 백스페이스의 키코드 
+            $(this).val($(this).val().substring(0, str.length - 1));
+            
+            // 눌렀을때 공백은 이미 지워지고 숫자 1개더지우는거니까 -1
+        } else {
+        	
+            $(this).val($(this).val() + '/');
+            // 이거는 숫자눌렀을때 공백추가
+        }
+    }
+    $(this).val($(this).val()
+        .replace(/^(\d{2})(\d+)/g, `$1/$2`));
 	
 	let re = /\d{2}\/\d{2}/.test($(this).val());
-	
 	
 	if ($(this).val().length == 0) { 
 		$('#pre-contractNumber').removeClass(); // 초기화 
