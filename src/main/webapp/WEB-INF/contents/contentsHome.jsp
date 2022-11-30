@@ -67,140 +67,24 @@
 				}
 			}
 			</style>
+
 			
-			<header id="top_navigation" class="css-ed6ye">
-				<style data-emotion-css="1k5w0z7">
-				.css-1k5w0z7 {
-					display: -webkit-box;
-					display: -webkit-flex;
-					display: -ms-flexbox;
-					display: flex;
-					position: relative;
-					-webkit-box-pack: justify;
-					-webkit-justify-content: space-between;
-					-ms-flex-pack: justify;
-					justify-content: space-between;
-					-webkit-align-items: center;
-					-webkit-box-align: center;
-					-ms-flex-align: center;
-					align-items: center;
-					width: 100%;
-					height: 56px;
-					padding: 12px 40px;
-					background: transparent;
-					-webkit-transition: background-color 300ms;
-					transition: background-color 300ms;
-				}
-				
-				@media ( max-width :600px) {
-					.css-1k5w0z7 {
-						padding: 12px 20px;
-					}
-				}
-				</style>
-				<nav class="css-1k5w0z7">
-		
-					<div class="css-79au95">
+<!-- header id="top_navigation"  -->
 
-						<div class="css-y31tiq"></div>
-						<style data-emotion-css="5bw3sj">
-.css-5bw3sj {
-	display: none;
-}
-
-@media ( max-width :600px) {
-	.css-5bw3sj {
-		display: block;
-	}
-}
-</style>
-						<div class="css-5bw3sj">
-							<a aria-label="홈" href="/m">
-								<style data-emotion-css="1ko9xco-Logo">
-.css-1ko9xco-Logo {
-	vertical-align: top;
-	width: 88px;
-	height: 26px;
-}
-</style>
-								<img alt="Watcha Logo"
-								src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTk2IiBoZWlnaHQ9IjU5IiB2aWV3Qm94PSIwIDAgMTk2IDU5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTc4LjI3MTMgMTIuOTE4NFYyMC43NzFIODYuMDk0NlY1Ni4xOTU2SDk1Ljg0MzJWMjAuNzcxSDEwMy4yMThWMTIuOTE4NEg3OC4yNzEzWk0xNTMuNDY0IDI5LjYzODlIMTQ2LjAwNFYxMi45NzYzSDEzNi4yODVWNTYuMjUzMkgxNDYuMDA0VjM3LjQ5MTJIMTUzLjQ2NFY1Ni4yNTMySDE2My4xODNWMTIuOTc2M0gxNTMuNDY0VjI5LjYzODlaTTExOS42MTMgMTIuNDUyN0gxMTcuOTJDMTA5LjE0MiAxMi40NTI3IDEwNS42MzEgMTYuOTMxNiAxMDUuNjMxIDI0LjIwM1Y0NC44NTIxQzEwNS42MzEgNTIuMTIzOSAxMDkuMTQyIDU2Ljc3NyAxMTguMTA4IDU2Ljc3N0gxMTkuODAxQzEyOC43MDQgNTYuNzc3IDEzMS44MzkgNTEuNDI1MiAxMzEuODM5IDQ1LjM3NjNWMzcuOTg5MUgxMjIuMzA5VjQ0Ljg1MjFDMTIyLjMwOSA0Ny40MTIzIDEyMS40MzEgNDguOTgyNiAxMTguOTIzIDQ4Ljk4MjZDMTE2LjQ3NyA0OC45ODI2IDExNS42NjMgNDcuNTI4NiAxMTUuNjYzIDQ0Ljc5NDZWMjQuMTQ0NkMxMTUuNjYzIDIxLjQxMDUgMTE2LjQ3NyAyMC4wMTUgMTE4LjkyMyAyMC4wMTVDMTIxLjQ5MyAyMC4wMTUgMTIyLjMwOSAyMS41MjY5IDEyMi4zMDkgMjQuMTQ0NlYyOS4xNDdIMTMxLjgzOVYyMy42MjFDMTMxLjgzOSAxNi40MDg3IDEyOC40NTMgMTIuNDUyNyAxMTkuNjEzIDEyLjQ1MjdaTTY4Ljc4MiA0MS40MjI0TDY1Ljk1NTggMjMuMzMxNkg2NC4yODQxTDYxLjQ1NzYgNDEuNDIyNEg2OC43ODJaTTcyLjMyNjIgMTIuOTE4NEw3OS45NzU5IDU2LjE5NTZINzEuMDkwMkw3MC4wMDkgNDkuMjc1M0g2MC4yMzA4TDU5LjE0OTMgNTYuMTk1Nkg1MC4yNjM2TDU3LjkxMzYgMTIuOTE4NEg3Mi4zMjYyWk0xODQuMzkxIDQxLjQyMjRMMTgxLjU2NCAyMy4zMzE2SDE3OS44OTNMMTc3LjA2NiA0MS40MjI0SDE4NC4zOTFaTTE4Ny45MzUgMTIuOTE4NEwxOTUuNTg1IDU2LjE5NTZIMTg2LjY5OUwxODUuNjE4IDQ5LjI3NTNIMTc1Ljg0TDE3NC43NTkgNTYuMTk1NkgxNjUuODczTDE3My41MjIgMTIuOTE4NEgxODcuOTM1WiIgZmlsbD0iI0ZGMDU1OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQyLjI1MDEgMC43NTc4MTJMMzkuMzUyMSA0Mi4yMDY3TDM4LjU3MzMgNDIuMjQ2NkwzMS42ODA3IDEyLjkyMjRIMjMuMTY0TDE4LjAwNzggNDMuMzA3MkwxNi45MDI3IDQzLjM2MzlMMTIuMjg2MiAxMi45MjI0SDAuNDE0MDYyTDExLjIxNTEgNTguMjM5N0wyMy4yODkxIDU3LjQ1NTdMMjcuMjE3MyAyOS4zMjY4TDI4LjM2OTQgMjkuMjY1M0wzMy42Mjk1IDU2Ljc3NjFMNDUuMTg1NSA1Ni4wMjA2TDU0LjM2MjUgMC43NTc4MTJINDIuMjUwMVoiIGZpbGw9IiNGRjA1NTgiLz4KPC9zdmc+Cg=="
-								class="css-1ko9xco-Logo" />
-							</a>
-						</div>
-					</div>
-					<style data-emotion-css="ov1ktg">
-.css-ov1ktg {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-</style>
-					<div class="css-ov1ktg">
-						<style data-emotion-css="cssveg">
-.css-cssveg {
-	position: relative;
-}
-</style>
-						<div class=" css-cssveg">
-							<div class="css-0">
-								<style data-emotion-css="s08p0c">
-.css-s08p0c {
-	width: 100%;
-	height: 100%;
-}
-</style>
-								<div class="css-s08p0c">
-									<style data-emotion-css="1tjvop5">
-.css-1tjvop5 {
-	vertical-align: top;
-}
-</style>
-									<button aria-label="accountAndSettings" type="button"
-										class="css-1tjvop5">
-										<style data-emotion-css="1uyohez">
-.css-1uyohez {
-	width: 32px;
-	height: 32px;
-	padding: 0;
-	border-radius: 100%;
-	margin: 0;
-	overflow: hidden;
-}
-</style>
-										<figure class="css-1uyohez">
-											<style data-emotion-css="o65cdz">
-.css-o65cdz {
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-</style>
-											<img alt=""
-												src="https://an2-img.amz.wtchn.net/image/v2/RBY1ZxGWzNq5tZwGXLiddQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16QXdlRE13TUNKZExDSndJam9pTDNZeUwzTjBiM0psTDNWelpYSXZaR1ZtWVhWc2RGOXdjbTltYVd4bFgybHRZV2RsTDNCeWIyWnBiR1ZmTURrdWNHNW5JbjAuRUd0TUFhbDZ3MVVwekdzbFc3ek1jTVRwTHROOEZHSm9ram1PTVlHTHdrUQ"
-												class="css-o65cdz" />
-										</figure>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</nav>
-			</header>
+			
 			<style data-emotion-css="1huum1b">
-.css-1huum1b {
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-	background: #000;
-}
-</style>
+			.css-1huum1b {
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+				background: #000;
+			}
+			</style>
 
 
 
 
-			<!-- contents main page -->
+<!-- contents main page -->
 
 
 			<main class="css-1huum1b">
@@ -315,89 +199,45 @@ body {
 
 
 					<style data-emotion-css="1tbf0i1-pageSideMargin">
-.css-1tbf0i1-pageSideMargin {
-	display: none;
-	padding-right: 40px;
-	padding-left: 40px;
-}
-
-@media ( max-width :600px) {
-	.css-1tbf0i1-pageSideMargin {
-		padding-right: 20px;
-		padding-left: 20px;
-	}
-}
-
-@media ( max-width :960px) {
-	.css-1tbf0i1-pageSideMargin {
-		display: block;
-		position: relative;
-		text-align: center;
-		max-width: 500px;
-		padding-top: 63px;
-		padding-bottom: 20px;
-		margin: 0 auto;
-	}
-}
-</style>
+					.css-1tbf0i1-pageSideMargin {
+						display: none;
+						padding-right: 40px;
+						padding-left: 40px;
+					}
+					
+					@media ( max-width :600px) {
+						.css-1tbf0i1-pageSideMargin {
+							padding-right: 20px;
+							padding-left: 20px;
+						}
+					}
+					
+					@media ( max-width :960px) {
+						.css-1tbf0i1-pageSideMargin {
+							display: block;
+							position: relative;
+							text-align: center;
+							max-width: 500px;
+							padding-top: 63px;
+							padding-bottom: 20px;
+							margin: 0 auto;
+						}
+					}
+					</style>
 					<header class="css-1tbf0i1-pageSideMargin">
-						<style data-emotion-css="kooiip">
-.css-kooiip {
-	position: relative;
-	z-index: 1;
-}
-</style>
+						
 						<div class="css-kooiip">
-							<style data-emotion-css="fam3cq-StyledImageContainer">
-.css-fam3cq-StyledImageContainer {
-	position: relative;
-	width: 130px;
-	height: 192px;
-	border-radius: 4px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-</style>
+							
 							<div type="portrait" class="css-fam3cq-StyledImageContainer">
-								<style data-emotion-css="x7kmij">
-.css-x7kmij {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-</style>
+								
 								<img alt="공조"
-									src="https://an2-img.amz.wtchn.net/image/v2/7w-pdJDHpfKLvi81snu3qA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk56STVlREV3T0RCeE9EQWlYU3dpY0NJNklpOTJNaTl6ZEc5eVpTOXBiV0ZuWlM4eE5qTXhNek16TXpreU1qVTBNRFEyTVRJeEluMC5tTVZBVjBGM2NWbElnRUZVUzJZUlBPQXlVRmlMOFU4cFF2NDRJWURqd09V"
-									title="공조" class="css-x7kmij" />
+								titl	src="https://an2-img.amz.wtchn.net/image/v2/7w-pdJDHpfKLvi81snu3qA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk56STVlREV3T0RCeE9EQWlYU3dpY0NJNklpOTJNaTl6ZEc5eVpTOXBiV0ZuWlM4eE5qTXhNek16TXpreU1qVTBNRFEyTVRJeEluMC5tTVZBVjBGM2NWbElnRUZVUzJZUlBPQXlVRmlMOFU4cFF2NDRJWURqd09V"
+									e="공조" class="css-x7kmij" />
 							</div>
-							<style data-emotion-css="66jbd0">
-.css-66jbd0 {
-	color: #fff;
-	font-size: 20px;
-	font-weight: 700;
-	-webkit-letter-spacing: 0px;
-	-moz-letter-spacing: 0px;
-	-ms-letter-spacing: 0px;
-	letter-spacing: 0px;
-	line-height: 26px;
-	margin: 12px 0 0;
-}
-</style>
+							
 							<h1 class="css-66jbd0">공조</h1>
 							<style data-emotion-css="1xhht53">
-.css-1xhht53 {
-	color: #babac1;
-	font-size: 15px;
-	font-weight: 400;
-	-webkit-letter-spacing: 0px;
-	-moz-letter-spacing: 0px;
-	-ms-letter-spacing: 0px;
-	letter-spacing: 0px;
-	line-height: 20px;
-	white-space: pre;
-	margin: 4px 0 0;
-}
+
 </style>
 							<p class="css-1xhht53">
 								<a class="css-1wnw4hn" href="/tag?domain=video&amp;ids=367">액션</a>
