@@ -4,9 +4,66 @@ $(function(){
 	webtoonAddBanner();
 
 	$("#webtoon-Contents").load("/swan_stream/webtoon/webtoon_contents/webtoon_contents01.html");
+
 	
+	$(document).on("mouseover",'.exclusiveToon_slideDiv',function(){
+			var idx=$(this).index();
+		//	if($('#exclusiveToon_slide02').attr('checked',true)) idx=idx+4;
+		
+			
+			
+			console.log('index = ' + idx);
+			$('#exclusiveWebtoonTitle'+idx).css({
+														'position':'absolute',
+														'left':'17%',
+														'top':'80%',
+														'transform':'scale(1.3)',
+														'z-index':'100',
+														'transform-origin':'50% 100%',
+														'font-size':'x-small'			
+														}).show();
+			
+			$('.exclusiveWebtoonGenre:eq('+idx+')').css({
+														'position':'absolute',
+														'left':'17%',
+														'top':'90%',
+														'transform':'scale(1.3)',
+														'z-index':'100',
+														'transform-origin':'50% 100%',
+														'font-size':'xx-small'		
+														}).show();
+			
+			
+			$('.layerSpan:eq('+idx+')').css({"position":"absolute", 
+										"height" : $('.layerSpan:eq('+idx+')').next().height(), 
+										"width":$('.layerSpan:eq('+idx+')').next().width(), 
+										"background": "linear-gradient(to bottom, transparent, black)", 
+										"opacity":"98%"
+										}).show();
+			
+	})
+	
+	$(document).on("mouseout",'.exclusiveToon_slideDiv',function(){
+			var idx=$(this).index();
+			
+			$('.exclusiveWebtoonTitle:eq('+idx+')').hide();
+			$('.layerSpan:eq('+idx+')').hide();	
+			$('.exclusiveWebtoonGenre:eq('+idx+')').hide();
+	})
 });
 
+
+
+/*
+$('.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv > a').hover(function(){
+		$(this).attr({
+				'transform':'scale(1.3)',
+				'z-index':'100',
+				'transform-origin':'50% 100%'
+		});
+		$(".exclusiveWebtoonTitle").show();
+	})
+*/	
 
 //화면 open시 화면 사이즈에 따라 로드될 배너 개수
 function webtoonAddBanner(){
@@ -326,30 +383,37 @@ $(window).resize(function(){
 
 //exclusive webtoon슬라이드 추가
 function addExclusiveToonSlide(){
-	
+	//style="position:absolute; height : 304.29px; width:171px; background: black; opacity:70%;"
 	$.ajax({
 		type:'post',
 		url :'/swan_stream/webtoon/getExclusive',
 		dataType:'json',
 		success:function(data){
 			//alert(JSON.stringify(data));
-			var image =[];
-			var imageSpan =[];
+			var image = [];
+			var imageSpan = [];
+			var genreSpan = [];
+			var layerSpan = [];
+			
 			$.each(data,function(index,items){
 				image.push($('<img>',{
 										'src':items.webtoonImage,
 										'alt':items.webtoonTitle
 						}))
 				
-				imageSpan.push($('<span>').css({
+				imageSpan.push($('<span>').attr('id','exclusiveWebtoonTitle'+index).text(items.webtoonTitle).addClass('exclusiveWebtoonTitle').css({
 											'position':'absolute',
-										    'left':'10%',
-    										'top':'70%',
-    										'font-size':'0.7em'
-											}).text(items.webtoonTitle)
-				
-				
+										    'font-size':'0.1em'
+											}).hide()
 				);
+				
+				genreSpan.push($('<span>').text(items.genre).addClass('exclusiveWebtoonGenre').css({
+											'position':'absolute',
+										    'font-size':'0.05em'
+											}).hide()
+				);
+						
+				layerSpan.push($('<span>').addClass('layerSpan'))		
 						
 				$(".exclusiveToon_slidelist").remove();
 	
@@ -371,14 +435,25 @@ function addExclusiveToonSlide(){
 						
 						
 						if((i+(k*4-3))<=10){
+						
 					
-						exclusiveToon_a.append(imageSpan[i+(k*4-4)]).append(image[i+(k*4-4)]);
+						
+						exclusiveToon_a.append(
+									imageSpan[i+(k*4-4)]
+									).append(
+									genreSpan[i+(k*4-4)]
+									).append(
+									layerSpan[i+(k*4-4)]
+									).append(
+									image[i+(k*4-4)]);
 						
 						
 						exclusiveToon_slideDiv.append(exclusiveToon_a);
 						exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
 						exclusiveToon_slideDiv.css("width","25%");
 						exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
+						
+						
 						}
 				}
 					
@@ -409,11 +484,20 @@ function addExclusiveToonSlide(){
 				for(i=0;i<5;i++){
 					var exclusiveToon_slideDiv = $('<div>');
 					var exclusiveToon_a = $('<a>');
-			
-					exclusiveToon_a.append(imageSpan[i+(k*5-5)]).append(image[i+(k*5-5)]);
+					
+				
+					exclusiveToon_a.append(imageSpan[i+(k*5-5)]
+									).append(
+									genreSpan[i+(k*5-5)]
+									).append(
+									layerSpan[i+(k*5-5)]
+									).append(
+									image[i+(k*5-5)]);
+									
 					exclusiveToon_slideDiv.append(exclusiveToon_a);
 					exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
 					exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
+					
 				}
 					
 				for(i=0;i<5;i++){
@@ -441,13 +525,24 @@ function addExclusiveToonSlide(){
 					var exclusiveToon_a = $('<a>');
 					
 					if((i+(k*7-6))<=10){
-					exclusiveToon_a.append(imageSpan[i+(k*7-7)]).append(image[i+(k*7-7)]);
+					
+					exclusiveToon_a.append(
+								imageSpan[i+(k*7-7)]
+								).append(
+								genreSpan[i+(k*7-7)]
+								).append(
+								layerSpan[i+(k*7-7)]
+								).append(
+								image[i+(k*7-7)]);
+								
+								
 					exclusiveToon_slideDiv.append(exclusiveToon_a);
 					exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
 					exclusiveToon_slideDiv.css("width","14%");
 					exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
 					}
 				}
+				
 					
 				for(i=0;i<7;i++){
 					exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
@@ -463,8 +558,10 @@ function addExclusiveToonSlide(){
 				theme.style.setProperty('--webtoonExclusive3p','-200%');
 				}
 						
-			})//$.each
+			})
 		
+			
+			
 		},
 		error:function(err){
 			console.log(err);
