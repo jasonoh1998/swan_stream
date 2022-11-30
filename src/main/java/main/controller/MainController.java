@@ -84,5 +84,31 @@ public class MainController {
 		return str;
 	}
 	
+	@GetMapping(value="/selectprofile")
+	public String profile(Model model) {
+		if(model.getAttribute("email")!=null) {
+			return "profile/selectProfile";		
+		} else {
+			return "404Error";
+		}
 	
+	}
+
+	@GetMapping(value="/watchingprofile")
+	public String watchingprofile(Model model) {
+		if(model.getAttribute("email")!=null) {
+			return "profile/watchingprofile";		
+		} else {
+			return "404Error";
+		}
+	}
+		
+		@GetMapping(value="/editprofile")
+		public String editprofile(Model model) {
+			if(model.getAttribute("email")!=null) {
+				return "profile/editProfile";		
+			} else {
+				return "404Error";
+			}
+		}
 }
