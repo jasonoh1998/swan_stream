@@ -6,4 +6,6 @@ import home.bean.HomeDTO;
 
 public interface HomeService {
 	public List<HomeDTO> getBanner();
+
+	public List<HomeDTO> getTopTen();
 }

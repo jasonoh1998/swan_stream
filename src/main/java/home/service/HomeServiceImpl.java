@@ -21,4 +21,11 @@ public class HomeServiceImpl implements HomeService {
 		return homeDAO.getBanner();
 	}
 
+
+	@Override
+	public List<HomeDTO> getTopTen() {
+		// TODO Auto-generated method stub
+		return homeDAO.getTopTen();
+	}
+
 }

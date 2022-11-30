@@ -22,4 +22,10 @@ public class HomeDAOMyBatis implements HomeDAO {
 		return sqlSession.selectList("videoSQL.getBanner");
 	}
 
+	@Override
+	public List<HomeDTO> getTopTen() {
+		System.out.println("바티스에 오냐?");
+		return sqlSession.selectList("videoSql.getTopTen");
+	}
+
 }
