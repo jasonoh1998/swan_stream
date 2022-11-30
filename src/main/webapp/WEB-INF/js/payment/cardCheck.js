@@ -20,7 +20,6 @@ $('.pre-cardInput').on("keyup", function(e) {
 		// 경우의수가 4 9 14일때 변화가 생김
         if (e.keyCode == 8) { // 백스페이스의 키코드 
             $(this).val($(this).val().substring(0, str.length - 1));
-            
             // 눌렀을때 공백은 이미 지워지고 숫자 1개더지우는거니까 -1
         } else {
         	
@@ -61,10 +60,8 @@ $('.pre-contractInput').on("keyup", function(e) {
 		// 경우의수가 2 일때 변화가 생김
         if (e.keyCode == 8) { // 백스페이스의 키코드 
             $(this).val($(this).val().substring(0, str.length - 1));
-            
             // 눌렀을때 공백은 이미 지워지고 숫자 1개더지우는거니까 -1
         } else {
-        	
             $(this).val($(this).val() + '/');
             // 이거는 숫자눌렀을때 공백추가
         }
