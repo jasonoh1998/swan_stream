@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import search.bean.SearchMovieDataDTO;
 import search.service.SearchService;
 
 @Component
@@ -69,5 +70,11 @@ public class SearchController {
 		} else {
 			return "404Error";
 		}
+	}
+	
+	@PostMapping(value="/search/getSearchMovieData")
+	@ResponseBody
+	public List<SearchMovieDataDTO> getSearchMovieData(@RequestParam("tagList[]") List<String> tagList) {
+		return searchService.getSearchMovieData(tagList);
 	}
 }
