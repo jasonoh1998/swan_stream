@@ -5,6 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	
+	<!-- style sheet -->
+	<link rel="stylesheet" href="/swan_stream/styles/payment/pay.css">
+    <link rel="stylesheet" href="/swan_stream/styles/payment/cardCheck.css">
+	
+	<!-- javascript -->
+	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/payment/cardShow.js" defer></script>
 </head>
 <body>
 	<div class="modal-um">
