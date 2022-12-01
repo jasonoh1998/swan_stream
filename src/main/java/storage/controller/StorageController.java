@@ -59,7 +59,7 @@ public class StorageController { // this is a videoController
 		return "storagecontent/storagecontentlist";
 	}
 	@PostMapping(value="getcontentlist")
-//	@ResponseBodyss
+//	@ResponseBody
 	public List<MainDTO> getcontentlist(){
 		return MainService.getcontentlist();
 	}
