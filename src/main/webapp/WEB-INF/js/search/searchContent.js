@@ -1,6 +1,6 @@
 let timeout = null;
 let search_content = []; // contains all contents to display
-$(window).resize(function n(){
+$(window).resize(function(){
 	// 71em 1136px > 6 items
 	// 62em 996px > 5 items
 	// 56em 896px > 4 items
