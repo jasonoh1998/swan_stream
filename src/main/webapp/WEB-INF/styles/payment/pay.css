@@ -1745,9 +1745,9 @@ input.css-7lsjjs[type="password"] {
     opacity: 0.5;
 }
 
-:not(svg) {
+/* :not(svg) {
     transform-origin: 0px 0px;
-}
+} */
 
 .css-sd55c3 {
     background: rgb(248, 47, 98);

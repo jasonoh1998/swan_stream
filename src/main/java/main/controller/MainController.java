@@ -78,9 +78,13 @@ public class MainController {
 	
 	@PostMapping(value="/getUserKakao")
 	@ResponseBody
-	public String getUserKakao(@RequestParam String email) {
+	public String getUserKakao(@RequestParam String email, Model model, HttpSession session) {
 		//System.out.println(email);
 		String str = mainService.getUserKakao(email);
+		if(str == "exist") {
+			model.addAttribute("userExist", str);
+			session.setAttribute("email", email);
+		}
 		return str;
 	}
 	

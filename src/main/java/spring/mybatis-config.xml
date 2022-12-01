@@ -6,6 +6,8 @@
 	<typeAliases>
 		<typeAlias type="main.bean.MainDTO" alias="main" />
 		<typeAlias type="payment.bean.PaymentDTO" alias="payment" />
+		<typeAlias type="search.bean.SearchMovieDataDTO" alias="search" />
+
 	</typeAliases>
 	
 <!-- 	<mappers>
