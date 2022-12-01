@@ -15,4 +15,5 @@ public class ContentsController { // this is a videoController
 		model.addAttribute("display", "./contents/contentsHome.jsp");
 		return "index";
 	}
+	
 }

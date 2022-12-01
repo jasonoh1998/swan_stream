@@ -93,6 +93,11 @@ function button_show(name_valid, email_valid, password_valid) {
 		$(".create-account-button").attr("disabled", true);			
 	}
 }
+$(document).on('keypress',function(e) {
+    if(e.which == 13 && $(".create-account-button").attr("disabled")==null) {
+        $(".create-account-button").click();
+    }
+});
 
 
 $(".create-account-button").click(function() {

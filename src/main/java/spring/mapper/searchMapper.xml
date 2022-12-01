@@ -7,4 +7,20 @@
 	<select id="getSearchTitle" parameterType="String" resultType="String">
 		select ${columnName} from search_title where ${columnName} is not null
 	</select>
+	
+		<!-- 장르 및 국가 타이틀 가지고 오기 -->
+	<select id="getSearchMovieData" parameterType="String" resultType="search">
+		SELECT 
+			movie_id,
+		    movie_title,
+		    movie_age_restriction,
+		    movie_release_date,
+		    movie_time,
+		    content_type
+		FROM movie_data
+		JOIN movie_tag using (movie_id)
+		JOIN tag using (tag_id)
+		${tagWhereStatement}
+		GROUP BY movie_id, movie_title, movie_age_restriction, movie_release_date, movie_time, content_type
+	</select>
 </mapper>
