@@ -24,7 +24,8 @@ const modal23 = document.querySelector('.modal23');
 const pay_info = document.querySelector('.pay-info');
 const basic = document.querySelector('.basic');
 const precard_display = document.querySelector('.precard-display');
-
+													
+const basiccard_display01 = document.querySelector('.basiccard-display01');
 
 const modal_body = document.querySelector('.modal_body');
 
@@ -33,7 +34,7 @@ const btnOpenPopup2 = document.querySelector('.btn-open-popup2');
 const btnOpenPopup3 = document.querySelector('.btn-open-popup3');
 
 const two_btn = document.querySelector('.two-btn');
-const two_btn2 = document.querySelector('.two-btn2');
+const basic_btn01 = document.querySelector('.basic-btn01');
 const x_btn = document.querySelector('.x-btn');
 const x_btn5 = document.querySelector('.x-btn5');
 const cl_btn = document.querySelector('.cl-btn');
@@ -138,6 +139,15 @@ two_btn.addEventListener('click', function() {
     modal.classList.toggle('show');
     modal2.classList.toggle('show2'); 
 });
+
+// 베이직 결제화면 modal2 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
+back_btn.addEventListener('click', () => { 
+    if (modal2.classList.contains('show2')) {
+        modal2.classList.toggle('show2');
+        modal.classList.toggle('show');
+    }
+});
+
 // modal2 body 아무데나 누르면 나가짐 // 확인완료  
 modal2.addEventListener('click', (event) => {
     // 클래스는 target이지만 
@@ -146,9 +156,6 @@ modal2.addEventListener('click', (event) => {
         // modal의 자손 개념이라 if문이 성립된다
         modal2.classList.toggle('show2');
     }
-        if(!modal2.classList.contains('show2')) {
-        //    body.style.overflow = 'auto';
-        }
 });
 
 // modal2 -> modal6 으로 프리미엄 결제화면 -> 네이버페이로
@@ -166,8 +173,6 @@ $(document).on("click", ".pre-btn3", function(){
         modal7.classList.toggle('show7');
     }
 });
-
-
 // 모델2 -> 모델8 로 이동
 // pre 카드 결제 에서 휴대폰 결제 로 이동
 $(document).on("click", ".pre-btn2", function(){
@@ -211,7 +216,7 @@ $(document).on("click", ".pre-btn2", function(){
     }
 });
 
-// 프리미엄 결제화면에서 back-btn 뒤로가기 버튼
+// precard_display 에서 back-btn 뒤로가기 버튼
 back_btn2.addEventListener('click', () => { 
     if (precard_display.classList.contains('show')) {
         precard_display.classList.toggle('show');
@@ -247,10 +252,11 @@ basic.addEventListener('click', (event) => {
 
 // 모델4
 // modal4 화면 (베이직 결제화면) 띄우기 // 확인완료 
-two_btn2.addEventListener('click', function() { 
+basic_btn01.addEventListener('click', function() { 
     basic.classList.toggle('show');
     modal4.classList.toggle('show4'); 
 });
+
 
 // modal body4 아무데나 누르면 나가지게 하자
 modal4.addEventListener('click', (event) => {
@@ -270,6 +276,7 @@ back_btn4.addEventListener('click', () => {
         modal.classList.toggle('show');
     }
 });
+
 // 모델4 -> 모델9 로 이동
 // ba 카드 결제에서 네이버결제 로 이동
 $(document).on("click", ".bago-btn1", function(){
@@ -320,6 +327,47 @@ $(document).on("click", ".ba-btn3", function(){
         modal14.classList.toggle('show14');
     }
 });
+
+// basiccard-display01
+// basiccard-display01-body 아무데나 누르면 나가짐 // 확인완료  
+basiccard_display01.addEventListener('click', (event) => {
+    if(event.target == basiccard_display01) { 
+        basiccard_display01.classList.toggle('show');
+    }
+});
+
+// basiccard_display01 에서 다시선택하기 버튼 만들기 
+$(document).on("click", ".basiccard-display01-backbtn", function(){
+    if (basiccard_display01.classList.contains('show')) {
+        basiccard_display01.classList.toggle('show');
+        basic.classList.toggle('show');
+    }
+});
+
+// basiccard_display01 -> modal9 basic 1개월 네이버페이로
+$(document).on("click", ".basic01-naver-btn", function(){
+    if (basiccard_display01.classList.contains('show')) {
+        basiccard_display01.classList.toggle('show');
+        modal9.classList.toggle('show9');
+    }
+});
+
+// basiccard_display01 -> modal10 basic 1개월 카카오페이로
+$(document).on("click", ".basic01-kakao-btn", function(){
+    if (basiccard_display01.classList.contains('show')) {
+        basiccard_display01.classList.toggle('show');
+        modal10.classList.toggle('show10');
+    }
+});
+
+// basiccard_display01 -> modal11 basic 1개월 휴대폰결제로
+$(document).on("click", ".basic01-phone-btn", function(){
+    if (basiccard_display01.classList.contains('show')) {
+        basiccard_display01.classList.toggle('show');
+        modal11.classList.toggle('show11');
+    }
+});
+
 
 // modal5 이곳 누르면 tv 목록 띄우기 
 go_btn1.addEventListener('click', () => { 

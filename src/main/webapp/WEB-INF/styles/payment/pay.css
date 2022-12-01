@@ -17,6 +17,40 @@ body {
     display: inline-block;
 }
 
+.basiccard-display01 { 
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1003;
+    overflow: auto;
+}
+
+.basiccard-display01.show {
+    display: block;
+}
+.basiccard-display01-body {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+
+    vertical-align: middle;
+    background-color: rgb(25, 26, 28);
+    border-radius: 4px;
+    border: 1px solid rgb(35, 36, 38);
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+    transform: translateX(-50%) translateY(-50%);
+    color: rgb(255, 255, 255);
+    text-align: left;
+} 
+
+
 .precard-display {
     position: fixed;
     top: 0;
@@ -31,7 +65,6 @@ body {
 .precard-display.show {
     display: block;
 }
-
 .precard-display-body {
     position: absolute;
     top: 50%;
@@ -2180,8 +2213,5 @@ input.css-7lsjjs[type="password"] {
     color: rgb(248, 47, 98);
     margin-left: 10px;
 }
-
-
-
 
 
