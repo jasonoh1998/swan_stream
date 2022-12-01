@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="/swan_stream/styles/search/searchContent.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
-<script defer src="/swan_stream/js/search/searchContent.js" defer></script>
+<script src="/swan_stream/js/search/searchContent.js" defer></script>
 </head>
 <body>
 <input id="tag-name" type="hidden" value="${tag }">
