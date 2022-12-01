@@ -7,4 +7,26 @@
 		select * from movie_banner
 	</select>
 
+	<select id="getTopTen" resultType="home">
+		        select * from(
+        select
+		movie_id as movieId,
+		movie_title as movieTitle,
+		movie_age_restriction as movieAgeRestriction,
+		movie_time as movieTime,
+		content_type as contentType,
+		genre, hit,
+		exclusive_movie as exclusiveMovie,
+		movie_image as movieImage,
+        rank() over(order by hit desc) as rank
+		from movie_data
+		left join(
+		select movie_id, listagg(genre_title,'|') within group (order by genre_id) as genre
+		from (select*from movie_genre
+		left join genre using (genre_id)) group by movie_id)
+		using(movie_id)
+		left join movie_data_extended 
+		using(movie_id)) where rank &gt;=10
+
+	</select>
 </mapper>
