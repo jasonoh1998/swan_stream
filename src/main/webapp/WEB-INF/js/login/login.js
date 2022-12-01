@@ -44,6 +44,11 @@ function button_show(email_valid, password_valid) {
 		$(".login-login-button-click").attr("disabled", true);			
 	}
 }
+$(document).on('keypress',function(e) {
+    if(e.which == 13 && $(".login-login-button-click").attr("disabled")==null) {
+        $(".login-login-button-click").click();
+    }
+});
 
 $(".login-login-button-click").click(function() {	
 	$("#email-box").css("opacity","0.3");

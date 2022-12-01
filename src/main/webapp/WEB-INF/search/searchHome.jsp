@@ -120,10 +120,76 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
+let listPosition = [0,0,0];
+let initialListLength = [0,0,0];
+let rowNum;
+let options = {
+    root: null,
+    rootMargin: "0px",
+	threshold: 1
+};
+let callback = (entries, observer) => {
+	entries.forEach((entry) => {
+		//console.log(entry.intersectionRatio)
+		if(entry.intersectionRatio==1){
+			$(".slide-right-slidernav:eq("+rowNum+")").hide();
+		}
+	});
+};
+let observer = new IntersectionObserver(callback, options);
+
+let timeout = null;
+$(window).resize(function(){
+	$(".slide-left-slidernav").hide();
+	listPosition = [0,0,0];
+	$(".search-content_lists").css("transform","translateX(0)");
+	clearTimeout(timeout);
+	timeout = setTimeout(function(){
+		for(let i = 0; i < 3; i++){
+			if($(".slide-right-slidernav:eq("+i+")").attr("style") == "display: none;"){
+				$(".slide-right-slidernav:eq("+i+")").toggle();
+				$(".slide-right-slidernav:eq("+i+")").removeAttr("style");
+			}
+		}
+	},300)
+});
+
 // loads lists of titles from database onload
 $(function(){
 	$(".slide-left-slidernav").hide();
+	search_grid_ajax();
+});
+
+$(".slide-left-slidernav").click(function(){
+	rowNum = $(".slide-left-slidernav").index(this);
+	listPosition[rowNum]+=100;
 	
+	if(listPosition[rowNum]==0)
+		$(".slide-left-slidernav:eq("+rowNum+")").hide();
+	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden"))
+		$(".slide-right-slidernav:eq("+rowNum+")").show();
+	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%");
+	$(".slide-left-slidernav").attr("disabled", true);
+	setTimeout(function(){
+		$(".slide-left-slidernav").attr("disabled", false);		
+	},700);
+});
+$(".slide-right-slidernav").on("click",function(){
+	rowNum = $(".slide-right-slidernav").index(this);
+	listPosition[rowNum]-=100;
+	
+	$(".slide-left-slidernav:eq("+rowNum+")").show();
+	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%)");
+	$(".search-content_lists:eq("+rowNum+")").css("transition","750ms ease 0s");
+	let target = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list:eq("+(initialListLength[rowNum]-1)+")").get(0);
+	$(".slide-right-slidernav").attr("disabled", true);
+	setTimeout(function(){
+		$(".slide-right-slidernav").attr("disabled", false);
+	},700);
+	observer.observe(target);
+});
+
+function search_grid_ajax(){
 	$(".search_title").each(function(outsideIndex){
 		let title = $(this)[0].innerText;
 		if(title === "비디오 장르") title = "video_genre";
@@ -155,63 +221,7 @@ $(function(){
 			}
 		});
 	});
-});
-
-let listPosition = [0,0,0];
-let initialListLength = [0,0,0];
-let rowNum;
-let options = {
-    root: null,
-    rootMargin: "0px",
-	threshold: 1
-};
-let callback = (entries, observer) => {
-	entries.forEach((entry) => {
-		//console.log(entry.intersectionRatio)
-		if(entry.intersectionRatio==1){
-			$(".slide-right-slidernav:eq("+rowNum+")").hide();
-		}
-	});
-};
-let observer = new IntersectionObserver(callback, options);
-
-$(window).on('resize', function(){
-	$(".slide-left-slidernav").hide();
-	$(".slide-right-slidernav").show();
-	setTimeout(function(){
-		listPosition = [0,0,0];
-		$(".search-content_lists").css("transform","translateX(0)");
-	},400)
-});
-
-$(".slide-left-slidernav").click(function(){
-	rowNum = $(".slide-left-slidernav").index(this);
-	listPosition[rowNum]+=100;
-	
-	if(listPosition[rowNum]==0)
-		$(".slide-left-slidernav:eq("+rowNum+")").hide();
-	if($(".slide-right-slidernav:eq("+rowNum+")").is(":hidden"))
-		$(".slide-right-slidernav:eq("+rowNum+")").show();
-	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%");
-	$(".slide-left-slidernav").attr("disabled", true);
-	setTimeout(function(){
-		$(".slide-left-slidernav").attr("disabled", false);		
-	},700);
-});
-$(".slide-right-slidernav").on("click",function(){
-	rowNum = $(".slide-right-slidernav").index(this);
-	listPosition[rowNum]-=100;
-	
-	$(".slide-left-slidernav:eq("+rowNum+")").show();
-	$(".search-content_lists:eq("+rowNum+")").css("transform","translateX("+listPosition[rowNum]+"%)");
-	$(".search-content_lists:eq("+rowNum+")").css("transition","750ms ease 0s");
-	let target = $(".search-content_lists:eq("+rowNum+")").find(".search-content_list:eq("+(initialListLength[rowNum]-1)+")").get(0);
-	observer.observe(target);
-	$(".slide-right-slidernav").attr("disabled", true);
-	setTimeout(function(){
-		$(".slide-right-slidernav").attr("disabled", false);
-	},700);
-});
+}
 </script>
 </body>
 </html>
