@@ -66,7 +66,7 @@
                             </a>                                        
                         </li>
                         <li class="setting">
-                            <a href="#/[https://watcha.com/zendesk/login]" target="_blank" rel="noopener noreferrer">
+                            <a href="/swan_stream/customerCenterHome" target=”_blank”>
                                 <div class="setting-box">고객센터</div> <!-- same link in footer -->
                             </a>                                        
                         </li>

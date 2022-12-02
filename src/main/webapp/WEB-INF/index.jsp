@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/swan_stream/styles/home_content.css">
     <link rel="stylesheet" href="/swan_stream/styles/styles.css">
     <link rel="stylesheet" href="/swan_stream/styles/contents/contents.css">
+    <link rel="stylesheet" href="/swan_stream/styles/customerCenter/customerCenterHome.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/pay.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/cardCheck.css">
     <link rel="stylesheet" href="/swan_stream/styles/video/videoHome.css" >
@@ -35,6 +36,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/contents/contents.js" defer></script>
+	<script type="text/javascript" src="/swan_stream/js/customerCenter/customerCenter.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
@@ -86,7 +88,7 @@
             			개인정보 처리 방침
             		</li>
             		<li class="footer-list">
-	       			   	<a href="#/[https://watcha.com/zendesk/login]" target="_blank" rel="noopener noreferrer">
+	       			   	<a>
 	                    	고객센터 <!-- same link in topNav -->
 	                    </a>
             		</li>
