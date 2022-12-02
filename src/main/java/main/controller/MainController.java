@@ -1,5 +1,8 @@
 package main.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,5 +117,43 @@ public class MainController {
 			} else {
 				return "404Error";
 			}
+		}
+		
+		@GetMapping(value="/setting")
+		public String setting(Model model) {
+			if(model.getAttribute("email")!=null) {
+				return "login/setting";		
+			} else {
+				return "404Error";
+			}
+		}
+		
+		@GetMapping(value="/changePassword")
+		//@ResponseBody
+		public String changePassword(Model model) {
+		//public String changePassword(@RequestParam String password, Model model, HttpSession session) {
+			//String str = mainService.changePassword(password);
+			if(model.getAttribute("email")!=null) {
+				return "login/changePassword";		
+			} else {
+				return "404Error";
+			}
+		}
+		
+		@PostMapping(value="/isExistPassword")
+		@ResponseBody
+		public String isExistPassword(@RequestParam String password) {
+			System.out.println("c="+password);
+			return mainService.isExistPassword(password);	
+		}
+		
+		
+		@PostMapping(value="/changeNewPassword")
+		@ResponseBody
+		public void changeNewPassword(@RequestParam String password, @RequestParam String newPassword) {
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("password", password);
+			map.put("newPassword", newPassword);
+			mainService.changeNewPassword(map);	
 		}
 }
