@@ -57,6 +57,20 @@ public class HomeController { // this is a videoController
 		return homeService.getTopTen();
 	}
 	
+	@PostMapping(value="/video/getTopTenMovie")
+	@ResponseBody
+	public List<HomeDTO> getTopTenMovie() {
+		//System.out.println("컨트롤러 오냐?");
+		return homeService.getTopTenMovie();
+	}
+	
+	@PostMapping(value="/video/getTopTenTV")
+	@ResponseBody
+	public List<HomeDTO> getTopTenTV() {
+		//System.out.println("컨트롤러 오냐?");
+		return homeService.getTopTenTV();
+	}
+	
 }
 
 

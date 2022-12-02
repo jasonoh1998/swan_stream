@@ -26,7 +26,7 @@ $(function(){
 														'transform':'scale(1.3)',
 														'z-index':'100',
 														'transform-origin':'50% 100%',
-														'font-size':'8pt',
+														'font-size':'8pt'
 														
 														}).show();
 			
@@ -409,6 +409,7 @@ function addTopTenSlide(){
 	var imageSpan = [];
 	var genreSpan = [];
 	var layerSpan = [];
+	var topTen_a = [];
 	$.ajax({
 		type:'post',
 		url:'/swan_stream/video/getTopTen',
@@ -433,7 +434,9 @@ function addTopTenSlide(){
 			);
 					
 			layerSpan.push($('<span>').addClass('layerSpan'))					
-								
+			
+			topTen_a.push($('<a>').attr('href','http://localhost:8080/swan_stream/contents?title='+items.movieTitle)
+			);
 								
 			})//each문
 			
@@ -456,20 +459,20 @@ function addTopTenSlide(){
 				
 				for(i=0;i<4;i++){
 					var topTen_slideDiv = $('<div>');
-					var topTen_a = $('<a>');
+					
 					var topTen_Rank = $('<div>');
 					
 					if((i+(k*4-3))<=10){
 					topTen_Rank.addClass("topTen_Rank");
 					topTen_Rank.text(i+(k*4-3));
-					topTen_a.append(topTen_Rank)
+					topTen_a[i+(k*4-4)].append(topTen_Rank)
 							.append(imageSpan[i+(k*4-4)])
 							.append(genreSpan[i+(k*4-4)])
 							.append(layerSpan[i+(k*4-4)])
 							.append(image[i+(k*4-4)]);
 					
 					
-					topTen_slideDiv.append(topTen_a);
+					topTen_slideDiv.append(topTen_a[i+(k*4-4)]);
 					topTen_slideDiv.addClass("topTen_slideDiv");
 					topTen_slideDiv.css("width","25%");
 					topTen_slideDiv_arr.push(topTen_slideDiv);
@@ -503,17 +506,16 @@ function addTopTenSlide(){
 			
 			for(i=0;i<5;i++){
 				var topTen_slideDiv = $('<div>');
-				var topTen_a = $('<a>');
 				var topTen_Rank = $('<div>');
 				
 				topTen_Rank.addClass("topTen_Rank");
 				topTen_Rank.text(i+(k*5-4));
-				topTen_a.append(topTen_Rank)
+				topTen_a[i+(k*5-5)].append(topTen_Rank)
 						.append(imageSpan[i+(k*5-5)])
 						.append(genreSpan[i+(k*5-5)])
 						.append(layerSpan[i+(k*5-5)])
 						.append(image[i+(k*5-5)]);
-				topTen_slideDiv.append(topTen_a);
+				topTen_slideDiv.append(topTen_a[i+(k*5-5)]);
 				topTen_slideDiv.addClass("topTen_slideDiv");
 				topTen_slideDiv_arr.push(topTen_slideDiv);
 			}
@@ -543,17 +545,18 @@ function addTopTenSlide(){
 			
 			for(i=0;i<7;i++){
 				var topTen_slideDiv = $('<div>');
-				var topTen_a = $('<a>');
+				
+				
 				var topTen_Rank = $('<div>');
 				if((i+(k*7-6))<=10){
 				topTen_Rank.addClass("topTen_Rank");
 				topTen_Rank.text(i+(k*7-6));
-				topTen_a.append(topTen_Rank)
+				topTen_a[i+(k*7-7)].append(topTen_Rank)
 						.append(imageSpan[i+(k*7-7)])
 						.append(genreSpan[i+(k*7-7)])
 						.append(layerSpan[i+(k*7-7)])
 						.append(image[i+(k*7-7)]);
-				topTen_slideDiv.append(topTen_a);
+				topTen_slideDiv.append(topTen_a[i+(k*7-7)]);
 				topTen_slideDiv.addClass("topTen_slideDiv");
 				topTen_slideDiv.css("width","14%");
 				topTen_slideDiv_arr.push(topTen_slideDiv);

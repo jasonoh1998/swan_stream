@@ -8,4 +8,8 @@ public interface HomeService {
 	public List<HomeDTO> getBanner();
 
 	public List<HomeDTO> getTopTen();
+
+	public List<HomeDTO> getTopTenMovie();
+
+	public List<HomeDTO> getTopTenTV();
 }

@@ -28,4 +28,18 @@ public class HomeServiceImpl implements HomeService {
 		return homeDAO.getTopTen();
 	}
 
+
+	@Override
+	public List<HomeDTO> getTopTenMovie() {
+		// TODO Auto-generated method stub
+		return homeDAO.getTopTenMovie();
+	}
+
+
+	@Override
+	public List<HomeDTO> getTopTenTV() {
+		// TODO Auto-generated method stub
+		return homeDAO.getTopTenTV();
+	}
+
 }
