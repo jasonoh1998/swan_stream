@@ -22,7 +22,7 @@
 				<div id="storage-container">
 					<!-- 탭버튼 영역 -->
 						<ul class="tab">
-							<li><button type="button" href="./webtoonbox_tab01.html" class="selected">보고싶어요한 콘텐츠</button>></li>
+							<li><button type="button" href="./webtoonbox_tab01.html" class="selected">보고싶어요한 콘텐츠</button></li>
 							<li><button type="button" href="./webtoonbox_tab02.html" class="non-selected">다 본 콘텐츠</button></li>
 						</ul>
 					<!-- 내용 영역 -->

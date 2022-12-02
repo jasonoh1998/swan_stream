@@ -31,9 +31,7 @@
 					</div>
 				</a>
 				<hr class="storage_my-hr">
-				<div id=recenttext>최근 보고싶어요 한 콘텐츠
-					
-				</div>
+				<div id=recenttext>최근 보고싶어요 한 콘텐츠</div>
 				<div id=recentheart> 
 					<img src="./images/storage/recentheart.png" />
 					<p>보고싶어요한 콘텐츠가 여기 보여져요.</p>
@@ -45,168 +43,242 @@
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">1</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/1.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">그것이 알고싶다</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">2</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/3.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">세상에 나쁜개는 없다</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">3</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/4.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">맛있는 녀석들</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">4</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/6.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">런닝맨</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">5</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/8.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">사일런트</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">6</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/9.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">심야괴담회</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">7</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/11.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">나의 히어로 아카데미아</p>
+									<p class="madecard-text">애니메이션</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">8</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/13.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">극한직업</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">9</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/15.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">시맨틱에러</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">10</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/18.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">쌈마이웨이</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">11</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/19.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">W</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">12</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/21.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">스토브리그</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">13</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/17.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">빅 피쉬</p>
+									<p class="madecard-text">영화</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">14</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/12.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">1박 2일</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">15</p>
-									<p class="madecard-text">냐한남자</p>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">16</p>
-									<p class="madecard-text">냐한남자</p>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">17</p>
-									<p class="madecard-text">냐한남자</p>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<div class="madecard" >
-								<img src="./images/storage/영철이.jpg" class="madecard-img-top" alt="...">
-									<p class="madecard-title">18</p>
-									<p class="madecard-text">냐한남자</p>
+								<img src="./images/storage/5.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">나 혼자 산다</p>
+									<p class="madecard-text">TV 프로그램</p>
 								</div>
 							</a>
 						</li>
 			       </ul>
 		       <img class="list_scroll_right" src="./images/storage/white_right.png"/>
 			</div>
+			<br><br>
+			<div id=recenttextwebtoon>최근 본 웹툰</div>
+			
+				
+				<div class="section2">
+					<img class="list_scroll_left2" src="./images/storage/white_left.png"/>
+					<ul class="slidelist2">
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w1.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">구원하소서</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w3.png" class="madecard-img-top" alt="...">
+									<p class="madecard-title">겉과 속의 아지랑이</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w4.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">퀸 오브 락</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w6.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">천사같은 나탈리</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w7.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">섬의봄</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w8.png" class="madecard-img-top" alt="...">
+									<p class="madecard-title">섬의봄 그리고 여름</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w9.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">체스와잭</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w10.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">빌런 앤 히어로</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w11.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">화린</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="madecard" >
+								<img src="./images/storage/w12.jpg" class="madecard-img-top" alt="...">
+									<p class="madecard-title">당신이 원하신다면</p>
+									<p class="madecard-text">웹툰</p>
+								</div>
+							</a>
+						</li>
+			       </ul>
+		       <img class="list_scroll_right2" src="./images/storage/white_right.png"/>
+			</div>
+			
 	    </div>
 	</div>
 </main>

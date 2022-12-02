@@ -48,6 +48,7 @@
 .webtoonbox_likecontent .webtoonbox_gridlist > li > a img{
 	height:280px;
 	width:100%;
+	margin-bottom: 10px;
 }
 .webtoonbox_likecontent .webtoonbox_gridlist > li > a img:hover{
 	transform:scale(1.1);
@@ -63,14 +64,14 @@
 }
 
 .webtoonbox_madecard-title{
-	font-size: 15pt;
+	font-size: 12pt;
 	margin: 0;
 	padding:0;
     margin-block-end: 0;
     margin-block-start: 0;
 }
 .webtoonbox_madecard-text{
-	font-size: 12pt;;
+	font-size: 9pt;;
 	opacity: 0.5;
 	margin-block-end: 0;
     margin-block-start: 0;
