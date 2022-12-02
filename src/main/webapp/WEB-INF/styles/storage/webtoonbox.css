@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*-------------tab00 html-------------*/
+
+#storage-container ul.tab {
+   list-style: none;
+   position: relative;
+   text-align: center;
+}
+
+#storage-container ul.tab li{
+	display: inline-block;
+} 
+#storage-container ul.tab li button{
+	display: inline-block;
+	color:white; 
+	width: 300px;
+	height: 45px;
+	text-decoration: none;
+}
+#storage-container ul.tab li .selected{
+	font-weight: bold;
+	font-size: 180%;
+	border-bottom: 3px solid white;
+}
+/*-------------------------------------------*/
+
+.webtoonbox_gridlist{
+	padding:3%;
+}
+.webtoonbox_likecontent .webtoonbox_gridlist > li{
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:1%;
+	margin-right:1%;
+	margin-bottom:1%;
+	
+}
+.webtoonbox_likecontent .webtoonbox_gridlist > li:hover{
+	transform-origin: 50% 50%;
+
+}
+.webtoonbox_likecontent .webtoonbox_gridlist > li > a {
+	display: block;
+	position: relative;
+	cursor:pointer;
+	
+}
+.webtoonbox_likecontent .webtoonbox_gridlist > li > a img{
+	height:280px;
+	width:100%;
+	margin-bottom: 10px;
+}
+.webtoonbox_likecontent .webtoonbox_gridlist > li > a img:hover{
+	transform:scale(1.1);
+	transition: all 0.3s ease-in-out;
+	background-size: contain;
+}
+
+
+.webtoonbox_madecard{
+	width: 11rem;
+	float:left;
+	color:white;
+}
+
+.webtoonbox_madecard-title{
+	font-size: 12pt;
+	margin: 0;
+	padding:0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+.webtoonbox_madecard-text{
+	font-size: 9pt;;
+	opacity: 0.5;
+	margin-block-end: 0;
+    margin-block-start: 0;
+    margin-bottom:10px;
+}
+.webtoonbox_madecard-img-top:hover{
+	-webkit-transform:scale(1.1);
+	transition: all 0.3s ease-in-out; 
+}
+.row-cols-8{
+	list-style:none;
+}
