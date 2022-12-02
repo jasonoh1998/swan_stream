@@ -1,11 +1,21 @@
 @charset "UTF-8";
 
-.basic01-btn:disabled {
+.basic-card-num06 {
+    color: rgb(218, 66, 65);
+    font-size: 11px;
+    letter-spacing: -0.37px;
+    line-height: 11px;
+    text-align: left;
+    height: 11px;
+    margin: 3px 0px 0px;
+}
+
+.basic06-btn:disabled {
     background: rgba(255, 255, 255, 0.3);
     color: rgb(153, 156, 161);
 }
 
-.basic01-btn {
+.basic06-btn {
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -23,31 +33,7 @@
     padding: 10px 16px;
 }
 
-.css-k5snl0 {
-    position: relative;
-    width: 100%;
-}
-
-/*
- pre-card 첫화면  length = 0 일때  
- pre-card-correct = 성공 
- pre-card-wrong  = 실패화면
-*/
-
-/*
-.login-content-middle,
-.login-content-middle-correct,
-.login-content-middle-wrong
-*/
-
-.basic-card,
-.basic-card-correct,
-.basic-card-wrong {
-    position: relative;
-    width: 100%;
-}
-
-.basic-cardInput {
+.basic-cardInput06 {
     width: 100%;
     padding: 10px 10px 10px 14px;
     border-radius: 4px;
@@ -55,9 +41,9 @@
     color: rgb(255, 255, 255) !important;
 }
 
-input.basic-cardInput[type="text"],
-input.basic-cardInput[type="number"],
-input.basic-cardInput[type="password"] {
+input.basic-cardInput06[type="text"],
+input.basic-cardInput06[type="number"],
+input.basic-cardInput06[type="password"] {
     font-size: 16px;
     letter-spacing: -0.3px;
     line-height: 24px;
@@ -66,40 +52,14 @@ input.basic-cardInput[type="password"] {
     padding-left: 11px;
     border: 1px solid rgba(255, 255, 255, 0.09) !important;
 }
-
-.basic-card-correct::after {
-    content: "";
-    display: inline-block;
-	background: url(/swan_stream/images/login/check.svg) no-repeat;
-    position: absolute;
-    top: 50%;
-    right: 4px;
-    bottom: auto;
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-}
-.basic-card-wrong::after {
-    content: "";
-    display: inline-block;
-	background: url(/swan_stream/images/login/xmark.svg) no-repeat;
-    position: absolute;
-    top: 50%;
-    right: 4px;
-    bottom: auto;
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-} 
-
 /* contract  유효기간 */
 
-.contract-card {
+.contract-card06 {
     position: relative;
     width: 100%;
 }
 
-.basic-contractInput {
+.basic-contractInput06 {
     width: 100%;
     padding: 10px 10px 10px 14px;
     border-radius: 4px;
@@ -107,9 +67,9 @@ input.basic-cardInput[type="password"] {
     color: rgb(255, 255, 255) !important;
 }
 
-input.basic-contractInput[type="text"],
-input.basic-contractInput[type="number"],
-input.basic-contractInput[type="password"] {
+input.basic-contractInput06[type="text"],
+input.basic-contractInput06[type="number"],
+input.basic-contractInput06[type="password"] {
     font-size: 16px;
     letter-spacing: -0.3px;
     line-height: 24px;
@@ -118,13 +78,7 @@ input.basic-contractInput[type="password"] {
     padding-left: 11px;
     border: 1px solid rgba(255, 255, 255, 0.09) !important;
 }
-
-.birth-card {
-	position: relative;
-    width: 100%;
-}
-
-.basic-birthInput {
+.basic-birthInput06 {
     width: 100%;
     padding: 10px 10px 10px 14px;
     border-radius: 4px;
@@ -132,9 +86,9 @@ input.basic-contractInput[type="password"] {
     color: rgb(255, 255, 255) !important;
 }
 
-input.basic-birthInput[type="text"],
-input.basic-birthInput[type="number"],
-input.basic-birthInput[type="password"] {
+input.basic-birthInput06[type="text"],
+input.basic-birthInput06[type="number"],
+input.basic-birthInput06[type="password"] {
     font-size: 16px;
     letter-spacing: -0.3px;
     line-height: 24px;
@@ -143,23 +97,3 @@ input.basic-birthInput[type="password"] {
     padding-left: 11px;
     border: 1px solid rgba(255, 255, 255, 0.09) !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

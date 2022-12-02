@@ -24,8 +24,6 @@ const modal23 = document.querySelector('.modal23');
 const pay_info = document.querySelector('.pay-info');
 const basic = document.querySelector('.basic');
 const precard_display = document.querySelector('.precard-display');
-													
-const basiccard_display01 = document.querySelector('.basiccard-display01');
 
 const modal_body = document.querySelector('.modal_body');
 
@@ -64,10 +62,6 @@ const back_btn23 = document.querySelector('.back-btn23');
 const go_btn1 = document.querySelector('.go-btn1');
 const go_btn2 = document.querySelector('.go-btn2');
 const pre_btn1 = document.querySelector('.pre-btn1');
-
-const ba_btn1 = document.querySelector('.ba-btn1');
-const ba_btn2 = document.querySelector('.ba-btn2');
-const ba_btn3 = document.querySelector('.ba-btn3');
 
 const go_payinfo = document.querySelector('.go-payinfo');
 const basic_go_payinfo = document.querySelector('.basic-go-payinfo');
@@ -134,11 +128,13 @@ $(document).on("click", ".css-1w1rfj81", function(){
 });
 
 // 모델2
+/*
 // modal2 화면 (프리미엄 결제화면) 띄우기 // 확인완료 
 two_btn.addEventListener('click', function() { 
     modal.classList.toggle('show');
     modal2.classList.toggle('show2'); 
 });
+*/
 
 // 베이직 결제화면 modal2 에서 back-btn 다시선택하기(뒤로) 누르면 modal로 이동
 back_btn.addEventListener('click', () => { 
@@ -303,6 +299,7 @@ $(document).on("click", ".bago-btn3", function(){
     }
 });
 
+/*
 // 모델4 -> 모델12로 이동
 // ba 1개 -> 3개로
 $(document).on("click", ".ba-btn1", function(){
@@ -327,47 +324,7 @@ $(document).on("click", ".ba-btn3", function(){
         modal14.classList.toggle('show14');
     }
 });
-
-// basiccard-display01
-// basiccard-display01-body 아무데나 누르면 나가짐 // 확인완료  
-basiccard_display01.addEventListener('click', (event) => {
-    if(event.target == basiccard_display01) { 
-        basiccard_display01.classList.toggle('show');
-    }
-});
-
-// basiccard_display01 에서 다시선택하기 버튼 만들기 
-$(document).on("click", ".basiccard-display01-backbtn", function(){
-    if (basiccard_display01.classList.contains('show')) {
-        basiccard_display01.classList.toggle('show');
-        basic.classList.toggle('show');
-    }
-});
-
-// basiccard_display01 -> modal9 basic 1개월 네이버페이로
-$(document).on("click", ".basic01-naver-btn", function(){
-    if (basiccard_display01.classList.contains('show')) {
-        basiccard_display01.classList.toggle('show');
-        modal9.classList.toggle('show9');
-    }
-});
-
-// basiccard_display01 -> modal10 basic 1개월 카카오페이로
-$(document).on("click", ".basic01-kakao-btn", function(){
-    if (basiccard_display01.classList.contains('show')) {
-        basiccard_display01.classList.toggle('show');
-        modal10.classList.toggle('show10');
-    }
-});
-
-// basiccard_display01 -> modal11 basic 1개월 휴대폰결제로
-$(document).on("click", ".basic01-phone-btn", function(){
-    if (basiccard_display01.classList.contains('show')) {
-        basiccard_display01.classList.toggle('show');
-        modal11.classList.toggle('show11');
-    }
-});
-
+*/
 
 // modal5 이곳 누르면 tv 목록 띄우기 
 go_btn1.addEventListener('click', () => { 
@@ -485,16 +442,7 @@ modal7.addEventListener('click', (event) => {
     //    body.style.overflow = 'auto';
     }
 });
-        
-// 모델7 -> 모델2 로 이동
-// pre 카카오 결제에서 카드결제 로 이동
-$(document).on("click", ".preback-btn2", function(){
-    if (modal7.classList.contains('show7')) {
-        modal7.classList.toggle('show7');
-        modal2.classList.toggle('show2');
-    }
-});
-        
+                
 // 모델7 -> 모델6 로 이동
 // pre 카카오 결제에서 네이버결제 로 이동
 $(document).on("click", ".preback-btn3", function(){
@@ -539,16 +487,7 @@ $(document).on("click", ".modal-outbtn", function(){
         modal8.classList.toggle('show8');
     }
 });        
-        
-// 모델8 -> 모델2 로 이동
-// pre 휴대폰 결제에서 카드 결제 로 이동
-$(document).on("click", ".preback-btn4", function(){
-    if (modal8.classList.contains('show8')) {
-        modal8.classList.toggle('show8');
-        modal2.classList.toggle('show2');
-    }
-});
-        
+     
 // 모델8 -> 모델6 로 이동
 // pre 휴대폰 결제에서 네이버결제 로 이동
 $(document).on("click", ".preback-btn5", function(){
@@ -599,14 +538,6 @@ back_btn9.addEventListener('click', () => {
     if (modal9.classList.contains('show9')) {
         modal9.classList.toggle('show9');
         modal.classList.toggle('show');
-    }
-});
-// 모델9 -> 모델4 로 이동
-// ba 네이버 결제에서 카드 결제 로 이동
-$(document).on("click", ".bago-btn4", function(){
-    if (modal9.classList.contains('show9')) {
-        modal9.classList.toggle('show9');
-        modal4.classList.toggle('show4');
     }
 });
 
@@ -684,14 +615,7 @@ back_btn10.addEventListener('click', () => {
         modal.classList.toggle('show');
     }
 });
-// 모델10 -> 모델4 로 이동
-// ba 카카오 결제에서 카드 결제 로 이동
-$(document).on("click", ".bago-btn7", function(){
-    if (modal10.classList.contains('show10')) {
-        modal10.classList.toggle('show10');
-        modal4.classList.toggle('show4');
-    }
-});
+
 // 모델10 -> 모델9 로 이동
 // ba 카카오 결제에서 네이버 결제 로 이동
 $(document).on("click", ".bago-btn8", function(){
@@ -760,14 +684,7 @@ back_btn11.addEventListener('click', () => {
         modal.classList.toggle('show');
     }
 });
-// 모델11 -> 모델4 로 이동
-// ba 휴대폰 결제에서 카드 결제 로 이동
-$(document).on("click", ".bago-btn10", function(){
-    if (modal11.classList.contains('show11')) {
-        modal11.classList.toggle('show11');
-        modal4.classList.toggle('show4');
-    }
-});
+
 // 모델11 -> 모델9 로 이동
 // ba 휴대폰 결제에서 네이버 결제 로 이동
 $(document).on("click", ".bago-btn11", function(){
@@ -1030,6 +947,7 @@ $(document).on("click", ".bago-btn40", function(){
     }
 });
 
+/*
 //modal15 베3개월 네이버결제 =-> 베3개월 카드 결제 modal12
 $(document).on("click", ".bago-btn41", function(){
     if (modal15.classList.contains('show15')) {
@@ -1037,6 +955,7 @@ $(document).on("click", ".bago-btn41", function(){
         modal12.classList.toggle('show12');
     }
 });
+*/
 
 //modal15 베3개월 네이버결제 =-> 베3개월 카카오 결제 modal16
 $(document).on("click", ".bago-btn42", function(){

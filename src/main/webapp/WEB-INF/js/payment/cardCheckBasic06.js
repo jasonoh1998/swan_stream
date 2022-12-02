@@ -1,12 +1,13 @@
 
+
 // 나는 3개만들고 3개 false 박고 시작 
-let basic_card_valid01 = false;  // 카드번호
-let basic_contract_valid01 = false; // 유효기간
-let basic_birth_valid01 = false; // 생년월일 6자리
-$(".basic01-btn").attr("disabled", true); // 버튼을 먼저 고장내고 시작
+let basic_card_valid06 = false;  // 카드번호
+let basic_contract_valid06 = false; // 유효기간
+let basic_birth_valid06 = false; // 생년월일 6자리
+$(".basic06-btn").attr("disabled", true); // 버튼을 먼저 고장내고 시작
 
 // 카드번호 class="css-7lsjjs" id="cardNumber"
-$('.basic-cardInput').on("keyup", function(e) {
+$('.basic-cardInput06').on("keyup", function(e) {
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
 	$(this).val($(this).val().replace(/[^0-9]/g, ""))
 	let str = $(this).val();
@@ -28,23 +29,23 @@ $('.basic-cardInput').on("keyup", function(e) {
 	let re = /^[0-9]{4}[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{4}[-\s\.]?[0-9]{4}$/.test($(this).val());
 		
 	if ($(this).val().length == 0) { 
-		$('#basic-cardNumber').removeClass(); // 초기화 
-		$("#basic-cardNumber").addClass("basic-card"); // 첫화면
-        basic_card_valid01 = false; // 카드번호 입력안한거니까 false 
+		$('#basic-cardNumber06').removeClass(); // 초기화 
+		$("#basic-cardNumber06").addClass("basic-card"); // 첫화면
+        basic_card_valid06 = false; // 카드번호 입력안한거니까 false 
 	} else if(!re) { // 카드번호 형식과 틀린 경우 
-        $("#basic-cardNumber").removeClass(); // 초기화  
-        $("#basic-cardNumber").addClass("basic-card-wrong"); // wrong 화면 띄워줌         
-        basic_card_valid01 = false; // 잘못 입력했으니 false
+        $("#basic-cardNumber06").removeClass(); // 초기화  
+        $("#basic-cardNumber06").addClass("basic-card-wrong"); // wrong 화면 띄워줌         
+        basic_card_valid06 = false; // 잘못 입력했으니 false
 	} else {
-        $("#basic-cardNumber").removeClass();
-        $("#basic-cardNumber").addClass("basic-card-correct");
-        basic_card_valid01 = true;
+        $("#basic-cardNumber06").removeClass();
+        $("#basic-cardNumber06").addClass("basic-card-correct");
+        basic_card_valid06 = true;
 	}
-	basic_button_show01(basic_card_valid01, basic_contract_valid01, basic_birth_valid01);
+	basic_button_show06(basic_card_valid06, basic_contract_valid06, basic_birth_valid06);
 });
 
 // 카드 유효기간 4자리  class="css-7lsjjs" id="cardExpiry"
-$('.basic-contractInput').on("keyup", function(e) {
+$('.basic-contractInput06').on("keyup", function(e) {
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
 	$(this).val($(this).val().replace(/[^0-9]/g, ""))
 	let str = $(this).val();
@@ -64,60 +65,63 @@ $('.basic-contractInput').on("keyup", function(e) {
 	let re = /\d{2}\/\d{2}/.test($(this).val());
 	
 	if ($(this).val().length == 0) { 
-		$('#basic-contractNumber').removeClass(); // 초기화 
-		$("#basic-contractNumber").addClass("basic-card"); // 첫화면
-        basic_contract_valid01 = false; // 카드번호 입력안한거니까 false 
+		$('#basic-contractNumber06').removeClass(); // 초기화 
+		$("#basic-contractNumber06").addClass("basic-card"); // 첫화면
+        basic_contract_valid03 = false; // 카드번호 입력안한거니까 false 
 	} else if(!re) { // 카드번호 형식과 틀린 경우 
-        $("#basic-contractNumber").removeClass(); // 초기화  
-        $("#basic-contractNumber").addClass("basic-card-wrong"); // wrong 화면 띄워줌 
-        basic_contract_valid01 = false; // 잘못 입력했으니 false
+        $("#basic-contractNumber06").removeClass(); // 초기화  
+        $("#basic-contractNumber06").addClass("basic-card-wrong"); // wrong 화면 띄워줌 
+        basic_contract_valid06 = false; // 잘못 입력했으니 false
 	} else {
-        $("#basic-contractNumber").removeClass();
-        $("#basic-contractNumber").addClass("basic-card-correct");
-        basic_contract_valid01 = true;
+        $("#basic-contractNumber06").removeClass();
+        $("#basic-contractNumber06").addClass("basic-card-correct");
+        basic_contract_valid06 = true;
 	}
-	basic_button_show01(basic_card_valid01, basic_contract_valid01, basic_birth_valid01);
+	basic_button_show06(basic_card_valid06, basic_contract_valid06, basic_birth_valid06);
 });
 
-$('.basic-birthInput').on("keyup", function(){
+$('.basic-birthInput06').on("keyup", function(){
 	//정규식 표현식(Regular Expression) test() ㅡ 찾는 문자열이, 들어있는지 아닌지를 알려준다.
 	let re = /\d{6}/.test($(this).val());
 	if ($(this).val().length == 0) { 
-		$('#basic-birthNumber').removeClass(); // 초기화 
-		$("#basic-birthNumber").addClass("basic-card"); // 첫화면
-        basic_birth_valid01 = false; // 카드번호 입력안한거니까 false 
+		$('#basic-birthNumber06').removeClass(); // 초기화 
+		$("#basic-birthNumber06").addClass("basic-card"); // 첫화면
+        basic_birth_valid06 = false; // 카드번호 입력안한거니까 false 
 	} else if(!re) { // 카드번호 형식과 틀린 경우 
-        $("#basic-birthNumber").removeClass(); // 초기화  
-        $("#basic-birthNumber").addClass("basic-card-wrong"); // wrong 화면 띄워줌 
-        basic_birth_valid01 = false; // 잘못 입력했으니 false
+        $("#basic-birthNumber06").removeClass(); // 초기화  
+        $("#basic-birthNumber06").addClass("basic-card-wrong"); // wrong 화면 띄워줌 
+        basic_birth_valid06 = false; // 잘못 입력했으니 false
 	} else {
-        $("#basic-birthNumber").removeClass();
-        $("#basic-birthNumber").addClass("basic-card-correct");
-        basic_birth_valid01 = true;
+        $("#basic-birthNumber06").removeClass();
+        $("#basic-birthNumber06").addClass("basic-card-correct");
+        basic_birth_valid06 = true;
 	}
-	basic_button_show01(basic_card_valid01, basic_contract_valid01, basic_birth_valid01);
+	basic_button_show06(basic_card_valid06, basic_contract_valid06, basic_birth_valid06);
 });
 
 
-function basic_button_show01(basic_card_valid01, basic_contract_valid01, basic_birth_valid01) { 
+function basic_button_show06(basic_card_valid06, basic_contract_valid06, basic_birth_valid06) { 
 // 나는 1 카드번호(16자리숫자) 2 유효기간(4자리숫자) 3 생년월일(6자리)   
-	if(basic_card_valid01 == true && basic_contract_valid01 == true && basic_birth_valid01 == true ){  
-		$(".basic01-btn").attr("disabled", false); // 버튼 고침
+	if(basic_card_valid06 == true && basic_contract_valid06 == true && basic_birth_valid06 == true ){  
+		$(".basic06-btn").attr("disabled", false); // 버튼 고침
 	} else {
-		$(".basic01-btn").attr("disabled", true); // 버튼 고장
+		$(".basic06-btn").attr("disabled", true); // 버튼 고장
 	}
 }
 
+
+
+
+// 여기도 해야함ㅠ 
 // DB에 카드 정보 넣기 
-$(".basic01-btn").click(function() {	
-	// alert($("#basic-pay-form01").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
+$(".basic06-btn").click(function() {
+	alert($("#basic-pay-form06").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
 	// db갔다가 오는과정에서 실패함 
-	
 	setTimeout(function() {
 		$.ajax({
 			type: "post",
 			url: "/swan_stream/cardRegister", // 요청 어디로갈지 수정 
-			data: $("#basic-pay-form01").serialize(),  // form 이름만 바꿔주자
+			data: $("#basic-pay-form06").serialize(),  // form 이름만 바꿔주자
 			
 			// user_id가 필요한데 일단은 먼저 내거만 넣어보자 
 			success: function(data){
@@ -132,6 +136,7 @@ $(".basic01-btn").click(function() {
 		})
     }, 1500);
 });
+
 
 
 

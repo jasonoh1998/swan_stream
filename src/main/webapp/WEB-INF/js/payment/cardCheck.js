@@ -46,7 +46,6 @@ $('.pre-cardInput').on("keyup", function(e) {
         $("#pre-cardNumber").addClass("pre-card-correct");
         card_valid = true;
 	}
-	
 	button_show(card_valid, contract_valid, birth_valid);
 });
 
@@ -125,7 +124,7 @@ $(".precard-btn").click(function() {
 	$("#cardBirth").css("opacity","0.3");
 	// 클릭시 box들 밝기 줄여주고 
 	
-	alert($("#pre-form").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
+	// alert($("#pre-form").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
 	// db갔다가 오는과정에서 실패함 
 	
 	setTimeout(function() {
