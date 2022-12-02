@@ -5,11 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/swan_stream/styles/storage/storagebox.css" />
 </head>
 <body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="/swan_stream/js/storage/storage.js" defer></script>
 <!-- left navigation bar highlight -->
 <input id="left-navigation-highlight" type="hidden" value=${page }>
-
 <main id="content">
 	<div></div>
 	<div class="content-margin">
@@ -17,18 +19,18 @@
 			<h1 class="content_header_title">보관함</h1>
 			<hr class="content_header_divider">
 				<div class=storagetext><br>
-					<a href="./storage/videobox_tab00.html">
+					<a href="./storagevideo/videobox">
 					<div id=videotext>
 						<img src="./images/storage/storage_video_icon.png" style="width:24px; height:24px;"/> 비디오
 					</div>
 				</a>
-				<hr class="my-hr">
-				<a href="./im/storage/webtoonbox_tab00.html">
+				<hr class="storage_my-hr">
+				<a href="./storagewebtoon/webtoonbox">
 					<div id=webtoontext>
 						<img src="./images/storage/storage_webtoon_icon.png" style="width:24px; height:24px;"/> 웹툰
 					</div>
 				</a>
-				<hr class="my-hr">
+				<hr class="storage_my-hr">
 				<div id=recenttext>최근 보고싶어요 한 콘텐츠
 					
 				</div>
