@@ -20,8 +20,7 @@
 	    <div class="content_header">
 			<h1 class="content_header_title">발견</h1>
 			<hr class="content_header_divider">
-			<div class="discovery">
-				<h1>님, 역동적인 낮이에요</h1><br><br>
+			<div class="discovery"><br><br>
 				<ul class="discoverycard">
 					<h5>추천 콘텐츠</h5><br>
 					<li>

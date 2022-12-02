@@ -18,9 +18,9 @@ function getScrollPosition() {
 	  var position = $(".slidelist").scrollLeft();
 	  $(".slidelist").animate(
 	    {
-	      scrollLeft: position + 300,
+	      scrollLeft: position + 900,
 	    },
-	    500
+	    1300
 	  );
 	});
 
@@ -28,13 +28,43 @@ function getScrollPosition() {
 	  var position = $(".slidelist").scrollLeft();
 	  $(".slidelist").animate(
 	    {
-	      scrollLeft: position - 300,
+	      scrollLeft: position - 900,
 	    },
-	    500
+	    1300
 	  );
 	});
 
+function getScrollPosition() {
+	  if ($(".slidelist2").scrollLeft() == 0) {
+	    $(".list_scroll_left2").hide();
+	  } else if ($(".slidelist2").scrollLeft() >= 709) {
+	    $(".list_scroll_right2").hide();
+	  } else {
+	    $(".list_scroll_left2").show();
+	    $(".list_scroll_right2").show();
+	  }
+	}
 
+	$(".list_scroll_right2").click(function () {
+	  var position = $(".slidelist2").scrollLeft();
+	  $(".slidelist2").animate(
+	    {
+	      scrollLeft: position + 600,
+	    },
+	    1000
+	  );
+	});
+
+	$(".list_scroll_left2").click(function () {
+	  var position = $(".slidelist2").scrollLeft();
+	  $(".slidelist2").animate(
+	    {
+	      scrollLeft: position - 600,
+	    },
+	    1000
+	  );
+	});
+	
 $(function(){
 	//실행하자마자 class="selected" 부여된 파일의 내용을 읽어오기
 	$('.storagevideo_panel').load($('#storage-container ul.tab li a.selected').attr('href'));
@@ -55,19 +85,4 @@ $(function(){
 
 	});
 });
-
-$.ajax({
-		type: 'post',
-		url: '/swan_stream/storagecontent/storagecontentlist',
-		data: $('#writeForm').serialize(),
-		success: function(){
-			alert("보관함에 저장되었습니다.");
-			location.href="./storage/storageHome.jsp";
-		},
-		error: function(err){
-			console.log(err);
-		}
-		});
-
-
 

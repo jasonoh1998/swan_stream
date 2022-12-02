@@ -42,6 +42,7 @@
 .videobox_likecontent .videobox_gridlist > li > a img{
 	height:280px;
 	width:100%;
+	margin-bottom: 10px;
 }
 .videobox_likecontent .videobox_gridlist > li > a img:hover{
 	transform:scale(1.1);
@@ -57,14 +58,14 @@
 }
 
 .videobox_madecard-title{
-	font-size: 15pt;
+	font-size: 12pt;
 	margin: 0;
 	padding:0;
     margin-block-end: 0;
     margin-block-start: 0;
 }
 .videobox_madecard-text{
-	font-size: 12pt;;
+	font-size: 9pt;;
 	opacity: 0.5;
 	margin-block-end: 0;
     margin-block-start: 0;
