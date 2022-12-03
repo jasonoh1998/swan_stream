@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- css -->
+<link rel="stylesheet" href="/swan_stream/styles/video/videoHome.css" >
+<link rel="stylesheet" href="/swan_stream/styles/video/movieCat.css" >
+<link rel="stylesheet" href="/swan_stream/styles/video/tvCat.css" >
+<!-- javascript -->
+<script type="text/javascript" src="/swan_stream/js/video/videoHome.js" defer></script>	
+
+
+
 </head>
 <body>
 <!-- left navigation bar highlight -->
@@ -61,10 +70,12 @@
 					<!-- ------------------- 카테고리 버튼 ------------------- -->
 					<hr>
 					<br>
-					<div class = "head-category" id = "head-category">
-						<button type="button" class="category">전체</button>
-						<button type="button">영화</button>
-						<button type="button">TV프로그램</button>
+					<div class = "headCategory_Original">
+						<div class = "head-category" id = "head-category">
+							<button type="button" class="category">전체</button>
+							<button type="button">영화</button>
+							<button type="button">TV프로그램</button>
+						</div>
 					</div>
 					<br>
 					<br>
@@ -80,7 +91,10 @@
 					<!-- ------------------- 카테고리별 컨텐츠 끝 ------------------- -->
 					</div><!-- 컨테이너div -->
 	    
+	    		
+	    			
 	</div>
 </main>
+
 </body>
 </html>

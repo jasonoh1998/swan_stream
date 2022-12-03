@@ -31,8 +31,15 @@ public class HomeServiceImpl implements HomeService {
 
 	@Override
 	public List<HomeDTO> getTopTenMovie() {
-		// TODO Auto-generated method stub
-		return homeDAO.getTopTenMovie();
+
+		//System.out.println("컨트롤러 오냐?");
+				List<HomeDTO> list = homeDAO.getTopTenMovie();
+				
+				/*
+				 * for(HomeDTO data : list) { System.out.println(data); }
+				 */
+				return list;
+	
 	}
 
 
@@ -40,6 +47,34 @@ public class HomeServiceImpl implements HomeService {
 	public List<HomeDTO> getTopTenTV() {
 		// TODO Auto-generated method stub
 		return homeDAO.getTopTenTV();
+	}
+
+
+	@Override
+	public void updateHit(String title) {
+		homeDAO.updateHit(title);
+		
+	}
+
+
+	@Override
+	public List<HomeDTO> getTVExclusive() {
+		
+		return homeDAO.getTVExclusive();
+	}
+
+
+	@Override
+	public List<HomeDTO> getNew() {
+		// TODO Auto-generated method stub
+		return homeDAO.getNew();
+	}
+
+
+	@Override
+	public List<HomeDTO> getRomance() {
+		// TODO Auto-generated method stub
+		return homeDAO.getRomance();
 	}
 
 }

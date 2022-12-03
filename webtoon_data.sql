@@ -1,4 +1,5 @@
---장르
+
+--장르 추가
 insert into webtoon_genre_number (genre_title) values ('로맨스');
 insert into webtoon_genre_number (genre_title) values ('남녀');
 insert into webtoon_genre_number (genre_title) values ('일상');
@@ -85,7 +86,7 @@ insert into webtoon_contents (webtoonTitle, webtoonImage,ageRestriction, exclusi
 );
 
 
---장르
+--영화별 장르
 insert into webtoon_genre (webtoon_id, genre_id) values(1,1);
 insert into webtoon_genre (webtoon_id, genre_id) values(1,3);
 insert into webtoon_genre (webtoon_id, genre_id) values(1,4);

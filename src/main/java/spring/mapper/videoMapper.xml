@@ -8,29 +8,6 @@
 	</select>
 
 	<select id="getTopTen" resultType="home">
-		        select * from(
-        select
-		movie_id as movieId,
-		movie_title as movieTitle,
-		movie_age_restriction as movieAgeRestriction,
-		movie_time as movieTime,
-		content_type as contentType,
-		genre, hit,
-		exclusive_movie as exclusiveMovie,
-		movie_image as movieImage,
-        rank() over(order by hit desc) as rank
-		from movie_data
-		left join(
-		select movie_id, listagg(genre_title,'|') within group (order by genre_id) as genre
-		from (select*from movie_genre
-		left join genre using (genre_id)) group by movie_id)
-		using(movie_id)
-		left join movie_data_extended 
-		using(movie_id)) where rank &gt;=10
-
-	</select>
-	
-	<select id="getTopTenMovie" resultType="home">
 		select * from(
         select
 		movie_id as movieId,
@@ -49,7 +26,125 @@
 		left join genre using (genre_id)) group by movie_id)
 		using(movie_id)
 		left join movie_data_extended 
-		using(movie_id) where content_Type='영화') where rank &gt;=10
-
+		using(movie_id)) where rank &lt;=10
+	</select>
+	
+	<select id="getTopTenMovie" resultType="home">
+		select movieTitle, movieImage, genre from(
+        select
+		movie_id as movieId,
+		movie_title as movieTitle,
+		movie_age_restriction as movieAgeRestriction,
+		movie_time as movieTime,
+		content_type as contentType,
+		genre, hit,
+		exclusive_movie as exclusiveMovie,
+		movie_image as movieImage,
+        rank() over(order by hit desc) as rank
+		from movie_data
+		left join(
+		select movie_id, listagg(genre_title,'|') within group (order by genre_id) as genre
+		from (select*from movie_genre
+		left join genre using (genre_id)) group by movie_id)
+		using(movie_id)
+		left join movie_data_extended 
+		using(movie_id) where content_Type='영화')
+	</select>
+	
+	<select id="getTopTenTV" resultType="home">
+		select * from(
+        select
+		movie_id as movieId,
+		movie_title as movieTitle,
+		movie_age_restriction as movieAgeRestriction,
+		movie_time as movieTime,
+		content_type as contentType,
+		genre, hit,
+		exclusive_movie as exclusiveMovie,
+		movie_image as movieImage,
+        rank() over(order by hit desc) as rank
+		from movie_data
+		left join(
+		select movie_id, listagg(genre_title,'|') within group (order by genre_id) as genre
+		from (select*from movie_genre
+		left join genre using (genre_id)) group by movie_id)
+		using(movie_id)
+		left join movie_data_extended 
+		using(movie_id) where content_Type='TV 프로그램')
+	</select>
+	
+	
+	
+	
+	
+	<!-- 조회수 업데이트 -->
+	<update id="updateHit" parameterType="java.lang.String">
+		update (
+	    select * from movie_data D,movie_data_extended DE
+	    where D.movie_id = DE.movie_id
+		)set hit = hit+1
+		where movie_title = #{title}
+	</update>
+	
+	
+	<select id="getTVExclusive" resultType="home">
+		select * from(
+        select
+		movie_id as movieId,
+		movie_title as movieTitle,
+		movie_age_restriction as movieAgeRestriction,
+		movie_time as movieTime,
+		content_type as contentType,
+		genre, hit,
+		exclusive_movie as exclusiveMovie,
+		movie_image as movieImage,
+        rank() over(order by hit desc) as rank
+		from movie_data
+		left join(
+		select movie_id, listagg(genre_title,'|') within group (order by genre_id) as genre
+		from (select*from movie_genre
+		left join genre using (genre_id)) group by movie_id)
+		using(movie_id)
+		left join movie_data_extended 
+		using(movie_id) where content_Type='TV 프로그램' and exclusive_movie =1)
+	</select>
+	
+	<select id="getNew" resultType="home">
+		select * from(
+        select
+		movie_id as movieId,
+		movie_title as movieTitle,
+		movie_age_restriction as movieAgeRestriction,
+		movie_time as movieTime,
+		content_type as contentType,
+		genre, hit,
+		exclusive_movie as exclusiveMovie,
+		movie_image as movieImage,
+        movie_release_date as releaseDate
+		from movie_data
+		left join(
+		select movie_id, listagg(genre_title,'|') within group (order by genre_id) as genre
+		from (select*from movie_genre
+		left join genre using (genre_id)) group by movie_id)
+		using(movie_id)
+		left join movie_data_extended 
+		using(movie_id)  where content_Type='TV 프로그램' order by movie_release_date desc)
+	</select>
+	
+	<select id="getRomance" resultType="home">
+		select 
+			movie_id as movieId,
+			movie_title as movieTitle,
+			movie_age_restriction as movieAgeRestriction,
+			movie_time as movieTime,
+			content_type as contentType,
+			exclusive_movie as exclusiveMovie,
+			movie_image as movieImage,
+	        movie_release_date as releaseDate
+		from movie_data
+		left join movie_data_extended using(movie_id)
+		left join movie_genre using(movie_id)
+		where genre_id = 3 and content_type = '영화'
+        order by movie_time desc
 	</select>
 </mapper>

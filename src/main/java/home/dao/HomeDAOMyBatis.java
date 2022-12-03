@@ -30,14 +30,43 @@ public class HomeDAOMyBatis implements HomeDAO {
 
 	@Override
 	public List<HomeDTO> getTopTenMovie() {
-		
-		return sqlSession.selectList("videoSQL.getTopTenMovie");
+		List<HomeDTO> list = sqlSession.selectList("videoSQL.getTopTenMovie");
+//		for(HomeDTO data : list) {
+//			System.out.println(data);
+//		}	
+//		
+//		System.out.println("여기까지가 dao---------------------------------");
+		return list;
 	}
 
 	@Override
 	public List<HomeDTO> getTopTenTV() {
-		System.out.println("바티스에 오냐?");
-		return sqlSession.selectList("videoSQL.getTopTenMovie");
+		
+		return sqlSession.selectList("videoSQL.getTopTenTV");
+	}
+
+	@Override
+	public void updateHit(String title) {
+		//System.out.println("바티스에 오냐?");
+		sqlSession.update("videoSQL.updateHit",title);
+	}
+
+	@Override
+	public List<HomeDTO> getTVExclusive() {
+		
+		return sqlSession.selectList("videoSQL.getTVExclusive");
+	}
+
+	@Override
+	public List<HomeDTO> getNew() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("videoSQL.getNew");
+	}
+
+	@Override
+	public List<HomeDTO> getRomance() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("videoSQL.getRomance");
 	}
 
 }

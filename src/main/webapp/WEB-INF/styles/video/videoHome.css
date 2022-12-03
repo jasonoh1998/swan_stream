@@ -269,3 +269,315 @@ display:block;
 
 /* 영화 basic컨텐츠 끝 */
 
+
+
+
+/*TVEXCLUSIVE컨텐츠 */
+.tvExclusive_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.tvExclusive_slidebox .tvExclusive_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.tvExclusive_slidebox .tvExclusive_slidelist .tvExclusive_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+/* 	background:black;
+ */	width:100%;
+	transition:all 1s;
+	
+}
+.tvExclusive_slidebox .tvExclusive_slidelist .tvExclusive_slideitem .tvExclusive_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.tvExclusive_slidebox .tvExclusive_slidelist .tvExclusive_slideitem .tvExclusive_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+	transition:0.3s;
+}
+.tvExclusive_slidebox .tvExclusive_slidelist .tvExclusive_slideitem .tvExclusive_slideDiv > a:hover {
+	transform:scale(1.3);
+	z-index:100;
+	transform-origin:50% 100%;
+}
+.tvExclusive_slidebox .tvExclusive_slidelist .tvExclusive_slideitem .tvExclusive_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.tvExclusive_slidebox .tvExclusive_slidelist .tvExclusive_slideitem .tvExclusive_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.tvExclusive_slidebox .tvExclusive_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.tvExclusive_slidebox .tvExclusive_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.tvExclusive_slidebox .tvExclusive_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="tvExclusive_slide"] {
+display:none;
+}
+#tvExclusive_slide01:checked ~ .tvExclusive_slidelist .tvExclusive_slideitem {
+left:0;
+}
+#tvExclusive_slide02:checked ~ .tvExclusive_slidelist .tvExclusive_slideitem {
+left:var(--size2);
+}
+#tvExclusive_slide03:checked ~ .tvExclusive_slidelist .tvExclusive_slideitem {
+left:var(--size);
+
+}
+
+
+.tvExclusive_slide-control [class*="control"] {
+display:none;
+}
+#tvExclusive_slide01:checked ~ .tvExclusive_slide-control .control01 {
+display:block;
+}
+#tvExclusive_slide02:checked ~ .tvExclusive_slide-control .control02 {
+display:block;
+}
+#tvExclusive_slide03:checked ~ .tvExclusive_slide-control .control03 {
+display:block;
+}
+#tvExclusive_slide04:checked ~ .tvExclusive_slide-control .control04 {
+display:block;
+}
+
+/*TVEXCLUSIVE컨텐츠 끝 */
+
+
+/* 새로운 컨텐츠 */
+.new_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.new_slidebox .new_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.new_slidebox .new_slidelist .new_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+/* 	background:black;
+ */	width:100%;
+	transition:all 1s;
+	
+}
+.new_slidebox .new_slidelist .new_slideitem .new_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.new_slidebox .new_slidelist .new_slideitem .new_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+	transition:0.3s;
+}
+.new_slidebox .new_slidelist .new_slideitem .new_slideDiv > a:hover {
+	transform:scale(1.3);
+	z-index:100;
+	transform-origin:50% 100%;
+}
+.new_slidebox .new_slidelist .new_slideitem .new_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.new_slidebox .new_slidelist .new_slideitem .new_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.new_slidebox .new_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.new_slidebox .new_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.new_slidebox .new_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="new_slide"] {
+display:none;
+}
+#new_slide01:checked ~ .new_slidelist .new_slideitem {
+left:0;
+}
+#new_slide02:checked ~ .new_slidelist .new_slideitem {
+left:var(--size2);
+}
+#new_slide03:checked ~ .new_slidelist .new_slideitem {
+left:var(--size);
+
+}
+
+
+.new_slide-control [class*="control"] {
+display:none;
+}
+#new_slide01:checked ~ .new_slide-control .control01 {
+display:block;
+}
+#new_slide02:checked ~ .new_slide-control .control02 {
+display:block;
+}
+#new_slide03:checked ~ .new_slide-control .control03 {
+display:block;
+}
+#new_slide04:checked ~ .new_slide-control .control04 {
+display:block;
+}
+/* 새로운 컨텐츠 끝 */
+
+
+/*로맨스 영화 */
+.romance_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.romance_slidebox .romance_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.romance_slidebox .romance_slidelist .romance_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+/* 	background:black;
+ */	width:100%;
+	transition:all 1s;
+	
+}
+.romance_slidebox .romance_slidelist .romance_slideitem .romance_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.romance_slidebox .romance_slidelist .romance_slideitem .romance_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+	transition:0.3s;
+}
+.romance_slidebox .romance_slidelist .romance_slideitem .romance_slideDiv > a:hover {
+	transform:scale(1.3);
+	z-index:100;
+	transform-origin:50% 100%;
+}
+.romance_slidebox .romance_slidelist .romance_slideitem .romance_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.romance_slidebox .romance_slidelist .romance_slideitem .romance_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.romance_slidebox .romance_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.romance_slidebox .romance_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.romance_slidebox .romance_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="romance_slide"] {
+display:none;
+}
+#romance_slide01:checked ~ .romance_slidelist .romance_slideitem {
+left:0;
+}
+#romance_slide02:checked ~ .romance_slidelist .romance_slideitem {
+left:var(--size2);
+}
+#romance_slide03:checked ~ .romance_slidelist .romance_slideitem {
+left:var(--size);
+
+}
+
+
+.romance_slide-control [class*="control"] {
+display:none;
+}
+#romance_slide01:checked ~ .romance_slide-control .control01 {
+display:block;
+}
+#romance_slide02:checked ~ .romance_slide-control .control02 {
+display:block;
+}
+#romance_slide03:checked ~ .romance_slide-control .control03 {
+display:block;
+}
+#romance_slide04:checked ~ .romance_slide-control .control04 {
+display:block;
+}
+
+/* 로맨스 영화 끝 */

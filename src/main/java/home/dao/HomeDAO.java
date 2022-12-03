@@ -12,4 +12,12 @@ public interface HomeDAO {
 	public List<HomeDTO> getTopTenMovie();
 
 	public List<HomeDTO> getTopTenTV();
+
+	public void updateHit(String title);
+
+	public List<HomeDTO> getTVExclusive();
+
+	public List<HomeDTO> getNew();
+
+	public List<HomeDTO> getRomance();
 }

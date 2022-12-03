@@ -1,69 +1,10 @@
-$(function(){
-	
-	
-	$("#movie-Contents").load("/swan_stream/video/movie/basic_Contents.html");
-	$("#tv-Contents").load("/swan_stream/video/tv_Program/basic_Contents.html");
-
-	
-	$(document).on("mouseover",'.topTenMovie_slideDiv',function(){
-			var idx=$(this).index();
-		//	if($('#exclusiveToon_slide02').attr('checked',true)) idx=idx+4;
-		
-			
-			
-			console.log('index = ' + idx);
-			$('#topTenMovieTitle'+idx).css({
-														'position':'absolute',
-														'left':'17%',
-														'top':'80%',
-														'transform':'scale(1.3)',
-														'z-index':'100',
-														'transform-origin':'50% 100%',
-														'font-size':'8pt'
-														
-														}).show();
-			
-			$('.topTenMovieGenre:eq('+idx+')').css({
-														'position':'absolute',
-														'left':'17%',
-														'top':'90%',
-														'transform':'scale(1.3)',
-														'z-index':'100',
-														'transform-origin':'50% 100%',
-														'font-size':'2pt'		
-														}).show();
-			
-			
-			$('.layerSpan:eq('+idx+')').css({"position":"absolute", 
-										"height" : $('.layerSpan:eq('+idx+')').next().height(), 
-										"width":$('.layerSpan:eq('+idx+')').next().width(), 
-										"background": "linear-gradient(to bottom, transparent, black)", 
-										"opacity":"98%"
-										}).show();
-			
-	})
-	
-	$(document).on("mouseout",'.topTenMovie_slideDiv',function(){
-			var idx=$(this).index();
-			
-			$('#topTenMovieTitle'+idx).hide();
-			$('.layerSpan:eq('+idx+')').hide();	
-			$('.topTenMovieGenre:eq('+idx+')').hide();
-	})
-
-
-});
 
 
 //사이즈에 따른 배너 갯수 조절	
 $(window).resize(function(){
-	
 		setTopTenMovie_SlideNum();
 		addTopTenMovieSlide();
-		
 });
-
-
 
 //topTen슬라이드 추가
 function addTopTenMovieSlide(){
@@ -79,17 +20,17 @@ function addTopTenMovieSlide(){
 	var topTenMovie_a = [];
 	$.ajax({
 		type:'post',
-		url:'/swan_stream/video/getTopTen',
+		url:'/swan_stream/video/getTopTenMovie',
 		dataType:'json',
 		success:function(data){
-			//alert(JSON.stringify(data));
+			console.log(JSON.stringify(data));
 			$.each(data,function(index, items){
 			image.push($('<img>',{
 								'src': items.movieImage,
 								'alt': items.movieTitle
 								
 								}))
-								
+			
 			imageSpan.push($('<span>').attr('id','topTenMovieTitle'+index).text(items.movieTitle).addClass('topTenMovieTitle').css({
 										'position':'absolute'
 										}).hide()
@@ -102,7 +43,9 @@ function addTopTenMovieSlide(){
 					
 			layerSpan.push($('<span>').addClass('layerSpan'))					
 			
-			topTenMovie_a.push($('<a>').attr('href','http://localhost:8080/swan_stream/contents?title='+items.movieTitle)
+			topTenMovie_a.push($('<a>').attr('href','http://localhost:8080/swan_stream/video/contentsTransfer?title='+items.movieTitle)
+			
+			//topTenMovie_a.push($('<a>').attr('href','http://localhost:8080/swan_stream/contents?title='+items.movieTitle)
 			);
 								
 			})//each문
@@ -111,10 +54,6 @@ function addTopTenMovieSlide(){
 			$('.topTenMovie_slidelist').remove();
 			
 			if($(window).width() < 1000){
-	
-	
-			$('.headcategory-copy').html($('.head-category').clone());
-			
 				
 			var ul = $('<ul>')
 			ul.addClass('topTenMovie_slidelist');
@@ -253,8 +192,6 @@ function addTopTenMovieSlide(){
 	
 	
 }
-
-
 
 //topTenMovie 슬라이드 개수 조절
 function setTopTenMovie_SlideNum(){

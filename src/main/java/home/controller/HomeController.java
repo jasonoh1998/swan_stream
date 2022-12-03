@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -61,7 +62,10 @@ public class HomeController { // this is a videoController
 	@ResponseBody
 	public List<HomeDTO> getTopTenMovie() {
 		//System.out.println("컨트롤러 오냐?");
-		return homeService.getTopTenMovie();
+		List<HomeDTO> list = homeService.getTopTenMovie();
+		
+		
+		return list;
 	}
 	
 	@PostMapping(value="/video/getTopTenTV")
@@ -71,34 +75,36 @@ public class HomeController { // this is a videoController
 		return homeService.getTopTenTV();
 	}
 	
+	@GetMapping(value="/video/contentsTransfer")
+	public String index(@RequestParam String title, Model model) {
+		
+		homeService.updateHit(title);
+		model.addAttribute("title",title);
+		model.addAttribute("display", "./contents/contentsHome.jsp");
+		return "index";
+	}
+	
+	@PostMapping(value="/video/getTVExclusive")
+	@ResponseBody
+	public List<HomeDTO> getTVExclusive() {
+		//System.out.println("컨트롤러 오냐?");
+		return homeService.getTVExclusive();
+	}
+	
+	@PostMapping(value="/video/getNew")
+	@ResponseBody
+	public List<HomeDTO> getNew() {
+		//System.out.println("컨트롤러 오냐?");
+		return homeService.getNew();
+	}
+	
+	@PostMapping(value="/video/getRomance")
+	@ResponseBody
+	public List<HomeDTO> getRomance() {
+		//System.out.println("컨트롤러 오냐?");
+		return homeService.getRomance();
+	}
+	
+	
 }
 
-
-
-/*
- * @GetMapping(value="/video/movie/basic_Contents") public String
- * movieBasicContents() {
- * 
- * return "video/movie/basic_Contents"; }
- */
-
-/*
- * @GetMapping(value="/video/movie/category_Contents") public String
- * movieCategoryContents() {
- * 
- * return "video/movie/category_Contents"; }
- * 
- * @GetMapping(value="/video/tv_Program/basic_Contents") public String
- * tvBasicContents() {
- * 
- * return "video/tv_Program/basic_Contents"; }
- * 
- * @GetMapping(value="/video/tv_Program/category_Contents") public String
- * tvCategoryContents() {
- * 
- * return "video/tv_Program/category_Contents"; }
- * 
- * @GetMapping(value="/video/tv_Program/tvshow") public String tvshow() {
- * 
- * return "video/tv_Program/tvshow"; }
- */

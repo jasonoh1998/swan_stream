@@ -28,9 +28,7 @@
     <link rel="stylesheet" href="/swan_stream/styles/contents/contents.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/pay.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/cardCheck.css">
-    <link rel="stylesheet" href="/swan_stream/styles/video/videoHome.css" >	
-    <link rel="stylesheet" href="/swan_stream/styles/webtoon/webtoonHome.css" >
-     
+ 	
     <!-- javascripts -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
@@ -38,9 +36,8 @@
 	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
-   	<script type="text/javascript" src="/swan_stream/js/video/videoHome.js" defer></script>
-    <script type="text/javascript" src="/swan_stream/js/webtoon/webtoonHome.js" defer></script>
-   	<script type="text/javascript" src="/swan_stream/js/video/movie.js" defer></script>
+
+   
 	
     
 </head>
