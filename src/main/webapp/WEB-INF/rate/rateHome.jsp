@@ -3,9 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<!-- rate style sheet -->
 <link rel="stylesheet" href="/swan_stream/styles/rate/rate.css" />
 </head>
 <body>

@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <link rel="stylesheet" href="/swan_stream/styles/storage/storagebox.css" />
 </head>
 <body>
