@@ -61,11 +61,6 @@
                             </a>
                         </li>
                         <li class="setting">
-                            <a href="#/evaluate">
-                                <div class="setting-box">평가하기</div>
-                            </a>                                        
-                        </li>
-                        <li class="setting">
                             <a href="#/[https://watcha.com/zendesk/login]" target="_blank" rel="noopener noreferrer">
                                 <div class="setting-box">고객센터</div> <!-- same link in footer -->
                             </a>                                        

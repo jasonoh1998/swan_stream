@@ -70,4 +70,9 @@ public class MainServiceImpl implements MainService {
 		mainDAO.changeNewPassword(map);
 		
 	}
+
+	@Override
+	public String getUserName(String email) {
+		return mainDAO.getUserName(email);
+	}
 }

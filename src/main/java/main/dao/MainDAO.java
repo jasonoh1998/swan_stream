@@ -14,5 +14,6 @@ public interface MainDAO {
 
 	public void changeNewPassword(Map<String, String> map);
 
+	public String getUserName(String email);
 
 }

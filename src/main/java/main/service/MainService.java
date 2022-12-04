@@ -15,6 +15,8 @@ public interface MainService {
 	public String isExistPassword(String password);
 
 	public void changeNewPassword(Map<String, String> map);
+
+	public String getUserName(String email);
 	
 
 }

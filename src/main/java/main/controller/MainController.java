@@ -100,6 +100,13 @@ public class MainController {
 		}
 	
 	}
+	@PostMapping(value="/getUserName")
+	@ResponseBody
+	public String getUserName(Model model) {
+		String email = (String) model.getAttribute("email");
+		String str = mainService.getUserName(email);
+		return str;
+	}
 
 	@GetMapping(value="/watchingprofile")
 	public String watchingprofile(Model model) {
