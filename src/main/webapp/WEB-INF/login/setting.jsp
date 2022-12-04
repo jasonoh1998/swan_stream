@@ -6,15 +6,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- meta og tags -->
-    <meta content="스완스트림 - 10만 편의 영화, 드라마, 애니, 예능, 웹툰 무제한 감상" property="og:title">
-    <meta content="website" property="og:type">
-    <meta content="모든 영화, 드라마, 다큐멘터리, 애니메이션, 웹툰을 언제 어디서나 최고의 화질로 무제한 감상하세요." property="og:description">
-    <meta content="영화, 드라마, 다큐멘터리, 애니메이션, 웹툰, 영화 보기, 드라마 보기, 애니메이션 보기, 영화 스트리밍, 드라마 스트리밍, 다큐멘터리 스트리밍, 애니메이션 스트리밍" property="og:keywords">
-    <meta content="/swan_stream/images/favicon.ico" property="og:image">
-    <meta content="ko-KR" property="og:locale">
-    <meta content="http://jasontesting.shop/" property="og:url">
+
     <title>Swan Stream</title>
     
     <!-- fonts -->
@@ -24,6 +16,9 @@
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
     <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
     <link rel="stylesheet" href="/swan_stream/styles/global_settings.css">
+    <!-- index style sheets -->
+    <link rel="stylesheet" href="/swan_stream/styles/home_content.css">
+    <link rel="stylesheet" href="/swan_stream/styles/styles.css">
     <!-- login style sheets -->
     <link rel="stylesheet" href="/swan_stream/styles/login/login_navigation.css">
     <link rel="stylesheet" href="/swan_stream/styles/login/main.css">
@@ -32,21 +27,12 @@
 
 	<!-- javascripts -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+    <script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
     <script type="text/javascript" src="/swan_stream/js/login/main.js" defer></script>
 </head>
 <body>
 <div id="root">
     <div class="css-1p8mgyi-NavManager">
-        <div type="alert" class="css-dcmmt7-StyledPopupBanner">
-            <img alt="다시 오신 걸 환영해요!" src="https://an2-mars.amz.wtchn.net/assets/icon/ticket-86a24c7e480544ddd6054a1b56b4408a047281025ee913223fa401ee11e4d0e5.png" class="css-db4ylt">
-            <div class="css-srrxeg">
-                <div class="css-1ds58zn">
-                    <p class="css-10zg7sy">다시 오신 걸 환영해요!</p>
-                    <p class="css-rcphzz">지금 구독 시작하고 모든 콘텐츠를 무제한 감상해보세요</p>
-                </div>
-                <button class="css-nvbsrt">구독 시작하기</button>
-            </div>
-        </div>
         <nav class="css-edm8lq">
             <a class="css-oq2uzn" href="/swan_stream/home">
                 <img alt="swan-stream" src="/swan_stream/images/logo.png" class="css-ienfwh"></a>
@@ -56,7 +42,7 @@
                             <a class="css-se2mwu" href="/browse/video">
                                 <div class="css-1amgf2c">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3335 2.5H1.66683C1.2085 2.5 0.833496 2.875 0.833496 3.33333V16.6667C0.833496 17.125 1.2085 17.5 1.66683 17.5H18.3335C18.7918 17.5 19.1668 17.125 19.1668 16.6667V10.625V9.375V3.33333C19.1668 2.875 18.7918 2.5 18.3335 2.5ZM17.9168 5.93333H16.0418V3.75H17.9168V5.93333ZM14.7918 16.25H5.2085V10.625H14.7918V16.25ZM3.9585 9.375H2.0835V7.18333H3.9585V9.375ZM2.0835 10.625H3.9585V12.8083H2.0835V10.625ZM5.2085 9.375V3.75H14.7918V9.375H5.2085ZM3.9585 3.75V5.93333H2.0835V3.75H3.9585ZM2.0835 14.0667H3.9585V16.25H2.0835V14.0667ZM16.0418 16.25V14.0667H17.9168V16.25H16.0418ZM17.9168 12.8167H16.0418V10.625H17.9168V12.8167ZM16.0418 9.375V7.18333H17.9168V9.36667H16.0418V9.375Z" fill="#D4D7DB"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3335 2.5H1.66683C1.2085 2.5 0.833496 2.875 0.833496 3.33333V16.6667C0.833496 17.125 1.2085 17.5 1.66683 17.5H18.3335C18.7918 17.5 19.1668 17.125 19.1668 16.6667V10.625V9.375V3.33333C19.1668 2.875 18.7918 2.5 18.3335 2.5ZM17.9168 5.93333H16.0418V3.75H17.9168V5.93333ZM14.7918 16.25H5.2085V10.625H14.7918V16.25ZM3.9585 9.375H2.0835V7.18333H3.9585V9.375ZM2.0835 10.625H3.9585V12.8083H2.0835V10.625ZM5.2085 9.375V3.75H14.7918V9.375H5.2085ZM3.9585 3.75V5.93333H2.0835V3.75H3.9585ZM2.0835 14.0667H3.9585V16.25H2.0835V14.0667ZM16.0418 16.25V14.0667H17.9168V16.25H16.0418ZM17.9168 12.8167H16.0418V10.625H17.9168V12.8167ZM16.0418 9.375V7.18333H17.9168V9.36667H16.0418V9.375Z" fill="white"></path>
                                     </svg>
                                 </div>비디오
                             </a>

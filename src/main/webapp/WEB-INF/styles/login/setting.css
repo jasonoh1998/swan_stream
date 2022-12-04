@@ -1,30 +1,3 @@
-#root {
-    width: 100%;
-    height: 100%;
-}
-*, ::before, ::after {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-}
-html, body {
-    background: rgb(0, 0, 0);
-    color: white;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-}
-html[lang="ko-KR"] {
-    font-family: Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic", sans-serif;
-}
-:root {
-    --sat: env(safe-area-inset-top);
-    --sal: env(safe-area-inset-left);
-    --sar: env(safe-area-inset-right);
-    --sab: env(safe-area-inset-bottom);
-}
-html {
-    line-height: normal;
-}
 .css-1p8mgyi-NavManager {
     display: -webkit-box;
     display: -webkit-flex;
@@ -82,13 +55,6 @@ html {
     line-height: 22px;
     margin-bottom: 2px;
 }
-p {
-    padding: 0px;
-    margin: 0px;
-}
-h1, h3, p, hr {
-    margin: 0px;
-}
 .css-rcphzz {
     color: rgb(255, 255, 255);
     font-size: 13px;
@@ -104,37 +70,18 @@ h1, h3, p, hr {
     line-height: 20px;
     text-decoration-line: underline;
 }
-input[type="button"], input[type="submit"], button {
-    cursor: pointer;
-    border: 0px none transparent;
-    outline: none 0px;
-    background: none;
-    appearance: initial;
-    padding: 0px;
-}
-button, input, optgroup, select, textarea {
-    line-height: normal;
-}
 .css-edm8lq {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 501;
-    background: #141517;
+    background: #FAADB4;
     width: 240px;
     height: 100%;
-    border-right: 1px #1b1c1d solid;
 }
 .css-oq2uzn {
     display: block;
     margin: 24px 0 0 26px;
-}
-a {
-    outline: rgb(0, 0, 0);
-}
-a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
 }
 .css-ienfwh {
     vertical-align: top;
@@ -159,14 +106,6 @@ a {
     align-items: flex-start;
     padding: 0;
     margin: 0;
-}
-ol, ul {
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-    margin-block: 0px;
-    margin-inline: 0px;
-    padding-inline-start: 0px;
 }
 .css-clv9o4::before {
     content: attr(aria-label);
@@ -206,7 +145,7 @@ ol, ul {
     -ms-flex-item-align: stretch;
     align-self: stretch;
     background: transparent;
-    color: #d4d7db;
+    color: white;
     -webkit-text-decoration: none;
     text-decoration: none;
     width: 100%;
@@ -300,54 +239,6 @@ ol, ul {
     align-self: stretch;
     margin: 0 10px 0 0;
 }
-/* #top-navigation-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 500;
-    width: 100%;
-    padding: 0 0 0 240px;
-}
-.top-navigation {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    height: 56px;
-    padding: 12px 40px;
-    background: #fa8891;
-    -webkit-transition: background-color 300ms;
-    transition: background-color 300ms;
-}
-.hidden-logo {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    max-width: 100%;
-}
-.hidden-logo-box {
-    display: none;
-}
-.hidden-logo-box > a > img {
-    margin-bottom: 2px;
-    width: 200px;
-    height: 33.333px;
-}
-img {
-    border-style: none;
-} */
-
 .css-ed6ye {
     position: fixed;
     top: 0;
@@ -373,7 +264,7 @@ img {
     width: 100%;
     height: 56px;
     padding: 12px 40px;
-    background: #141517;
+    background: #FA8891;
     -webkit-transition: background-color 300ms;
     transition: background-color 300ms;
 }
@@ -407,18 +298,6 @@ img {
 }
 .accountAndSettings {
     vertical-align: top;
-}
-button, select {
-    text-transform: none;
-}
-button, input {
-    overflow: visible;
-}
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
 }
 .profile-picture {
     width: 32px;
@@ -465,9 +344,6 @@ element.style {
 .setting a, .setting button {
     display: block;
     width: 100%;
-}
-element.style {
-    background: rgb(250, 173, 180);
 }
 .setting-box {
     display: flex;
@@ -540,7 +416,7 @@ element.style {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background: #000;
+    background: #2F0000;
 }
 .css-1cdobt6 {
     height: 100%;
@@ -559,13 +435,6 @@ element.style {
     line-height: 30px;
     padding: 0px 6px;
     margin-bottom: 12px;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    padding: 0px;
-    margin: 0px;
-    margin-block: 0px;
-    margin-inline: 0px;
 }
 .css-1vu1xu7 {
     background: rgb(18, 19, 20);
@@ -988,6 +857,7 @@ h1, h2, h3, h4, h5, h6 {
 .css-hubf7r {
     position: relative;
     padding: 27px 40px 40px;
+    background: #2F0000;
 }
 .css-1wn0ztv {
     color: rgba(255,255,255,0.2);
@@ -1161,9 +1031,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .css-1ia10w4 > em {
     font-weight: 700;
-}
-em {
-    font-style: normal;
 }
 .css-aoelz3 {
     display: none;
