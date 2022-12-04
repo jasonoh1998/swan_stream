@@ -29,6 +29,12 @@ public class MainDAOMyBatis implements MainDAO {
 	public MainDTO getUserKakao(String email) {
 		return sqlSession.selectOne("mainSQL.getUserKakao", email);
 	}
+	
 
+	@Override
+	public void changeNewPassword(Map<String, String> map) {
+		 sqlSession.update("mainSQL.changeNewPassword", map);
+		
+	}
 	
 }

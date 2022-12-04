@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/swan_stream/styles/global_settings.css">
     <!-- login style sheets -->
     <link rel="stylesheet" href="/swan_stream/styles/login/login_navigation.css">
+    <!-- findPassword style sheet -->
     <link rel="stylesheet" href="/swan_stream/styles/login/find_password.css">
     
     <!-- javascripts -->
