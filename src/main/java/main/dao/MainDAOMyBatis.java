@@ -1,5 +1,6 @@
 package main.dao;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -40,6 +41,14 @@ public class MainDAOMyBatis implements MainDAO {
 	@Override
 	public String getUserName(String email) {
 		return sqlSession.selectOne("mainSQL.getUserName", email);
+	}
+
+	@Override
+	public void changeUserName(String email, String name) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		map.put("name", name);
+		sqlSession.update("mainSQL.changeUserName", map);
 	}
 	
 }

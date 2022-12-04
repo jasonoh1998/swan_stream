@@ -17,6 +17,8 @@ public interface MainService {
 	public void changeNewPassword(Map<String, String> map);
 
 	public String getUserName(String email);
+
+	public void changeUserName(String email, String name);
 	
 
 }

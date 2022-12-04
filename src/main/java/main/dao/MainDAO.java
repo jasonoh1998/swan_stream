@@ -16,4 +16,6 @@ public interface MainDAO {
 
 	public String getUserName(String email);
 
+	public void changeUserName(String email, String name);
+
 }

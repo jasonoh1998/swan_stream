@@ -75,4 +75,9 @@ public class MainServiceImpl implements MainService {
 	public String getUserName(String email) {
 		return mainDAO.getUserName(email);
 	}
+
+	@Override
+	public void changeUserName(String email, String name) {
+		mainDAO.changeUserName(email, name);
+	}
 }

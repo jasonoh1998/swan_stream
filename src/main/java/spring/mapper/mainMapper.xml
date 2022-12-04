@@ -29,9 +29,12 @@
 		select * from user_data where email='${email}'
 	</select>
 	
-		<!-- 카카오 로그인 -->
 	<select id="getUserName" parameterType="String" resultType="String">
 		select name from user_data where email='${email}'
+	</select>
+	
+	<select id="changeUserName" parameterType="java.util.Map">
+		update user_data set name='${name}' where email='${email}'
 	</select>
 	
 	<!-- 비밀번호 확인 -->

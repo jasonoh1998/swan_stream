@@ -6,15 +6,6 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- meta og tags -->
-    <meta content="스완스트림 - 10만 편의 영화, 드라마, 애니, 예능, 웹툰 무제한 감상" property="og:title">
-    <meta content="website" property="og:type">
-    <meta content="모든 영화, 드라마, 다큐멘터리, 애니메이션, 웹툰을 언제 어디서나 최고의 화질로 무제한 감상하세요." property="og:description">
-    <meta content="영화, 드라마, 다큐멘터리, 애니메이션, 웹툰, 영화 보기, 드라마 보기, 애니메이션 보기, 영화 스트리밍, 드라마 스트리밍, 다큐멘터리 스트리밍, 애니메이션 스트리밍" property="og:keywords">
-    <meta content="/swan_stream/images/favicon.ico" property="og:image">
-    <meta content="ko-KR" property="og:locale">
-    <meta content="http://jasontesting.shop/" property="og:url">
     <title>Swan Stream</title>
     
     <!-- fonts -->
@@ -24,9 +15,7 @@
     <link rel="icon" type="image/x-icon" href="/swan_stream/images/favicon.ico">
     <link rel="stylesheet" href="/swan_stream/styles/normalize.css">
     <link rel="stylesheet" href="/swan_stream/styles/global_settings.css">
-    <!-- login style sheets -->
-    <link rel="stylesheet" href="/swan_stream/styles/login/login_navigation.css">
-    <link rel="stylesheet" href="/swan_stream/styles/login/main.css">
+
     <!-- editProfile style sheet -->
      <link rel="stylesheet" href="/swan_stream/styles/profile/editProfile.css">
     
@@ -64,7 +53,7 @@
 								</div>
 								<section class="css-15c1pm4">
 									<label for="name" class="css-1ri5295">이름
-										<input name="name" type="text" class="css-1539jpa" value="Boyoung Kim">
+										<input name="name" type="text" class="css-1539jpa" value="">
 									</label>
 									<ul class="css-19ksx78">
 										<li class="css-1k0sbwm">• 이름은 최소 2자, 최대 20자 까지 입력이 가능해요</li>
@@ -74,8 +63,8 @@
 							</div>
 							<div class="css-rgcpo5"></div>
 							<div class="css-1e5dy7u">
-								<button type="button" class="css-8o4jzm-Button" onclick="location.href='http://localhost:8080/swan_stream/selectprofile'">완료</button>
-								<button type="button" class="css-8o4jzm-Button">취소</button>
+								<button type="button" id="nameChange" class="css-8o4jzm-Button">완료</button>
+								<button type="button" class="css-8o4jzm-Button" onclick="location.href='/swan_stream/selectprofile'">취소</button>
 							</div>
 						</form>
 					</section>
@@ -87,5 +76,36 @@
 		<div id="tooltip-root">
 		</div>
 	</div>
+	<!-- javascripts -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+    	$(function(){
+    		$.ajax({
+    			type: "post",
+    			url: "/swan_stream/getUserName",
+    			success: function(data){
+					$(".css-1539jpa").val(data);
+    			},
+    			error: function(error) {
+    				//console.log(error);
+    			}
+    		})
+    	});
+    	
+    	$("#nameChange").click(function(){
+    		$.ajax({
+    			type:"post",
+    			url: "/swan_stream/changeUserName",
+    			data: 'name='+$('.css-1539jpa').val(),
+    			success: function(data){
+    				location.href='/swan_stream/selectprofile';
+    			},
+    			error: function(error) {
+    				//console.log(error);
+    			}
+    		})
+    	})
+    	
+    </script>
 </body>
 </html>
