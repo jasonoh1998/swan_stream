@@ -3,4 +3,21 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="webtoonSQL">
+	<!-- <select id="getExclusive" resultType="webtoon">
+		select * from webtoon_contents where exclusive_contents = 'exclusive'
+	</select> -->
+
+
+	<select id="getExclusive" resultType="webtoon">
+		select * from webtoon_contents 
+		left join (
+		select webtoon_id, listagg(genre_title, '|') within group (order by webtoon_id) as genre
+		from (select * from
+		webtoon_genre
+		left join webtoon_genre_number using(genre_id))
+		group by webtoon_id
+		)
+		using(webtoon_id) 
+		where exclusive_contents=1
+	</select>
 </mapper>
