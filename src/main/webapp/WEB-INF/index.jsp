@@ -39,7 +39,7 @@
       <div id="main">
         <jsp:include page="./loading.jsp" />
 
-<!--         new subscription advertisement for non-membership members
+        <!--  new subscription advertisement for non-membership members -->
         <div id="new-sub">
           <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket" />
           <div class="new-sub_content">
@@ -51,7 +51,7 @@
               무료 이용 시작
             </button>
           </div>
-        </div> -->
+        </div>
 
         <!-- navigation area -->
         <jsp:include page="./navigation/leftNav.jsp" />
