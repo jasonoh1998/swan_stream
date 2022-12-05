@@ -115,7 +115,7 @@ function basic_button_show06(basic_card_valid06, basic_contract_valid06, basic_b
 // 여기도 해야함ㅠ 
 // DB에 카드 정보 넣기 
 $(".basic06-btn").click(function() {
-	alert($("#basic-pay-form06").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
+//	alert($("#basic-pay-form06").serialize()); // 3개의 값은 제대로 들어옴 여기까진 잘됨  
 	// db갔다가 오는과정에서 실패함 
 	setTimeout(function() {
 		$.ajax({

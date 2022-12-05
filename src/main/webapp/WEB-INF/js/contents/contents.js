@@ -13,6 +13,7 @@
 
 
 /* 1.감상하기 */
+/*
 $('.css-1h9ez8n').on("click", function(){
    $("<a>").prop({
         target: "_blank",
@@ -20,4 +21,4 @@ $('.css-1h9ez8n').on("click", function(){
         href: "/swan_stream/contentsVideo"
     })[0].click();
 });
-
+*/
