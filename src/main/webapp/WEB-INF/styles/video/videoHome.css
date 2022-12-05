@@ -18,6 +18,9 @@
 	font-family:sans-serif;
 	
 }
+a:hover{
+	color: white !important;
+}
 /* 배너 */
 ul, li {
 	list-style:none;

@@ -207,7 +207,7 @@
         <li class="css-s8yyxh">
             <div class="css-omfv7y">이메일</div>
             <div class="css-1qvpu5u">
-                <div class="css-1wvvw8g">0426zzang@naver.com</div>
+                <div class="css-1wvvw8g">${email }</div>
             </div>
             <div class="css-mchwlt">
                 <button type="button" class="css-4zi2m" id="deleteBtn">회원정보삭제

@@ -24,14 +24,12 @@
     <!-- index style sheets -->
     <link rel="stylesheet" href="/swan_stream/styles/home_content.css">
     <link rel="stylesheet" href="/swan_stream/styles/styles.css">
-    <link rel="stylesheet" href="/swan_stream/styles/contents/contents.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/pay.css">
     <link rel="stylesheet" href="/swan_stream/styles/payment/cardCheck.css">
  	
     <!-- javascripts -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/index.js" defer></script>
-	<script type="text/javascript" src="/swan_stream/js/contents/contents.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/pay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/apiPay.js" defer></script>
 	<script type="text/javascript" src="/swan_stream/js/payment/cardCheck.js" defer></script>
@@ -41,7 +39,7 @@
       <div id="main">
         <jsp:include page="./loading.jsp" />
 
-        <!-- new subscription advertisement for non-membership members -->
+<!--         new subscription advertisement for non-membership members
         <div id="new-sub">
           <img alt="첫 구독 시 2주 무료!" src="/swan_stream/images/subscription_ticket.png" class="new-sub_ticket" />
           <div class="new-sub_content">
@@ -53,7 +51,7 @@
               무료 이용 시작
             </button>
           </div>
-        </div>
+        </div> -->
 
         <!-- navigation area -->
         <jsp:include page="./navigation/leftNav.jsp" />
