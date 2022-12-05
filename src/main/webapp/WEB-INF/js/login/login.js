@@ -51,8 +51,8 @@ $(document).on('keypress',function(e) {
 });
 
 $(".login-login-button-click").click(function() {	
-	$("#email-box").css("opacity","0.3");
-	$("#password-box").css("opacity","0.3");
+	$("#email-box").css("opacity","0.3");   
+	$("#password-box").css("opacity","0.3"); 
 	setTimeout(function() {
 		$.ajax({
 			type: "post",
@@ -64,6 +64,7 @@ $(".login-login-button-click").click(function() {
 				$("#password-box").css("opacity","1");
 				if(data == 'exist'){
 					location.href="/swan_stream/home";
+					
 					$(".error-message").hide();
 				} else if(data=='non_exist'){
 					$(".error-message").show();
@@ -74,5 +75,5 @@ $(".login-login-button-click").click(function() {
 				//console.log(error);
 			}
 		})
-    }, 1500);
+    }, 500);
 });

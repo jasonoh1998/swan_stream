@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="paymentSQL">
+	<!-- 컬럼명이 틀릴때 
+	<resultMap type="main.bean.MainDTO" id="mainResult">
+		<result property="name" column="NAME"/>
+		<result property="email" column="EMAIL"/>
+		<result property="password" column="PASSWORD"/>
+		<result property="age_restriction" column="AGE_RESTRICTION"/>
+		<result property="marketing_agreement" column="MARKETING_AGREEMENT"/>
+		<result property="logtime" column="LOGTIME"/>
+	</resultMap>
+	-->
+	
+	<!-- card 번호 저장 -->
+	<insert id="cardDataSave" parameterType="payment">
+		insert into user_card
+			(email, card_Number, card_Expiry, card_Birth, logtime)
+			values(#{email}, #{card_Number}, #{card_Expiry}, #{card_Birth}, sysdate)
+	</insert>
+	
+	<!-- email로 card 번호 가져오기 -->
+	<select id="cardShow" parameterType="String" resultType="payment">
+		select rownum, card_number from
+		(select * from user_card order by logtime desc) 
+		where rownum = 1 and email ='${email}'	
+	</select>
+
+</mapper>
+

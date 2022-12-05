@@ -37,6 +37,12 @@
 	<!-- contents -->
 	<context:component-scan base-package="contents.service" />
 	<context:component-scan base-package="contents.dao" />
-
+	
+	<!-- payment -->
+	<context:component-scan base-package="payment.service" />
+	<context:component-scan base-package="payment.dao" />
+	
+	
 	<context:component-scan base-package="spring.conf" />
+	
 </beans>

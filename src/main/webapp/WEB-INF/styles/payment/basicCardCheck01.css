@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+.basic01-btn:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    color: rgb(153, 156, 161);
+}
+
+.basic01-btn {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 20px;
+    background: rgb(248, 47, 98);
+    color: rgb(255, 255, 255);
+    padding: 10px 16px;
+}
+
+.css-k5snl0 {
+    position: relative;
+    width: 100%;
+}
+
+/*
+ pre-card 첫화면  length = 0 일때  
+ pre-card-correct = 성공 
+ pre-card-wrong  = 실패화면
+*/
+
+/*
+.login-content-middle,
+.login-content-middle-correct,
+.login-content-middle-wrong
+*/
+
+.basic-card,
+.basic-card-correct,
+.basic-card-wrong {
+    position: relative;
+    width: 100%;
+}
+.basic-card-correct::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/check.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+.basic-card-wrong::after {
+    content: "";
+    display: inline-block;
+	background: url(/swan_stream/images/login/xmark.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    bottom: auto;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+} 
+
+.basic-cardInput {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px;
+    background: rgb(14, 14, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
+input.basic-cardInput[type="text"],
+input.basic-cardInput[type="number"],
+input.basic-cardInput[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+/* contract  유효기간 */
+
+.contract-card {
+    position: relative;
+    width: 100%;
+}
+
+.basic-contractInput {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px;
+    background: rgb(14, 14, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
+input.basic-contractInput[type="text"],
+input.basic-contractInput[type="number"],
+input.basic-contractInput[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+.birth-card {
+	position: relative;
+    width: 100%;
+}
+
+.basic-birthInput {
+    width: 100%;
+    padding: 10px 10px 10px 14px;
+    border-radius: 4px;
+    background: rgb(14, 14, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
+input.basic-birthInput[type="text"],
+input.basic-birthInput[type="number"],
+input.basic-birthInput[type="password"] {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
