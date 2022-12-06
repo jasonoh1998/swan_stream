@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/* TV TOPTEN컨텐츠 */
+.topTenTV_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.topTenTV_slidebox .topTenTV_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.topTenTV_slidebox .topTenTV_slidelist .topTenTV_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+/* 	background:black;
+ */	width:100%;
+	transition:all 1s;
+	
+}
+.topTenTV_slidebox .topTenTV_slidelist .topTenTV_slideitem .topTenTV_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.topTenTV_slidebox .topTenTV_slidelist .topTenTV_slideitem .topTenTV_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+	transition:0.3s;
+}
+.topTenTV_slidebox .topTenTV_slidelist .topTenTV_slideitem .topTenTV_slideDiv > a:hover {
+	transform:scale(1.3);
+	z-index:100;
+	transform-origin:50% 100%;
+}
+.topTenTV_slidebox .topTenTV_slidelist .topTenTV_slideitem .topTenTV_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.topTenTV_slidebox .topTenTV_slidelist .topTenTV_slideitem .topTenTV_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.topTenTV_slidebox .topTenTV_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.topTenTV_slidebox .topTenTV_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.topTenTV_slidebox .topTenTV_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="topTenTV_slide"] {
+display:none;
+}
+#topTenTV_slide01:checked ~ .topTenTV_slidelist .topTenTV_slideitem {
+left:0;
+}
+#topTenTV_slide02:checked ~ .topTenTV_slidelist .topTenTV_slideitem {
+left:var(--size2);
+}
+#topTenTV_slide03:checked ~ .topTenTV_slidelist .topTenTV_slideitem {
+left:var(--size);
+
+}
+
+
+.topTenTV_slide-control [class*="control"] {
+display:none;
+}
+#topTenTV_slide01:checked ~ .topTenTV_slide-control .control01 {
+display:block;
+}
+#topTenTV_slide02:checked ~ .topTenTV_slide-control .control02 {
+display:block;
+}
+#topTenTV_slide03:checked ~ .topTenTV_slide-control .control03 {
+display:block;
+}
+#topTenTV_slide04:checked ~ .topTenTV_slide-control .control04 {
+display:block;
+}
+
+/* TVTOPTEN컨텐츠 끝 */

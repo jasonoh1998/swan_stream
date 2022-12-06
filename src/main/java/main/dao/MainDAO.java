@@ -12,4 +12,10 @@ public interface MainDAO {
 
 	public MainDTO getUserKakao(String email);
 
+	public void changeNewPassword(Map<String, String> map);
+
+	public String getUserName(String email);
+
+	public void changeUserName(String email, String name);
+
 }

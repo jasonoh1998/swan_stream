@@ -1,24 +1,24 @@
-
-/*
- [ 컨텐츠 js ]
- 1.감상하기 기능추가
- 2.회차정보 기능추가
- 3.관련 콘텐츠 기능추가
- 4.보고싶어요 기능추가
- 5.평가하기 기능추가
- 6.감독/출연자 정보 기능추가 + 더보기 기능추가
- 7.댓글기능 추가
- 8.무한스크롤 기능추가?
-*/
+let video_tag = `
+<div class="wrapper">
+	<iframe src="/swan_stream/images/Transformers_ Rise of the Beasts _ Official Teaser Trailer (2023 Movie) - YouTube - Google Chrome 2022-12-05 03-57-40.mp4" allowfullscreen></iframe>
+	<button id="iframe-button">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M20.372 3.628a.888.888 0 0 0-1.256 0L12 10.744 4.884 3.628a.888.888 0 0 0-1.256 1.256L10.744 12l-7.116 7.116a.888.888 0 1 0 1.256 1.256L12 13.256l7.116 7.116a.888.888 0 1 0 1.256-1.256L13.256 12l7.116-7.116a.888.888 0 0 0 0-1.256Z" fill="white"></path>
+		</svg>
+	</button>
+</div>
+`
 
 
-/* 1.감상하기 */
-
-$('.css-1h9ez8n').on("click", function(){
-   $("<a>").prop({
-        target: "_blank",
-        // href: "https://www.youtube.com/watch?v=g4qQXXtaMqc"
-        href: "/swan_stream/contentsVideo"
-    })[0].click();
+$(".content-view-button").click(function(){
+	$(body).prepend(video_tag);
+	$("#iframe-button").click(function(){
+		$(".wrapper").remove();
+	});
 });
-
+$(".content-view-button-phone").click(function(){
+	$(body).prepend(video_tag);
+	$("#iframe-button").click(function(){
+		$(".wrapper").remove();
+	});
+});

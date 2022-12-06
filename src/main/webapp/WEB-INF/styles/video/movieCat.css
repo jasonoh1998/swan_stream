@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/* 영화 basic컨텐츠 */
+.topTenMovie_slidebox {
+	max-width:90%;
+	margin:0 auto;
+	position:relative;
+}
+.topTenMovie_slidebox .topTenMovie_slidelist {
+	position:relative;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.topTenMovie_slidebox .topTenMovie_slidelist .topTenMovie_slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+/* 	background:black;
+ */	width:100%;
+	transition:all 1s;
+	
+}
+.topTenMovie_slidebox .topTenMovie_slidelist .topTenMovie_slideitem .topTenMovie_slideDiv{
+	display:block;
+	width:20%;
+	float:left;
+}
+	
+.topTenMovie_slidebox .topTenMovie_slidelist .topTenMovie_slideitem .topTenMovie_slideDiv > a {
+	display:block;
+	text-align:center;
+	position:relative;
+	transition:0.3s;
+}
+.topTenMovie_slidebox .topTenMovie_slidelist .topTenMovie_slideitem .topTenMovie_slideDiv > a:hover {
+	transform:scale(1.3);
+	z-index:100;
+	transform-origin:50% 100%;
+}
+.topTenMovie_slidebox .topTenMovie_slidelist .topTenMovie_slideitem .topTenMovie_slideDiv > a div{
+	text-align: left;
+    font-weight: bold;
+    font-size: 5em;
+    position: absolute;
+    left: -3%;
+    top: -5%;
+    background: transparent;
+}
+
+.topTenMovie_slidebox .topTenMovie_slidelist .topTenMovie_slideitem .topTenMovie_slideDiv > a img {
+	max-width:90%;
+	border-radius:5px;
+	
+}
+
+.topTenMovie_slidebox .topTenMovie_slide-control [class*="control"] label {
+	position:absolute;
+	z-index:10;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.topTenMovie_slidebox .topTenMovie_slide-control [class*="control"] label.prev {
+	left:-50px;
+	background:#333 url('/swan_stream/images/video/left-arrow.png') center center / 50% no-repeat;
+}
+.topTenMovie_slidebox .topTenMovie_slide-control [class*="control"] label.next {
+	right:-50px;
+	background:#333 url('/swan_stream/images/video/right-arrow.png') center center / 50% no-repeat;}
+
+[name="topTenMovie_slide"] {
+display:none;
+}
+#topTenMovie_slide01:checked ~ .topTenMovie_slidelist .topTenMovie_slideitem {
+left:0;
+}
+#topTenMovie_slide02:checked ~ .topTenMovie_slidelist .topTenMovie_slideitem {
+left:var(--size2);
+}
+#topTenMovie_slide03:checked ~ .topTenMovie_slidelist .topTenMovie_slideitem {
+left:var(--size);
+
+}
+
+
+.topTenMovie_slide-control [class*="control"] {
+display:none;
+}
+#topTenMovie_slide01:checked ~ .topTenMovie_slide-control .control01 {
+display:block;
+}
+#topTenMovie_slide02:checked ~ .topTenMovie_slide-control .control02 {
+display:block;
+}
+#topTenMovie_slide03:checked ~ .topTenMovie_slide-control .control03 {
+display:block;
+}
+#topTenMovie_slide04:checked ~ .topTenMovie_slide-control .control04 {
+display:block;
+}
+
+/* 영화 basic컨텐츠 끝 */

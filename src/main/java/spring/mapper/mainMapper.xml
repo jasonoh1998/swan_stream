@@ -29,4 +29,23 @@
 	<select id="getUserKakao" parameterType="String" resultType="main">
 		select * from user_data where email='${email}'
 	</select>
+	
+	<select id="getUserName" parameterType="String" resultType="String">
+		select name from user_data where email='${email}'
+	</select>
+	
+	<select id="changeUserName" parameterType="java.util.Map">
+		update user_data set name='${name}' where email='${email}'
+	</select>
+	
+	<!-- 비밀번호 확인 -->
+	<select id="isExistPassword" parameterType="String" resultType="main">
+		select * from user_data where password='${password}'
+	</select>
+	
+	<!-- 비밀번호 변 -->
+	<select id="changeNewPassword" parameterType="java.util.Map" >
+		update user_data set password='${newPassword}' where password='${password}'
+	</select>
+	
 </mapper>

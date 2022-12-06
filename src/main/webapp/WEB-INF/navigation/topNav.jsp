@@ -50,20 +50,15 @@
                         </li>
                         <hr class="setting-divider">
                         <li class="setting">
-                            <a href="#/manage_profiles?mode=readyToEdit">
+                            <a href="/swan_stream/selectprofile">
                                 <div class="setting-box">프로필 편집</div>
                             </a>
                         </li>
                         <hr class="setting-divider">
                         <li class="setting">
-                            <a href="#/settings">
+                            <a href="/swan_stream/setting">
                                 <div class="setting-box">설정</div>
                             </a>
-                        </li>
-                        <li class="setting">
-                            <a href="#/evaluate">
-                                <div class="setting-box">평가하기</div>
-                            </a>                                        
                         </li>
                         <li class="setting">
                             <a href="#/[https://watcha.com/zendesk/login]" target="_blank" rel="noopener noreferrer">

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="/swan_stream/styles/webtoon/webtoonHome.css" >
 </head>
 <body>
 <!-- left navigation bar highlight -->
@@ -67,6 +68,6 @@
 	    
 	</div>
 </main>
-
+<script type="text/javascript" src="/swan_stream/js/webtoon/webtoonHome.js" defer></script>
 </body>
 </html>

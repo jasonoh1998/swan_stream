@@ -5,6 +5,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="main.bean.MainDTO" alias="main" />
+		<typeAlias type="home.bean.HomeDTO" alias="home"/>
+		<typeAlias type="webtoon.bean.WebtoonDTO" alias="webtoon"/>
 		<typeAlias type="payment.bean.PaymentDTO" alias="payment" />
 		<typeAlias type="search.bean.SearchMovieDataDTO" alias="search" />
 

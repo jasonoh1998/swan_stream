@@ -4,12 +4,71 @@ $(function(){
 	webtoonAddBanner();
 
 	$("#webtoon-Contents").load("/swan_stream/webtoon/webtoon_contents/webtoon_contents01.html");
+
 	
+	$(document).on("mouseover",'.exclusiveToon_slideDiv',function(){
+			var idx=$(this).index();
+		//	if($('#exclusiveToon_slide02').attr('checked',true)) idx=idx+4;
+		
+			
+			
+			console.log('index = ' + idx);
+			$('#exclusiveWebtoonTitle'+idx).css({
+														'position':'absolute',
+														'left':'17%',
+														'top':'80%',
+														'transform':'scale(1.3)',
+														'z-index':'100',
+														'transform-origin':'50% 100%',
+														'font-size':'x-small'			
+														}).show();
+			
+			$('.exclusiveWebtoonGenre:eq('+idx+')').css({
+														'position':'absolute',
+														'left':'17%',
+														'top':'90%',
+														'transform':'scale(1.3)',
+														'z-index':'100',
+														'transform-origin':'50% 100%',
+														'font-size':'xx-small'		
+														}).show();
+			
+			
+			$('.layerSpan:eq('+idx+')').css({"position":"absolute", 
+										"height" : $('.layerSpan:eq('+idx+')').next().height(), 
+										"width":$('.layerSpan:eq('+idx+')').next().width(), 
+										"background": "linear-gradient(to bottom, transparent, black)", 
+										"opacity":"98%"
+										}).show();
+			
+	})
+	
+	$(document).on("mouseout",'.exclusiveToon_slideDiv',function(){
+			var idx=$(this).index();
+			
+			$('.exclusiveWebtoonTitle:eq('+idx+')').hide();
+			$('.layerSpan:eq('+idx+')').hide();	
+			$('.exclusiveWebtoonGenre:eq('+idx+')').hide();
+	})
 });
 
 
+
+/*
+$('.exclusiveToon_slidebox .exclusiveToon_slidelist .exclusiveToon_slideitem .exclusiveToon_slideDiv > a').hover(function(){
+		$(this).attr({
+				'transform':'scale(1.3)',
+				'z-index':'100',
+				'transform-origin':'50% 100%'
+		});
+		$(".exclusiveWebtoonTitle").show();
+	})
+*/	
+
 //화면 open시 화면 사이즈에 따라 로드될 배너 개수
 function webtoonAddBanner(){
+	
+
 	var image = [];
 	var titleSpan = ['왓챠웹툰 오리지널 ⟨어떤 시작은 소리 없이⟩', 
 				'', 
@@ -324,173 +383,192 @@ $(window).resize(function(){
 
 //exclusive webtoon슬라이드 추가
 function addExclusiveToonSlide(){
+	//style="position:absolute; height : 304.29px; width:171px; background: black; opacity:70%;"
+	$.ajax({
+		type:'post',
+		url :'/swan_stream/webtoon/getExclusive',
+		dataType:'json',
+		success:function(data){
+			//alert(JSON.stringify(data));
+			var image = [];
+			var imageSpan = [];
+			var genreSpan = [];
+			var layerSpan = [];
+			
+			$.each(data,function(index,items){
+				image.push($('<img>',{
+										'src':items.webtoonImage,
+										'alt':items.webtoonTitle
+						}))
+				
+				imageSpan.push($('<span>').attr('id','exclusiveWebtoonTitle'+index).text(items.webtoonTitle).addClass('exclusiveWebtoonTitle').css({
+											'position':'absolute',
+										    'font-size':'0.1em'
+											}).hide()
+				);
+				
+				genreSpan.push($('<span>').text(items.genre).addClass('exclusiveWebtoonGenre').css({
+											'position':'absolute',
+										    'font-size':'0.05em'
+											}).hide()
+				);
+						
+				layerSpan.push($('<span>').addClass('layerSpan'))		
+						
+				$(".exclusiveToon_slidelist").remove();
 	
 	
-	$(".exclusiveToon_slidelist").remove();
 	
-	var image =[];
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/9pRrC3u3faaD3fZhxjOzUw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5UazJOemM0TkRNME56SXhPRFU0TnpraWZRLjlGZTdhcHpQT3FtSkVzNlJyZXJWQ0pWZVpUREQ0Z2FrdEhFNjdCTmhUbHc',
-				'alt':'exclusiveToon1'		
-	})
-	)
-	
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/Fgnx4bO_ShPKm4GxQ7OvbA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qWXhORE01TWpVNE5EYzFPVGd4T0RraWZRLjhkREFHbmwxajZBdUdMU1RQSFpveVJra2lqV0kyazdyejFpM0JGMlZDTDg',
-				'alt':'exclusiveToon2'		
-	})
-	)
-	
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/SYwvwfauVrJs7cYcjL4A2A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qZzNNemN3TkRjNE9ESXdNRFl5TVRJaWZRLnl1dVA3Q184cHhzVUNtYVEyUGNqeFo4U0V4Y2tJYlU3WXdlLW1RR3dQakE',
-				'alt':'exclusiveToon3'		
-	})
-	)
-	
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/hhmBkpV0oZnn74BOlWTPPw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qYzRPVFkyTWpZMU5ESTVNRGt3TXpRaWZRLlZwT0dDRjRwZ2RNSDM3TEVseWJGLVhkckdKbjlkVGJtaUs3RTBPbk5KUlU',
-				'alt':'exclusiveToon4'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/rEinT4y45hXt8CPxTpgJJw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qYzRPRFV5TWpnNU9UQTNOamd5TnpVaWZRLndkYlQ2NHVUM3drUUJCY0xmZE1sTExKdU1pTHl3NnlZemxwVF9oREdIaGs',
-				'alt':'exclusiveToon5'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/2T4eI91zwoZ64uFphA6tSg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qWTNOalEzT0RJM016a3dNVEkzT0RjaWZRLmpjU3FXTFVvTE5nei1XdndMb21wcVBvMll5YXRUWl9MYzZJRW1NbElGVVk',
-				'alt':'exclusiveToon6'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/-Y779pSsY2gvryP9pqdTEQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5UY3lOamN3TlRjME1URTBOREF6T1RjaWZRLnUzUmczZHQ1T2piSkxsUFcyZFJVVVJ6VHhJR3ZkMThOVU5iUW9Ya09abkk',
-				'alt':'exclusiveToon7'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/DACw9om-nhq9ZGK-1o7BHw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qWTJOalExTURVek1UQXlOamMxTURJaWZRLjFSdGNRLUR4a04zU0dBdUQxNEdLOXhNR0ROMlJ5WWFtaFBheG00WlBhTm8',
-				'alt':'exclusiveToon8'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/bXLu0pkFMG8RC3lsNqfZjg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qTTJOalk1T0RVM056QTNOREEwTnpnaWZRLlBvUktPSnQ1d0kySGxla3hJSDhoRmxFZV9sSmVlV1VQN01TVlpHZlo2NjQ',
-				'alt':'exclusiveToon9'		
-	})
-	)
-	image.push($('<img>',{
-				'src':'https://an2-img.amz.wtchn.net/image/v2/UZjPTFbAkrUjHzshuudC-A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16WXdlRFkwTUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qTTJNemc1TmpFM01USXhOell4TnpFaWZRLlpxMWhTTFNzbWVadF9oRGV2ajBubzl2dEFSNG5VdTJrUnBLa0p1ZG9XS00',
-				'alt':'exclusiveToon10'		
-	})
-	)
-	
-	if($(window).width() < 1000){
+				if($(window).width() < 1000){
+					
+				var ul = $('<ul>')
+				ul.addClass('exclusiveToon_slidelist');
+				
+				for(k=1;k<4;k++){
+					var exclusiveToon_slideitem = $('<li>');
+					exclusiveToon_slideitem.addClass("exclusiveToon_slideitem");
+					var exclusiveToon_slideDiv_arr=[]; 
+					
+					for(i=0;i<4;i++){
+						var exclusiveToon_slideDiv = $('<div>');
+						var exclusiveToon_a = $('<a>');
+						
+						
+						if((i+(k*4-3))<=10){
+						
+					
+						
+						exclusiveToon_a.append(
+									imageSpan[i+(k*4-4)]
+									).append(
+									genreSpan[i+(k*4-4)]
+									).append(
+									layerSpan[i+(k*4-4)]
+									).append(
+									image[i+(k*4-4)]);
+						
+						
+						exclusiveToon_slideDiv.append(exclusiveToon_a);
+						exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
+						exclusiveToon_slideDiv.css("width","25%");
+						exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
+						
+						
+						}
+				}
+					
+				for(i=0;i<4;i++){
+					exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
+				}
+				
+				ul.append(exclusiveToon_slideitem);
+				
+				}
+				$('.exclusiveToon_slidebox').append(ul);
+				
+				
+				var theme=document.querySelector(':root');
+				theme.style.setProperty('--webtoonExclusive2p','-100%'); 
+				theme.style.setProperty('--webtoonExclusive3p','-150%');       
+				
+				}else if($(window).width() < 1600){
+				
+				var ul = $('<ul>')
+				ul.addClass('exclusiveToon_slidelist');
+				
+				for(k=1;k<3;k++){
+					var exclusiveToon_slideitem = $('<li>');
+					exclusiveToon_slideitem.addClass("exclusiveToon_slideitem");
+					var exclusiveToon_slideDiv_arr=[]; 
+				
+				for(i=0;i<5;i++){
+					var exclusiveToon_slideDiv = $('<div>');
+					var exclusiveToon_a = $('<a>');
+					
+				
+					exclusiveToon_a.append(imageSpan[i+(k*5-5)]
+									).append(
+									genreSpan[i+(k*5-5)]
+									).append(
+									layerSpan[i+(k*5-5)]
+									).append(
+									image[i+(k*5-5)]);
+									
+					exclusiveToon_slideDiv.append(exclusiveToon_a);
+					exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
+					exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
+					
+				}
+					
+				for(i=0;i<5;i++){
+					exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
+				}
+				
+				ul.append(exclusiveToon_slideitem);
+				}
+				$('.exclusiveToon_slidebox').append(ul);
+				var theme=document.querySelector(':root');
+				theme.style.setProperty('--webtoonExclusive2p','-100%');  
+				theme.style.setProperty('--webtoonExclusive3p','-200%');
+				}else{
+				
+				var ul = $('<ul>')
+				ul.addClass('exclusiveToon_slidelist');
+				
+				for(k=1;k<3;k++){
+					var exclusiveToon_slideitem = $('<li>');
+					exclusiveToon_slideitem.addClass("exclusiveToon_slideitem");
+					var exclusiveToon_slideDiv_arr=[]; 
+				
+				for(i=0;i<7;i++){
+					var exclusiveToon_slideDiv = $('<div>');
+					var exclusiveToon_a = $('<a>');
+					
+					if((i+(k*7-6))<=10){
+					
+					exclusiveToon_a.append(
+								imageSpan[i+(k*7-7)]
+								).append(
+								genreSpan[i+(k*7-7)]
+								).append(
+								layerSpan[i+(k*7-7)]
+								).append(
+								image[i+(k*7-7)]);
+								
+								
+					exclusiveToon_slideDiv.append(exclusiveToon_a);
+					exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
+					exclusiveToon_slideDiv.css("width","14%");
+					exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
+					}
+				}
+				
+					
+				for(i=0;i<7;i++){
+					exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
+				}
+				
+				ul.append(exclusiveToon_slideitem);
+				}
+				$('.exclusiveToon_slidebox').append(ul);
+				
+				
+				var theme=document.querySelector(':root');
+				theme.style.setProperty('--webtoonExclusive2p','-42%');  
+				theme.style.setProperty('--webtoonExclusive3p','-200%');
+				}
+						
+			})
 		
-	var ul = $('<ul>')
-	ul.addClass('exclusiveToon_slidelist');
-	
-	for(k=1;k<4;k++){
-		var exclusiveToon_slideitem = $('<li>');
-		exclusiveToon_slideitem.addClass("exclusiveToon_slideitem");
-		var exclusiveToon_slideDiv_arr=[]; 
-		
-		for(i=0;i<4;i++){
-			var exclusiveToon_slideDiv = $('<div>');
-			var exclusiveToon_a = $('<a>');
 			
 			
-			if((i+(k*4-3))<=10){
-		
-			exclusiveToon_a.append(image[i+(k*4-4)]);
-			
-			
-			exclusiveToon_slideDiv.append(exclusiveToon_a);
-			exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
-			exclusiveToon_slideDiv.css("width","25%");
-			exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
-			}
-	}
-		
-	for(i=0;i<4;i++){
-		exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
-	}
-	
-	ul.append(exclusiveToon_slideitem);
-	
-	}
-	$('.exclusiveToon_slidebox').append(ul);
-	
-	
-	var theme=document.querySelector(':root');
-	theme.style.setProperty('--webtoonExclusive2p','-100%'); 
-	theme.style.setProperty('--webtoonExclusive3p','-150%');       
-	
-	}else if($(window).width() < 1600){
-	
-	var ul = $('<ul>')
-	ul.addClass('exclusiveToon_slidelist');
-	
-	for(k=1;k<3;k++){
-		var exclusiveToon_slideitem = $('<li>');
-		exclusiveToon_slideitem.addClass("exclusiveToon_slideitem");
-		var exclusiveToon_slideDiv_arr=[]; 
-	
-	for(i=0;i<5;i++){
-		var exclusiveToon_slideDiv = $('<div>');
-		var exclusiveToon_a = $('<a>');
-
-		exclusiveToon_a.append(image[i+(k*5-5)]);
-		exclusiveToon_slideDiv.append(exclusiveToon_a);
-		exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
-		exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
-	}
-		
-	for(i=0;i<5;i++){
-		exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
-	}
-	
-	ul.append(exclusiveToon_slideitem);
-	}
-	$('.exclusiveToon_slidebox').append(ul);
-	var theme=document.querySelector(':root');
-	theme.style.setProperty('--webtoonExclusive2p','-100%');  
-	theme.style.setProperty('--webtoonExclusive3p','-200%');
-	}else{
-	
-	var ul = $('<ul>')
-	ul.addClass('exclusiveToon_slidelist');
-	
-	for(k=1;k<3;k++){
-		var exclusiveToon_slideitem = $('<li>');
-		exclusiveToon_slideitem.addClass("exclusiveToon_slideitem");
-		var exclusiveToon_slideDiv_arr=[]; 
-	
-	for(i=0;i<7;i++){
-		var exclusiveToon_slideDiv = $('<div>');
-		var exclusiveToon_a = $('<a>');
-		
-		if((i+(k*7-6))<=10){
-		exclusiveToon_a.append(image[i+(k*7-7)]);
-		exclusiveToon_slideDiv.append(exclusiveToon_a);
-		exclusiveToon_slideDiv.addClass("exclusiveToon_slideDiv");
-		exclusiveToon_slideDiv.css("width","14%");
-		exclusiveToon_slideDiv_arr.push(exclusiveToon_slideDiv);
+		},
+		error:function(err){
+			console.log(err);
 		}
-	}
-		
-	for(i=0;i<7;i++){
-		exclusiveToon_slideitem.append(exclusiveToon_slideDiv_arr[i]);
-	}
-	
-	ul.append(exclusiveToon_slideitem);
-	}
-	$('.exclusiveToon_slidebox').append(ul);
+	})
 	
 	
-	var theme=document.querySelector(':root');
-	theme.style.setProperty('--webtoonExclusive2p','-42%');  
-	theme.style.setProperty('--webtoonExclusive3p','-200%');
-	}
-
 }
 
 //exclusiveToon 슬라이드 개수 조절
@@ -499,7 +577,7 @@ function setExclusiveToon_SlideNum(){
 	$('.exclusiveToon_slide-control').remove();
 	
 	
-	if($(window).width() < 1300){
+	if($(window).width() < 1000){
 		for(i=0;i<3;i++){
 		//input태그 생성
 		var input_radio = $('<input>');
