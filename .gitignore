@@ -3,8 +3,10 @@
 build/
 .classpath
 .project
-/bin/
+bin/
+bin/*
 .DS_Store
 target/
 .factorypath
 *.mp4
+*.sql
