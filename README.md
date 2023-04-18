@@ -8,7 +8,7 @@ We used
 
 Frontend: JSP, Bootstrap 5.0.2, jQuery 3.6.1
 
-Backend: Java SE11, Spring Tool Suite 3.9.18(Maven), jstl, Apache Tomcat 9.0
+Backend: Java SE11, Spring Tool Suite 3.9.18(Maven), jstl, MyBatis, Apache Tomcat 9.0
 
 DB: OracleDB
 
