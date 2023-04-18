@@ -6,9 +6,9 @@ Purpose of the project was to create a trendy streaming website that can be bett
 
 We used 
 
-Frontend: JSP, Bootstrap 5.0.2, jQuery 3.6.1, jstl 
+Frontend: JSP, Bootstrap 5.0.2, jQuery 3.6.1
 
-Backend: Java SE11, Spring Tool Suite 3.9.18(Maven), Apache Tomcat 9.0
+Backend: Java SE11, Spring Tool Suite 3.9.18(Maven), jstl, Apache Tomcat 9.0
 
 DB: OracleDB
 
